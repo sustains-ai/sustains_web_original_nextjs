@@ -2,7 +2,7 @@
 import FeaturesSection from "./components/FeaturesSection";
 import ProductsSection from "./components/ProductsSection";
 import Testimonials from "./components/Testimonials";
-import HeroSection from "./components/HeroSection"; // Importing new Hero Section
+import HeroSection from "./components/HeroSection";
 import Quotes from "./components/Quotes";
 import Sandbox from "./components/Sandbox";
 

@@ -4,7 +4,7 @@ import "./globals.css"; // Keep global css imports
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Script from "next/script"; // Import Script for JS files
-
+import "./globals.css"; // Ensure this line is present
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 
