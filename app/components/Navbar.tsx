@@ -32,18 +32,12 @@ const Navbar = () => {
         <nav
           className={`${
             isOpen ? 'block' : 'hidden'
-          } lg:flex lg:items-center lg:space-x-6 w-full lg:w-auto absolute lg:static top-16 left-0 bg-white lg:bg-transparent px-4 lg:px-0 py-4 lg:py-0 shadow-lg lg:shadow-none`}
+          } lg:flex lg:items-center lg:space-x-6 w-full lg:w-auto absolute lg:static top-16 left-0 px-4 lg:px-0 py-4 lg:py-0`}
         >
-          <Link href="/" className="text-gray-800 hover:text-primary px-3 py-2">Home</Link>
-          <Link href="/about" className="text-gray-800 hover:text-primary px-3 py-2">About</Link>
-          <Link href="/thoughts" className="text-gray-800 hover:text-primary px-3 py-2">Thoughts</Link>
-          <Link href="/contact" className="text-gray-800 hover:text-primary px-3 py-2">Contact</Link>
-
-          {/*/!* Auth Buttons *!/*/}
-          {/*<div className="lg:ml-auto flex space-x-4">*/}
-          {/*  <Link href="/login" className="btn btn-outline-dark">Log in</Link>*/}
-          {/*  <Link href="/signup" className="btn btn-dark hidden lg:inline-block">Sign up</Link>*/}
-          {/*</div>*/}
+          <Link href="/" className="text-gray-800 hover:text-primary px-3 py-2 transition-colors">Home</Link>
+          <Link href="/about" className="text-gray-800 hover:text-primary px-3 py-2 transition-colors">About</Link>
+          <Link href="/thoughts" className="text-gray-800 hover:text-primary px-3 py-2 transition-colors">Thoughts</Link>
+          <Link href="/contact" className="text-gray-800 hover:text-primary px-3 py-2 transition-colors">Contact</Link>
         </nav>
       </div>
     </header>

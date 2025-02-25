@@ -2,47 +2,41 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#0A0A0A] text-white py-8">
-      <div className="container mx-auto px-4 text-center">
-        <h2 className="text-lg md:text-xl font-semibold">Sustains.ai</h2>
-        <p className="text-sm mt-2">
+    <footer className="bg-dark text-white py-12">
+      <div className="container mx-auto px-6 text-center">
+
+        {/* Brand Title */}
+        <h2 className="text-2xl md:text-3xl font-bold text-white">
+          Sustains.ai
+        </h2>
+
+        {/* Subtitle */}
+        <p className="text-sm md:text-base mt-2 text-gray-300">
           Empowering decisions with AI-driven risk analytics.
         </p>
 
-        <div className="flex justify-center space-x-6 mt-4">
-          <a href="/about" className="hover:underline">About</a>
-          <a href="/thoughts" className="hover:underline">Thoughts</a>
-          <a href="/contact" className="hover:underline">Contact</a>
+        {/* Navigation Links */}
+        <div className="flex justify-center space-x-8 mt-6 text-base font-medium">
+          <a href="/about" className="hover:text-[#0ABF53] transition">About</a>
+          <a href="/thoughts" className="hover:text-[#0ABF53] transition">Thoughts</a>
+          <a href="/contact" className="hover:text-[#0ABF53] transition">Contact</a>
         </div>
 
-        <div className="flex justify-center space-x-4 mt-4">
-          <a href="#" className="hover:opacity-80">
-            <Image
-              src="/svg/facebook.svg"
-              alt="Facebook"
-              width={20}
-              height={20}
-            />
+        {/* Social Icons */}
+        <div className="flex justify-center space-x-6 mt-6">
+          <a href="#" className="hover:opacity-80 transition">
+            <Image src="/svg/facebook.svg" alt="Facebook" width={24} height={24} />
           </a>
-          <a href="#" className="hover:opacity-80">
-            <Image
-              src="/svg/linkedin.svg"
-              alt="LinkedIn"
-              width={20}
-              height={20}
-            />
+          <a href="#" className="hover:opacity-80 transition">
+            <Image src="/svg/linkedin.svg" alt="LinkedIn" width={24} height={24} />
           </a>
-          <a href="#" className="hover:opacity-80">
-            <Image
-              src="/svg/X.svg"
-              alt="Twitter"
-              width={20}
-              height={20}
-            />
+          <a href="#" className="hover:opacity-80 transition">
+            <Image src="/svg/X.svg" alt="Twitter" width={24} height={24} />
           </a>
         </div>
 
-        <p className="text-xs mt-4 opacity-80">
+        {/* Copyright */}
+        <p className="text-xs md:text-sm mt-6 text-gray-400">
           © {new Date().getFullYear()} Sustains.ai. All rights reserved.
         </p>
       </div>
