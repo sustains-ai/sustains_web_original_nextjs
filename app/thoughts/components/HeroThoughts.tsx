@@ -62,6 +62,19 @@ const HeroThoughts = () => {
             height={500}
             priority
           />
+          <motion.div
+            className="absolute bottom-[-80px] right-[-100px] opacity-50"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1.2 }}
+          >
+            <Image
+              src="/svg/components/card-1.svg"
+              alt="Decorative SVG"
+              width={160}
+              height={160}
+            />
+            </motion.div>
         </motion.div>
       </motion.div>
     </section>

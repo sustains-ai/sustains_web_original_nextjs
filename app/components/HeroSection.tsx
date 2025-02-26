@@ -72,7 +72,7 @@ const HeroSection = () => {
             transition={{ duration: 1, delay: 1.2 }}
           >
             <Image
-              src="/svg/illustrations/plane.svg"
+              src="/svg/components/curved-shape.svg"
               alt="Decorative SVG"
               width={160}
               height={160}
