@@ -56,7 +56,7 @@ const HeroThoughts = () => {
         >
           <Image
             className="rounded-lg shadow-lg"
-            src="/img/950x950/equity_research.jpg"
+            src="/img/950x950/img1.jpg"
             alt="Innovation & Research"
             width={500}
             height={600}
