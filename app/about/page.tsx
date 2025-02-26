@@ -3,6 +3,9 @@ import ANoteFromHeart from "./components/ANoteFromHeart";
 import BusinessImpactCards from "./components/BusinessImpactCards";
 import KeyTerms from "./components/KeyTerms";
 import Quotes from "@/app/components/Quotes";
+import TechEcosystem from "./components/TechEchoSystem";
+import TeamSection from "./components/TeamSection";
+
 
 export default function About() {
   return (
@@ -10,6 +13,8 @@ export default function About() {
       <HeroAbout />
       <ANoteFromHeart />
       <BusinessImpactCards />
+        <TechEcosystem/>
+        <TeamSection/>
       <KeyTerms />
          <Quotes />
     </>

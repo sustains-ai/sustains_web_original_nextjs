@@ -59,8 +59,8 @@ const HeroSection = () => {
             className="rounded-lg shadow-lg z-10"
             src="/img/950x950/img4.jpg"
             alt="Risk Analysis"
-            width={950}
-            height={950}
+            width={500}
+            height={500}
             priority // Fast Loading
           />
 

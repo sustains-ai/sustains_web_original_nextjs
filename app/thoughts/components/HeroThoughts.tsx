@@ -59,7 +59,7 @@ const HeroThoughts = () => {
             src="/img/950x950/img1.jpg"
             alt="Innovation & Research"
             width={500}
-            height={600}
+            height={500}
             priority
           />
         </motion.div>

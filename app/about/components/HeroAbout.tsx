@@ -60,8 +60,8 @@ const HeroAbout = () => {
             // className="relative flex justify-center mt-20 md:mr-10"
             src="/img/950x950/img5.jpg"
             alt="Our Team"
-            width={950}
-            height={950}
+            width={500}
+            height={500}
           />
 
           {/* Decorative SVG - Positioned Bottom Right */}
