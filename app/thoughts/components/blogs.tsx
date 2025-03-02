@@ -11,7 +11,7 @@ const blogPosts = [
     description:
       "A deep dive into market risk, portfolio optimization, and the tools that professionals use.",
     image: "/img/Blogs/Blog_1.jpg",
-    link: "/blogs/risk-analysis",
+    link: "/blog/risk-analysis",
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ const blogPosts = [
     description:
       "Exploring the advancements in AI-driven energy forecasting and optimization.",
     image: "/img/Blogs/Blog_2.jpg",
-    link: "/blogs/sustainable-energy",
+    link: "/blog/sustainable-energy",
   },
   {
     id: 3,
@@ -27,7 +27,7 @@ const blogPosts = [
     description:
       "How AI and machine learning are transforming the way we make financial decisions.",
     image: "/img/Blogs/Blog_3.jpg",
-    link: "/blogs/data-driven-finance",
+    link: "/blog/data-driven-finance",
   },
 ];
 
