@@ -1,4 +1,6 @@
+import Blog from "../common/components/Blog"
 import CTA from "../common/components/CTA"
+import FeaturesTab from "../common/components/Features"
 import FeaturesSection from "../common/components/FeaturesSection"
 import HeroSection from "../common/components/HeroSection"
 import ProductsSection from "../common/components/ProductsSection"
@@ -11,11 +13,13 @@ const Home = () => {
         <>
             <HeroSection />
             <FeaturesSection />
-            <Sandbox />
+            <FeaturesTab />
+            {/* <Sandbox /> */}
             <ProductsSection />
-            <Testimonials />
             <CTA />
+            <Testimonials />
             <QuotesSection />
+            <Blog />
         </>
     )
 }

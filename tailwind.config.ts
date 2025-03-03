@@ -12,6 +12,7 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         primary: "#0ABF53", // Your main theme color
+        grey: "#808080"
       },
       fontFamily: {
         sans: ["Inter", "sans-serif"], // Keeping font consistent
