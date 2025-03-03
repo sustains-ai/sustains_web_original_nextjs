@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css"; // Keep global css imports
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import Footer from "./common/components/Footer";
 import Script from "next/script"; // Import Script for JS files
 import "./globals.css"; // Ensure this line is present
 import "bootstrap-icons/font/bootstrap-icons.css";
-
+import Header from "@/app/common/components/Header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-         {/*Local css (Ensure files exist in /public/css/)*/}
+        {/*Local css (Ensure files exist in /public/css/)*/}
         <link rel="stylesheet" href="/css/bootstrap.min.css" />
         <link rel="stylesheet" href="/css/theme.min.css" />
         <link rel="stylesheet" href="/css/style.css" />
@@ -46,13 +45,12 @@ export default function RootLayout({
         />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <Navbar />
-        <main>{children}</main>
+        <Header />
+        <main className="pt-16">{children}</main>
         <Footer />
 
         {/* Local JS (Ensure files exist in /public/js/) */}
         <Script src="/js/theme.min.js" strategy="lazyOnload" />
-
 
       </body>
     </html>
