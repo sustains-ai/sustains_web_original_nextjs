@@ -46,7 +46,7 @@ const Testimonials = () => {
         {testimonials.map((testimonial, index) => (
             <motion.div
                 key={index}
-                className="relative p-8 rounded-lg shadow-lg max-w-xs text-center transition-all duration-500 bg-gradient-to-br from-[#A8E6CF] to-[#0ABF53] text-white"
+                className="relative p-8 rounded-lg shadow-lg max-w-xs text-center transition-all duration-500 bg-gradient-to-t from-[#1D976C] to-[#93F9B9] text-white"
                 whileHover={{scale: 1.05, rotate: 2}}
                 initial={{opacity: 0, y: 20}}
                 animate={{opacity: 1, y: 0}}
