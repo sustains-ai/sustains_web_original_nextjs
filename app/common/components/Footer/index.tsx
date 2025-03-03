@@ -68,13 +68,13 @@ const Footer = () => {
           {/* Social Icons */}
           <div className="flex justify-center space-x-6">
             <a href="#" className="hover:opacity-80 transition">
-              <Image src="/svg/facebook.svg" alt="Facebook" width={24} height={24} className="dark:invert" />
+              <Image src="/svg/facebook.svg" alt="Facebook" width={24} height={24} />
             </a>
             <a href="#" className="hover:opacity-80 transition">
-              <Image src="/svg/linkedin.svg" alt="LinkedIn" width={24} height={24} className="dark:invert" />
+              <Image src="/svg/linkedin.svg" alt="LinkedIn" width={24} height={24} />
             </a>
             <a href="#" className="hover:opacity-80 transition">
-              <Image src="/svg/X.svg" alt="Twitter" width={24} height={24} className="dark:invert" />
+              <Image src="/svg/X.svg" alt="Twitter" width={24} height={24} />
             </a>
           </div>
 
