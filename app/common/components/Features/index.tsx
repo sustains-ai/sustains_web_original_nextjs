@@ -70,7 +70,7 @@ const FeaturesTab = () => {
                                 </div>
                                 <div className="md:w-3/5 lg:w-auto">
                                     <button className="text-sm font-semibold text-grey xl:text-regular">
-                                        Sandbox
+                                        Sustainability
                                     </button>
                                 </div>
                             </div>
@@ -88,7 +88,7 @@ const FeaturesTab = () => {
                                 </div>
                                 <div className="md:w-3/5 lg:w-auto">
                                     <button className="text-sm font-semibold text-grey xl:text-regular">
-                                        Entropy
+                                        Risk
                                     </button>
                                 </div>
                             </div>

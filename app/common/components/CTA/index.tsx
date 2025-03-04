@@ -29,10 +29,10 @@ const CTA = () => {
               className="animate_left md:w-[70%] lg:w-1/2"
             >
               <h2 className="mb-4 w-11/12 text-3xl font-bold text-black xl:text-sectiontitle4">
-              Boost Your Financial Insights & Optimize Energy Efficiency
+                  AI-Driven Energy & Risk Analytics for a Sustainable Future
               </h2>
               <p>
-              Unlock the power of data with cutting-edge financial analysis and entropy-energy solutions. Maximize productivity, minimize risk, and drive sustainable growth with precision.
+                  From optimizing energy resource planning to financial risk analysis, we harness the power of AI and quantitative modeling to drive sustainable growth and smarter decision-making.
               </p>
             </motion.div>
             <motion.div

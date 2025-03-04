@@ -17,21 +17,23 @@ const FeaturesSection = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
         <FeatureCard
-          icon="bi-graph-up-arrow"
-          title="Precision Risk Analytics"
-          description="Leverage cutting-edge tools to assess and mitigate risks with unparalleled accuracy."
+            icon="bi-bar-chart-line"
+            title="Data-Driven Sustainability"
+            description="Leverage AI-powered analytics to optimize energy use, reduce waste, and drive sustainable business decisions."
         />
         <FeatureCard
-          icon="bi-bar-chart-line"
-          title="Quantitative Excellence"
-          description="Showcase our expertise in risk modeling, forecasting, and optimization."
+            icon="bi-graph-up-arrow"
+            title="Risk Intelligence for Resilience"
+            description="Identify, quantify, and mitigate risks in energy, finance, and operations to ensure long-term stability."
         />
         <FeatureCard
-          icon="bi-briefcase"
-          title="Seamless Web Solutions"
-          description="User-friendly web platforms and robust API integrations for financial and energy analytics."
+            icon="bi-shield-lock"
+            title="AI for Smarter Growth"
+            description="Predict future challenges and opportunities with AI-driven modeling, ensuring a balanced, risk-aware strategy for sustainability."
         />
       </div>
+
+
     </section>
   );
 };

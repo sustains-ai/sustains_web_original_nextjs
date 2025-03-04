@@ -38,7 +38,6 @@ export default async function Vertical({ params }: { params: Promise<{ type: str
                 </div>
 
                 <p className="mb-5">{feature.desc1}</p>
-                <p className="w-11/12">{feature.desc2}</p>
               </div>
             </div>
           </div>

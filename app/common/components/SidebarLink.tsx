@@ -15,20 +15,15 @@ const SidebarLink = () => {
           href={""}
           className={`flex w-full rounded-sm px-3 py-2 text-base text-black dark:text-white `}
         >
-          Vertical Guide
+          About
         </Link>
         <Link
           href={""}
           className={`flex w-full rounded-sm px-3 py-2 text-base text-black dark:text-white `}
         >
-          Working Guide
+          Products Guide
         </Link>
-        <Link
-          href={""}
-          className={`flex w-full rounded-sm px-3 py-2 text-base text-black dark:text-white `}
-        >
-          Using The Feature
-        </Link>
+
       </li>
     </>
   );

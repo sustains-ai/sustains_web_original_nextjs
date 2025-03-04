@@ -15,21 +15,22 @@ const HeroSection = () => {
         {/* Left Column - Text Content (Moved More Left) */}
         <div className="text-center md:text-left px-6 mt-20 md:-ml-24">
           <motion.h1
-            className="text-5xl font-extrabold text-dark leading-tight"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2 }}
+              className="text-5xl font-extrabold text-dark leading-tight"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.2 }}
           >
-            Understanding risk <br /> gives confidence.
-            <span className="text-[#0ABF53]"> We do it with precision.</span>
+            Sustainable decisions. <br /> Smarter risk strategies.
+            <span className="text-[#0ABF53]"> Powered by data.</span>
           </motion.h1>
+
           <motion.p
             className="mt-6 text-lg text-gray-600"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.4 }}
           >
-            AI-driven risk analytics tailored for your business.
+            AI-Driven Analytics for Sustainable Growth & Risk Intelligence
           </motion.p>
 
           <motion.div

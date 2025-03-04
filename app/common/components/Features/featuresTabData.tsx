@@ -3,20 +3,19 @@ import { FeatureTab } from "@/types/featureTab";
 const featuresTabData: FeatureTab[] = [
   {
     id: "tabOne",
-    title: "Sandbox – Where Finance Meets Strategy",
-    desc1: `Sandbox empowers financial experts to see beyond numbers, offering tools that unravel market complexities and unlock sustainable growth.`,
-    desc2: `    Our platform goes beyond traditional data analysis — offering interactive simulations, real-time insights, and collaborative workspaces, all designed to foster innovation and informed decision-making.`,
-    image: "/images/vertical-1.png",
-    link: "sandbox"
+    title: "Sustainability",
+    desc1: `Empowering organizations with AI-driven solutions for energy efficiency, carbon footprint reduction, and resource optimization. Our platform transforms sustainability challenges into opportunities for smarter, greener growth.`,
+    image: "/images/sustainability_analytics.jpg",
+    link: "Sustainability Analytics"
   },
   {
     id: "tabTwo",
-    title: "Entropy – Energizing Tomorrow",
-    desc1: `Entropy drives innovation in the energy sector, merging AI with expertise to mitigate risks and foster efficient, sustainable energy solutions.`,
-    desc2: `    Our AI-driven platform analyzes complex data streams in real-time — from grid performance to renewable resource forecasts — helping you make smarter, faster decisions. With predictive modeling and intelligent automation, Entropy transforms challenges into opportunities for growth.`,
-    image: "/images/vertical-2.png",
-    link: "entropy"
+    title: "Risk",
+    desc1: `Navigate uncertainty with precision. Our risk analytics platform provides deep insights into financial, operational, and energy-related risks, ensuring resilience and long-term sustainability in a rapidly changing world.`,
+    image: "/images/risk_analysis_vertical.jpg",
+    link: "Risk Analytics"
   },
 ];
+
 
 export default featuresTabData;

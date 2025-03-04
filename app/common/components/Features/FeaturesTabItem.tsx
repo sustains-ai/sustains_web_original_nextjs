@@ -3,7 +3,7 @@ import { FeatureTab } from "@/types/featureTab";
 import Image from "next/image";
 
 const FeaturesTabItem = ({ featureTab }: { featureTab: FeatureTab }) => {
-  const { title, desc1, desc2, image, link } = featureTab;
+  const { title, desc1, image, link } = featureTab;
 
   return (
     <>
@@ -13,7 +13,6 @@ const FeaturesTabItem = ({ featureTab }: { featureTab: FeatureTab }) => {
             {title}
           </h2>
           <p className="mb-5">{desc1}</p>
-          <p className="w-11/12">{desc2}</p>
           <a
             href={`/vertical/${link}`}
             className="group mt-7.5 inline-flex items-center gap-2.5 text-black hover:text-primary"
