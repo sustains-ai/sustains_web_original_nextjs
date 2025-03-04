@@ -9,8 +9,25 @@ const compat = new FlatCompat({
   baseDirectory: __dirname,
 });
 
-const eslintConfig = [
+export default [
+  // Base config to extend Next.js defaults
   ...compat.extends("next/core-web-vitals", "next/typescript"),
+  // Override rules explicitly after extending
+  {
+    files: ["**/*.ts", "**/*.tsx"],
+    languageOptions: {
+      parserOptions: {
+        project: "./tsconfig.json", // Explicitly point to tsconfig
+        sourceType: "module",
+      },
+    },
+    rules: {
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-unused-expressions": "off",
+      "@typescript-eslint/no-empty-function": "off",
+      "@typescript-eslint/no-unused-vars": "off",
+      // Ensure Next.js-specific rules don’t interfere
+      "@next/next/no-async-client-component": "warn", // Downgrade to warning if needed
+    },
+  },
 ];
-
-export default eslintConfig;

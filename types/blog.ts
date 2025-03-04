@@ -1,22 +1,31 @@
 export type Author = {
   name: string;
-  image: string;
+  image: string | { src: string; alt?: string };
   bio?: string;
   _id?: number | string;
   _ref?: number | string;
 };
 
+export type ContentBlock = {
+  type: "paragraph" | "heading" | "list";
+  level?: number;
+  text?: string;
+  items?: string[];
+  ordered?: boolean;
+  value?: string; // Keep for backward compatibility if needed
+};
+
 export type Blog = {
-  id: number;
+  id?: number | string;
   title: string;
-  slug?: any;
+  slug?: string;
   description?: string;
   body?: string;
-  image?: any;
+  image?: string | { src: string; alt?: string };
   author?: Author;
   tags?: string[];
   publishedAt?: string;
-  link: string
-  content: Array<any>
-  date: string
+  link: string;
+  content: ContentBlock[];
+  date: string | Date;
 };

@@ -1,6 +1,6 @@
 const TermsOfUse = () => {
     return (
-        <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
+        <div style={{ padding: "20px", maxWidth: "800px", margin: "0 auto" }}>
             <h3>Terms of Use</h3>
             <p>Last updated: March 2025</p>
 
@@ -20,9 +20,7 @@ const TermsOfUse = () => {
 
             <section>
                 <h4>3. User Responsibilities</h4>
-                <p>
-                    You agree to:
-                </p>
+                <p>You agree to:</p>
                 <ul>
                     <li>Provide accurate and complete information during account registration.</li>
                     <li>Maintain the confidentiality of your account credentials.</li>
@@ -32,12 +30,10 @@ const TermsOfUse = () => {
 
             <section>
                 <h4>4. Prohibited Activities</h4>
-                <p>
-                    You are prohibited from engaging in activities such as:
-                </p>
+                <p>You are prohibited from engaging in activities such as:</p>
                 <ul>
                     <li>Engaging in fraudulent, deceptive, or illegal practices.</li>
-                    <li>Accessing or using our services to harm, disrupt, or damage the functionality of our website or other users' experience.</li>
+                    <li>Accessing or using our services to harm, disrupt, or damage the functionality of our website or other users experience.</li>
                     <li>Attempting to reverse engineer or gain unauthorized access to our system.</li>
                 </ul>
             </section>
@@ -59,7 +55,7 @@ const TermsOfUse = () => {
             <section>
                 <h4>7. Disclaimers</h4>
                 <p>
-                    Our services are provided "as is" without warranties of any kind, either express or implied. We do not guarantee the accuracy, reliability, or completeness of the financial information, models, or advice provided through our services.
+                    Our services are provided {"as is"} without warranties of any kind, either express or implied. We do not guarantee the accuracy, reliability, or completeness of the financial information, models, or advice provided through our services.
                 </p>
             </section>
 
@@ -93,7 +89,9 @@ const TermsOfUse = () => {
 
             <section>
                 <h4>12. Contact Us</h4>
-                <p>If you have any questions or concerns regarding these Terms of Use, please contact us at arjun@sustains.ai.</p>
+                <p>
+                    If you have any questions or concerns regarding these Terms of Use, please contact us at arjun@sustains.ai.
+                </p>
             </section>
         </div>
     );
