@@ -10,19 +10,18 @@ const teamSection = [
     name: "Aswin Nambiar",
     role: "Co-Founder / CEO",
     image: "/img/350x350/aswin2.jpg",
-    bio: "A visionary leader with deep expertise in financial analytics and AI-driven risk models.",
-  },
+    bio: "Our Chief Entertaining Officer. He talks—a lot. Conversations range from product strategies to deep spiritual insights, though there is ongoing debate about how spiritual he truly is. A relentless extrovert, he thrives on social interactions and energizes every discussion he joins."  },
   {
     name: "Sachin Muralee Krishna",
     role: "Co-Founder / Senior Analyst",
     image: "/img/350x350/sachin3.png",
-    bio: "A strategic thinker passionate about portfolio optimization and quantitative analysis.",
+    bio: "Our budding CFO. Loves finance and hangovers in equal measure. Equally passionate about spreadsheets and sweets. Rarely speaks—unless fueled by a drink. Eligible bachelor, for now."
   },
   {
     name: "Arjun C Unni",
     role: "Co-Founder / Product Manager",
     image: "/img/350x350/arjun2.jpg",
-    bio: "A product-focused leader blending technical expertise with innovative business strategy.",
+    bio: "A product guy turned developer turned energy professional turned finance guy. Holds a PhD in energy, loves coding, and might just end up as the CTO. A devoted fan of JETBRAINS products."
   },
 ];
 

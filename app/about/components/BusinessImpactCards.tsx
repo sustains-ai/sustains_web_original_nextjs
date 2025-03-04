@@ -18,9 +18,9 @@ const BusinessImpactCards = () => {
         {/* Business Impact Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {[
-            { number: "3", text: "Active business partners using Sandbox" },
-            { number: "2", text: "Business partners using Entropy" },
-            { number: "10+", text: "Advanced risk models developed" },
+            { number: "3", text: "Active business partners using our product" },
+            { number: "2", text: "Business partners using Our consulting services" },
+            { number: "10+", text: "Advanced mathematical models developed" },
           ].map((item, index) => (
             <motion.div
               key={index}

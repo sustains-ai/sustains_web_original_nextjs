@@ -30,10 +30,8 @@ const HeroAbout = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.4 }}
           >
-            We are a team of passionate individuals who love crunching numbers—not all of us!
-            Our gang includes hardcore designers, deep thinkers, and data-driven strategists,
-            all united by a common goal: simplifying complex problems in finance and energy
-            into actionable insights and innovative solutions.
+            We transform complex challenges into actionable insights and innovative solutions, all with sustainability at the core
+
           </motion.p>
 
           <motion.p

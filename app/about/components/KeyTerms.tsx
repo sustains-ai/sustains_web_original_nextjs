@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-const sandboxTerms = [
+const RiskTerms = [
   "Efficient Frontier & Portfolio Analysis",
   "Monte Carlo Analysis",
   "Back Testing",
@@ -13,7 +13,7 @@ const sandboxTerms = [
   "Black-Scholes Model",
 ];
 
-const entropyTerms = [
+const SustainabilityTerms = [
   "Solar Irradiation",
   "NPV & IRR",
   "PPA & VPPA",
@@ -70,10 +70,10 @@ const KeyTerms = () => {
           whileHover={{ scale: 1.05 }}
         >
           <h3 className="text-2xl font-semibold text-[#0ABF53]">
-            Finance Research Topics
+            Risk Research Topics
           </h3>
           <ul className="mt-4 space-y-2 text-lg text-gray-800">
-            {sandboxTerms.map((term, index) => (
+            {RiskTerms.map((term, index) => (
               <li key={index} className="flex items-center justify-center space-x-2">
                 <span className="text-[#0ABF53]">✔</span>
                 <span>{term}</span>
@@ -88,10 +88,10 @@ const KeyTerms = () => {
           whileHover={{ scale: 1.05 }}
         >
           <h3 className="text-2xl font-semibold text-[#0ABF53]">
-            Energy Research Topics
+            Sustainability Research Topics
           </h3>
           <ul className="mt-4 space-y-2 text-lg text-gray-800">
-            {entropyTerms.map((term, index) => (
+            {SustainabilityTerms.map((term, index) => (
               <li key={index} className="flex items-center justify-center space-x-2">
                 <span className="text-[#0ABF53]">✔</span>
                 <span>{term}</span>
