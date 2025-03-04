@@ -1,7 +1,9 @@
+"use client"
+
 import React from "react";
-import BlogData from "../common/components/Blog/blogData";
-import BlogItem from "../common/components/Blog/BlogItem";
-import SectionHeader from "../common/components/SectionHeader";
+import SectionHeader from "../SectionHeader";
+import BlogItem from "./BlogItem";
+import BlogData from "./blogData";
 
 const Blog = () => {
   return (
@@ -9,13 +11,13 @@ const Blog = () => {
       <div className="mx-auto max-w-c-1315 px-4 md:px-8 xl:px-0">
         {/* <!-- Section Title Start --> */}
         <div className="animate_top mx-auto text-center">
-           <SectionHeader
+          <SectionHeader
             headerInfo={{
               title: `NEWS & BLOGS`,
               subtitle: `Latest News & Blogs`,
               description: `Stay updated with the newest trends, insights, and innovations. Explore in-depth articles, industry news, and expert opinions, keeping you informed and inspired. Whether it’s technology breakthroughs, creative ideas, or success stories — discover what’s happening now!`,
             }}
-          /> 
+          />
         </div>
         {/* <!-- Section Title End --> */}
       </div>

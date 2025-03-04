@@ -1,16 +1,14 @@
-
-import { Metadata } from "next";
+import BlogData from "@/app/common/components/Blog/blogData";
+import RelatedPost from "@/app/common/components/Blog/RelatedPost";
+import SharePost from "@/app/common/components/Blog/SharePost";
 import Image from "next/image";
-import RelatedPost from "../RelatedPost";
-import SharePost from "../SharePost";
-import BlogData from "../blogData";
 
-const SingleBlogPage = async ({params,
+const SingleBlogPage = ({ params,
 }: {
-  params: Promise<{ title: string }>
+    params: { title: string }
 }) => {
 
-    const link = (await params).title
+    const link = params.title
     const blog = BlogData.find(b => b.link === link)
 
     if (!blog) {
@@ -19,11 +17,11 @@ const SingleBlogPage = async ({params,
 
     return (
         <>
-            <section className="pb-20 pt-35 lg:pb-25 lg:pt-45 xl:pb-30 xl:pt-50">
+            <section className="pb-20 pt-35 lg:pb-25 lg:pt-45 xl:pb-30 xl:pt-12">
                 <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
                     <div className="flex flex-col-reverse gap-7.5 lg:flex-row xl:gap-12.5">
                         <div className="md:w-1/2 lg:w-[32%]">
-                            <div className="animate_top mb-10 rounded-md border border-stroke bg-white p-3.5 shadow-solid-13 dark:border-strokedark dark:bg-blacksection">
+                            <div className="animate_top mb-10 rounded-md border border-stroke bg-white p-3.5 shadow-solid-13">
                                 <form
                                     action="https://formbold.com/s/unique_form_id"
                                     method="POST"
@@ -32,7 +30,7 @@ const SingleBlogPage = async ({params,
                                         <input
                                             type="text"
                                             placeholder="Search Here..."
-                                            className="w-full rounded-lg border border-stroke px-6 py-4 shadow-solid-12 focus:border-primary focus:outline-none dark:border-strokedark dark:bg-black dark:shadow-none dark:focus:border-primary"
+                                            className="w-full rounded-lg border border-stroke px-6 py-4 shadow-solid-12 focus:border-primary focus:outline-none"
                                         />
 
                                         <button
@@ -40,7 +38,7 @@ const SingleBlogPage = async ({params,
                                             aria-label="search-icon"
                                         >
                                             <svg
-                                                className="fill-black transition-all duration-300 hover:fill-primary dark:fill-white dark:hover:fill-primary"
+                                                className="fill-black transition-all duration-300 hover:fill-primary"
                                                 width="21"
                                                 height="21"
                                                 viewBox="0 0 21 21"
@@ -54,26 +52,26 @@ const SingleBlogPage = async ({params,
                                 </form>
                             </div>
 
-                            <div className="animate_top mb-10 rounded-md border border-stroke bg-white p-9 shadow-solid-13 dark:border-strokedark dark:bg-blacksection">
-                                <h4 className="mb-7.5 text-2xl font-semibold text-black dark:text-white">
+                            <div className="animate_top mb-10 rounded-md border border-stroke bg-white p-5 shadow-solid-13">
+                                <h4 className="mb-7.5 text-2xl font-semibold text-black">
                                     Categories
                                 </h4>
 
                                 <ul>
-                                    <li className="mb-3 transition-all duration-300 last:mb-0 hover:text-primary">
-                                        <a href="#">Blog</a>
+                                    <li className="font-semibold mb-3 transition-all duration-300 last:mb-0 hover:text-primary">
+                                        <a className="text-grey" href="#">Blog</a>
                                     </li>
-                                    <li className="mb-3 transition-all duration-300 last:mb-0 hover:text-primary">
-                                        <a href="#">Events</a>
+                                    <li className="font-semibold mb-3 transition-all duration-300 last:mb-0 hover:text-primary">
+                                        <a className="text-grey" href="#">Events</a>
                                     </li>
-                                    <li className="mb-3 transition-all duration-300 last:mb-0 hover:text-primary">
-                                        <a href="#">Grids</a>
+                                    <li className="font-semibold mb-3 transition-all duration-300 last:mb-0 hover:text-primary">
+                                        <a className="text-grey" href="#">Grids</a>
                                     </li>
-                                    <li className="mb-3 transition-all duration-300 last:mb-0 hover:text-primary">
-                                        <a href="#">News</a>
+                                    <li className="font-semibold mb-3 transition-all duration-300 last:mb-0 hover:text-primary">
+                                        <a className="text-grey" href="#">News</a>
                                     </li>
-                                    <li className="mb-3 transition-all duration-300 last:mb-0 hover:text-primary">
-                                        <a href="#">Rounded</a>
+                                    <li className="font-semibold mb-3 transition-all duration-300 last:mb-0 hover:text-primary">
+                                        <a className="text-grey" href="#">Rounded</a>
                                     </li>
                                 </ul>
                             </div>
@@ -82,7 +80,7 @@ const SingleBlogPage = async ({params,
                         </div>
 
                         <div className="lg:w-2/3">
-                            <div className="animate_top rounded-md border border-stroke bg-white p-7.5 shadow-solid-13 dark:border-strokedark dark:bg-blacksection md:p-10">
+                            <div className="animate_top rounded-md border border-stroke bg-white p-7.5 shadow-solid-13 md:p-10">
                                 <div className="mb-10 w-full overflow-hidden ">
                                     <div className="relative aspect-[97/60] w-full sm:aspect-[97/44]">
                                         <Image
@@ -94,22 +92,22 @@ const SingleBlogPage = async ({params,
                                     </div>
                                 </div>
 
-                                <h2 className="mb-5 mt-11 text-3xl font-semibold text-black dark:text-white 2xl:text-sectiontitle2">
+                                <h2 className="mb-5 mt-11 text-3xl font-semibold text-black 2xl:text-sectiontitle2">
                                     {blog.title}
                                 </h2>
 
                                 <ul className="mb-9 flex flex-wrap gap-5 2xl:gap-7.5">
                                     <li>
-                                        <span className="text-black dark:text-white">Author: </span>{" "}
-                                        Jhon Doe
+                                        <span className="text-black">Author: </span>{" "}
+                                        {blog.author?.name}
                                     </li>
                                     <li>
-                                        <span className="text-black dark:text-white">
-                                            Published On: July 30, 2023
+                                        <span className="text-black">
+                                            Published On: {blog.date}
                                         </span>{" "}
                                     </li>
                                     <li>
-                                        <span className="text-black dark:text-white">
+                                        <span className="text-black">
                                             Category:
                                         </span>
                                         Events
@@ -117,44 +115,33 @@ const SingleBlogPage = async ({params,
                                 </ul>
 
                                 <div className="blog-details">
-                                    <p>
-                                        {blog.description}
-                                    </p>
 
-                                    <p>
-                                    {blog.description}
-                                    </p>
-{/* 
-                                    <div className="flex flex-wrap gap-5">
-                                        <Image
-                                            src={"/images/blog/blog-01.png"}
-                                            width={350}
-                                            height={200}
-                                            alt="image"
-                                        />
-                                        <Image
-                                            src={"/images/blog/blog-02.png"}
-                                            width={350}
-                                            height={200}
-                                            alt="image"
-                                        />
-                                    </div>
-
-                                    <h3 className="pt-8">
-                                        Nunc elementum elit viverra, tempus quam non
-                                    </h3>
-
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        Nunc quis nibh lorem. Duis sed odio lorem. In a efficitur
-                                        leo. Ut venenatis rhoncus quam sed condimentum. Curabitur
-                                        vel turpis in dolor volutpat imperdiet in ut mi. Integer non
-                                        volutpat nulla. Nunc elementum elit viverra, tempus quam
-                                        non, interdum ipsum.
-                                    </p> */}
+                                    {blog.content.map((block, index) => {
+                                        switch (block.type) {
+                                            case "paragraph":
+                                                return <p key={index}>{block.text}</p>;
+                                            case "heading":
+                                                return <h5 key={index}>{block.text}</h5>;
+                                            case "list":
+                                                return block.ordered ? (
+                                                    <ol key={index}>
+                                                        {block.items.map((item: any, i: any) => (
+                                                            <li key={i}>{item}</li>
+                                                        ))}
+                                                    </ol>
+                                                ) : (
+                                                    <ul key={index}>
+                                                        {block.items.map((item: any, i: any) => (
+                                                            <li key={i}>{item}</li>
+                                                        ))}
+                                                    </ul>
+                                                );
+                                            default:
+                                                return null;
+                                        }
+                                    })}
                                 </div>
-
-                                <SharePost />
+                                {/* <SharePost /> */}
                             </div>
                         </div>
                     </div>
