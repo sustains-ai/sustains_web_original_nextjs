@@ -16,7 +16,7 @@ const Footer = () => {
 
           {/* Subtitle */}
           <p className="text-sm md:text-base text-gray-300 font-semibold">
-            Empowering decisions with AI-driven risk analytics.
+            Driving sustainable decisions with AI-powered analytics.
           </p>
         </div>
         {/* End Call-to-Action */}
