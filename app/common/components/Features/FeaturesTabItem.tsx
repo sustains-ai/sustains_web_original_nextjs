@@ -1,48 +1,73 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { FeatureTab } from "@/types/featureTab";
 
 const FeaturesTabItem = ({ featureTab }: { featureTab: FeatureTab }) => {
-  const { title, desc1, image, link } = featureTab;
+    const { title, desc1, image, link } = featureTab;
 
-  const formattedLink = `/vertical/${link.replace(/\s+/g, "-").toLowerCase()}`;
+    const knowMorePath =
+        link === "sustainability"
+            ? "/vertical/sustainability/know-more"
+            : "/vertical/risk/know-more";
 
-  return (
-      <div className="flex items-center gap-8 lg:gap-19">
-        <div className="md:w-1/2">
-          <h2 className="mb-7 text-3xl font-bold text-black xl:text-sectiontitle2">
-            {title}
-          </h2>
-          <p className="mb-5">{desc1}</p>
-          <Link
-              href={formattedLink}
-              className="group mt-7.5 inline-flex items-center gap-2.5 text-black hover:text-primary"
-              aria-label={`Learn more about ${title}`}
-          >
-          <span className="duration-300 group-hover:pr-2 text-primary">
-            Know More
-          </span>
-            <svg
-                width="14"
-                height="14"
-                viewBox="0 0 14 14"
-                xmlns="http://www.w3.org/2000/svg"
-                role="img"
-                aria-hidden="true"
-            >
-              <path
-                  d="M10.4767 6.16701L6.00668 1.69701L7.18501 0.518677L13.6667 7.00034L7.18501 13.482L6.00668 12.3037L10.4767 7.83368H0.333344V6.16701H10.4767Z"
-                  fill="#0ABF53"
-              />
-            </svg>
-          </Link>
-        </div>
-        <div className="relative mx-auto hidden aspect-[542/492] max-w-[550px] md:block md:w-1/2">
-          <Image src={image} alt={title} fill priority />
-        </div>
-      </div>
-  );
+    return (
+        <motion.div
+            className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 max-w-4xl mx-auto"
+            initial={{ opacity: 0, scale: 0.98 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            key={title} // Ensures animation triggers on content change
+        >
+            {/* Image Section */}
+            <div className="relative h-96 w-full">
+                <Image
+                    src={image}
+                    alt={title}
+                    fill
+                    className="object-cover rounded-t-xl"
+                    priority
+                />
+                <motion.div
+                    className="absolute inset-0 border-4 border-transparent rounded-t-xl"
+                    whileHover={{ borderColor: "#0ABF53" }}
+                    transition={{ duration: 0.3 }}
+                />
+            </div>
+
+            {/* Content Section */}
+            <div className="p-8 bg-gradient-to-b from-white to-gray-50 text-center">
+                <h3 className="text-4xl font-bold text-gray-800 mb-4 tracking-tight">
+                    {title}
+                </h3>
+                <p className="text-gray-600 text-lg leading-relaxed max-w-2xl mx-auto mb-6">
+                    {desc1}
+                </p>
+                <Link href={knowMorePath}>
+                    <button className="inline-flex items-center px-8 py-3 bg-[#0ABF53] text-white font-semibold rounded-full shadow-md hover:bg-[#089B45] hover:scale-105 hover:shadow-lg transition-all duration-300">
+                        Know More
+                        <svg
+                            className="ml-2 w-5 h-5"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M9 5l7 7-7 7"
+                            />
+                        </svg>
+                    </button>
+                </Link>
+            </div>
+        </motion.div>
+    );
 };
 
 export default FeaturesTabItem;

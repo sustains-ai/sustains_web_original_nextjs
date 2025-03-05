@@ -1,134 +1,87 @@
 "use client";
-import Image from "next/image";
-import { useState } from "react";
-import FeaturesTabItem from "./FeaturesTabItem";
-import { motion } from "framer-motion";
+
+import { useState, useEffect } from "react";
 import featuresTabData from "./featuresTabData";
+import FeaturesTabItem from "./FeaturesTabItem";
 
 const FeaturesTab = () => {
-    const [currentTab, setCurrentTab] = useState("tabOne");
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    // Auto-cycle through verticals every 5 seconds
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentIndex((prevIndex) =>
+                prevIndex === featuresTabData.length - 1 ? 0 : prevIndex + 1
+            );
+        }, 5000); // 5 seconds
+        return () => clearInterval(interval); // Cleanup on unmount
+    }, []);
+
+    const nextSlide = () => {
+        setCurrentIndex((prevIndex) =>
+            prevIndex === featuresTabData.length - 1 ? 0 : prevIndex + 1
+        );
+    };
+
+    const prevSlide = () => {
+        setCurrentIndex((prevIndex) =>
+            prevIndex === 0 ? featuresTabData.length - 1 : prevIndex - 1
+        );
+    };
+
+    const selectedVertical = featuresTabData[currentIndex];
 
     return (
-        <>
-            {/* <!-- ===== Features Tab Start ===== --> */}
-            <section className="relative pb-20 pt-18.5 lg:pb-22.5">
-                <motion.div
-                    className="container mx-auto text-center"
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1 }}
-                >
-                    {/* Main Title */}
-                    <motion.h2
-                        className="text-4xl font-bold text-center mb-12 text-dark"
-                        initial={{ opacity: 0, y: -20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 1 }}
+        <section className="relative pb-20 pt-18.5 lg:pb-22.5 bg-gradient-to-b from-gray-50 to-white">
+            <div className="container mx-auto px-4">
+                <h2 className="text-5xl font-extrabold text-center mb-12 text-gray-800 bg-clip-text text-transparent bg-gradient-to-r from-[#089B45] to-[#0ABF53]">
+                    Our Two Core Verticals
+                </h2>
+                <div className="relative w-full max-w-4xl mx-auto">
+                    {/* Navigation Arrows */}
+                    <button
+                        onClick={prevSlide}
+                        className="absolute left-0 top-1/2 transform -translate-y-1/2 p-3 bg-[#0ABF53] text-white rounded-full hover:bg-[#089B45] transition-all shadow-md z-10"
                     >
-                        Our Two Core Verticals
-                    </motion.h2>
-                    <div className="relative mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
-                        <div className="absolute -top-16 -z-1 mx-auto h-[350px] w-[90%]">
-                            <Image
-                                fill
-                                src="/images/shape/shape-dotted-light.svg"
-                                alt="Dotted Shape"
+                        <svg
+                            className="w-6 h-6"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M15 19l-7-7 7-7"
                             />
-
-                        </div>
-
-                        {/* <!-- Tab Menues Start --> */}
-                        <motion.div
-                            variants={{
-                                hidden: {
-                                    opacity: 0,
-                                    y: -20,
-                                },
-
-                                visible: {
-                                    opacity: 1,
-                                    y: 0,
-                                },
-                            }}
-                            initial="hidden"
-                            whileInView="visible"
-                            transition={{ duration: 0.5, delay: 0.1 }}
-                            viewport={{ once: true }}
-                            className="animate_top mb-15 flex flex-wrap justify-center rounded-[10px] border border-stroke bg-white shadow-solid-5 md:flex-nowrap md:items-center lg:gap-7.5 xl:mb-21.5 xl:gap-12.5"
+                        </svg>
+                    </button>
+                    <button
+                        onClick={nextSlide}
+                        className="absolute right-0 top-1/2 transform -translate-y-1/2 p-3 bg-[#0ABF53] text-white rounded-full hover:bg-[#089B45] transition-all shadow-md z-10"
+                    >
+                        <svg
+                            className="w-6 h-6"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
                         >
-                            <div
-                                onClick={() => setCurrentTab("tabOne")}
-                                className={`relative flex w-full cursor-pointer items-center gap-4 border-b border-stroke px-6 py-2 last:border-0 md:w-auto md:border-0 xl:px-13.5 xl:py-5 ${currentTab === "tabOne"
-                                        ? "active before:absolute before:bottom-0 before:left-0 before:h-1 before:w-full before:rounded-tl-[4px] before:rounded-tr-[4px] before:bg-primary"
-                                        : ""
-                                    }`}
-                            >
-                                <div className="flex h-12.5 w-12.5 items-center justify-center rounded-[50%] border border-stroke">
-                                    <p className="text-metatitle3 font-medium text-black pt-3">
-                                        01
-                                    </p>
-                                </div>
-                                <div className="md:w-3/5 lg:w-auto">
-                                    <button className="text-sm font-semibold text-grey xl:text-regular">
-                                        Sustainability
-                                    </button>
-                                </div>
-                            </div>
-                            <div
-                                onClick={() => setCurrentTab("tabTwo")}
-                                className={`relative flex w-full cursor-pointer items-center gap-4 border-b border-stroke px-6 py-2 last:border-0 md:w-auto md:border-0 xl:px-13.5 xl:py-5 ${currentTab === "tabTwo"
-                                        ? "active before:absolute before:bottom-0 before:left-0 before:h-1 before:w-full before:rounded-tl-[4px] before:rounded-tr-[4px] before:bg-primary"
-                                        : ""
-                                    }`}
-                            >
-                                <div className="flex h-12.5 w-12.5 items-center justify-center rounded-[50%] border border-stroke">
-                                    <p className="text-metatitle3 font-medium text-black pt-3">
-                                        02
-                                    </p>
-                                </div>
-                                <div className="md:w-3/5 lg:w-auto">
-                                    <button className="text-sm font-semibold text-grey xl:text-regular">
-                                        Risk
-                                    </button>
-                                </div>
-                            </div>
-                        </motion.div>
-                        {/* <!-- Tab Menues End --> */}
-
-                        {/* <!-- Tab Content Start --> */}
-                        <motion.div
-                            variants={{
-                                hidden: {
-                                    opacity: 0,
-                                    y: -20,
-                                },
-
-                                visible: {
-                                    opacity: 1,
-                                    y: 0,
-                                },
-                            }}
-                            initial="hidden"
-                            whileInView="visible"
-                            transition={{ duration: 0.5, delay: 0.5 }}
-                            viewport={{ once: true }}
-                            className="animate_top mx-auto max-w-c-1154"
-                        >
-                            {featuresTabData.map((feature, key) => (
-                                <div
-                                    className={feature.id === currentTab ? "block" : "hidden"}
-                                    key={key}
-                                >
-                                    <FeaturesTabItem featureTab={feature} />
-                                </div>
-                            ))}
-                        </motion.div>
-                        {/* <!-- Tab Content End --> */}
-                    </div>
-                </motion.div>
-            </section>
-            {/* <!-- ===== Features Tab End ===== --> */}
-        </>
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M9 5l7 7-7 7"
+                            />
+                        </svg>
+                    </button>
+                    {/* Feature Card */}
+                    <FeaturesTabItem featureTab={selectedVertical} />
+                </div>
+            </div>
+        </section>
     );
 };
 
