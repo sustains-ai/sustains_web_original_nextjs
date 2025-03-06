@@ -3,7 +3,7 @@ import CTA from "../common/components/CTA"
 import FeaturesTab from "../common/components/Features"
 import FeaturesSection from "../common/components/FeaturesSection"
 import HeroSection from "../common/components/HeroSection"
-import ProductsSection from "../common/components/ProductsSection"
+import ConsultingSection from "../common/components/ConsultingSection"
 import QuotesSection from "../common/components/Quotes"
 import Testimonials from "../common/components/Testimonials"
 
@@ -13,7 +13,7 @@ const Home = () => {
             <HeroSection />
             <FeaturesSection />
             <FeaturesTab />
-            <ProductsSection />
+            <ConsultingSection />
             <CTA />
             <Testimonials />
             <QuotesSection />
