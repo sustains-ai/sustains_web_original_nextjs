@@ -39,12 +39,9 @@ const HeroSection = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.6 }}
           >
-            <a
-              className="bg-[#0ABF53] text-white px-8 py-4 text-lg rounded-lg shadow-lg hover:bg-green-500 transition"
-              href="#"
-            >
+            <button className="bg-[#0ABF53] text-white py-3 px-6 text-lg font-semibold rounded-lg shadow-lg hover:bg-green-700 transition-all duration-300">
               Schedule a meeting
-            </a>
+            </button>
           </motion.div>
         </div>
 
