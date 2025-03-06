@@ -20,8 +20,8 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2 }}
           >
-            Sustainable decisions. <br /> Smarter risk strategies.
-            <span className="text-[#0ABF53]"> Powered by data.</span>
+            Sustainable decisions
+            <span className="text-[#0ABF53]"> Powered by data</span>
           </motion.h1>
 
           <motion.p
@@ -30,7 +30,7 @@ const HeroSection = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.4 }}
           >
-            AI-Driven Analytics for Sustainable Growth & Risk Intelligence
+            AI-Driven Analytics for Sustainable Growth
           </motion.p>
 
           <motion.div
