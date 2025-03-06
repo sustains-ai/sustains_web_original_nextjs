@@ -1,0 +1,183 @@
+"use client";
+
+import React, { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { ChevronRight, ChevronLeft, FileText, BarChart2 } from "lucide-react";
+
+const consultingProjects = [
+    {
+        title: "Electricity Demand Forecasting",
+        description: "Advanced AI models for precise demand forecasting in energy markets.",
+        image: "/images/projects/demand_forecasting.jpg",
+        report: "/reports/demand_forecasting_2023.pdf",
+    },
+    {
+        title: "EV Sales Analysis & Projections",
+        description: "Predictive analytics on electric vehicle adoption and future trends.",
+        image: "/images/projects/ev_sales.jpg",
+        report: "/reports/ev_sales_2023.pdf",
+    },
+    {
+        title: "Carbon Market & Emissions Trading",
+        description: "Optimizing carbon credit trading for sustainability-focused businesses.",
+        image: "/images/projects/carbon_trading.jpg",
+        report: "/reports/carbon_trading_2023.pdf",
+    },
+    {
+        title: "Smart Grid & Load Flow Analysis",
+        description: "Enhancing grid efficiency with real-time AI-driven analytics.",
+        image: "/images/projects/grid_analysis.jpg",
+        report: "/reports/grid_analysis_2023.pdf",
+    },
+];
+
+const navItems = [
+    { id: "projects", label: "Projects", icon: <FileText className="w-5 h-5" /> },
+    { id: "dashboard", label: "Insights", icon: <BarChart2 className="w-5 h-5" /> },
+];
+
+export default function ConsultingKnowMorePage() {
+    const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+    const [selectedSection, setSelectedSection] = useState("projects");
+
+    return (
+        <div className="flex min-h-screen bg-gradient-to-br from-[#E6F4EA] via-[#A5D6A7] to-[#FFFFFF]">
+            {/* Sidebar */}
+            <aside
+                className={`${
+                    isSidebarOpen ? "w-64" : "w-16"
+                } bg-[#0ABF53] text-white transition-all duration-300 flex-shrink-0 shadow-lg`}
+            >
+                <div className="p-4 flex justify-between items-center">
+                    {isSidebarOpen && <h1 className="text-xl font-bold">Consulting Insights</h1>}
+                    <button
+                        onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+                        className="p-1 rounded-full hover:bg-[#089B45]"
+                    >
+                        {isSidebarOpen ? <ChevronLeft /> : <ChevronRight />}
+                    </button>
+                </div>
+
+                <nav className="mt-6">
+                    {navItems.map((item) => (
+                        <button
+                            key={item.id}
+                            onClick={() => setSelectedSection(item.id)}
+                            className={`w-full flex items-center p-4 hover:bg-[#089B45] ${
+                                selectedSection === item.id ? "bg-[#089B45]" : ""
+                            }`}
+                        >
+                            {item.icon}
+                            {isSidebarOpen && <span className="ml-3">{item.label}</span>}
+                        </button>
+                    ))}
+                </nav>
+            </aside>
+
+            {/* Main Content */}
+            <main className="flex-1 p-8 max-w-7xl mx-auto">
+                {/* Header */}
+                <motion.header
+                    className="mb-12"
+                    initial={{ opacity: 0, y: -30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1, ease: "easeOut" }}
+                >
+                    <h1 className="text-4xl md:text-5xl font-extrabold text-gray-800 bg-clip-text text-transparent bg-gradient-to-r from-[#089B45] to-[#0ABF53]">
+                        Consulting Insights & Projects
+                    </h1>
+                    <p className="mt-2 text-lg text-gray-600">
+                        Explore our cutting-edge consulting work and download detailed reports.
+                    </p>
+                </motion.header>
+
+                {/* Content Section */}
+                {selectedSection === "projects" ? (
+                    <motion.div
+                        className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1, delay: 0.2 }}
+                    >
+                        {consultingProjects.map((project, index) => (
+                            <motion.div
+                                key={index}
+                                className="rounded-xl border bg-white shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden"
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: index * 0.1 }}
+                                whileHover={{ scale: 1.03 }}
+                            >
+                                {/* Image */}
+                                <div className="relative h-48 w-full">
+                                    <Image
+                                        src={project.image}
+                                        alt={project.title}
+                                        fill
+                                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-gray-800/50 to-transparent" />
+                                </div>
+
+                                {/* Content */}
+                                <div className="p-6">
+                                    <h2 className="text-xl font-semibold text-gray-700 mb-2">{project.title}</h2>
+                                    <p className="text-gray-600 text-sm mb-4">{project.description}</p>
+                                    <Link
+                                        href={project.report}
+                                        download
+                                        className="inline-flex items-center gap-2 text-[#0ABF53] hover:text-[#089B45] font-medium"
+                                    >
+                                        Download Report
+                                        <FileText className="w-4 h-4" />
+                                    </Link>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </motion.div>
+                ) : (
+                    <motion.div
+                        className="bg-white rounded-xl shadow-lg p-6 text-center"
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1, delay: 0.2 }}
+                    >
+                        <h2 className="text-2xl font-semibold text-gray-800 mb-4">Sustainability Insights Dashboard</h2>
+                        <p className="text-gray-600 mb-6">
+                            Explore detailed visualizations and analyses from our consulting projects.
+                        </p>
+                        <Link
+                            href="/dashboard" // Link to a future dashboard page
+                            className="inline-flex items-center gap-2 px-6 py-3 bg-[#0ABF53] text-white rounded-lg hover:bg-[#089B45] transition-all duration-300 shadow-md"
+                        >
+                            Visit Dashboard
+                            <BarChart2 className="w-5 h-5" />
+                        </Link>
+                    </motion.div>
+                )}
+
+                {/* Consultancy Services Section */}
+                <motion.section
+                    className="mt-12 bg-white rounded-xl shadow-lg p-6"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1, delay: 0.4 }}
+                >
+                    <h2 className="text-2xl font-semibold text-gray-800 mb-4">Consultancy Services</h2>
+                    <p className="text-gray-600 mb-4">
+                        Need tailored research or data analysis? Let’s collaborate to drive your sustainability goals.
+                    </p>
+                    <Link
+                        href="/contact"
+                        className="inline-flex items-center gap-2 px-6 py-3 bg-[#0ABF53] text-white rounded-lg hover:bg-[#089B45] transition-all duration-300 shadow-md"
+                    >
+                        Get in Touch
+                        <ChevronRight className="w-5 h-5" />
+                    </Link>
+                </motion.section>
+            </main>
+        </div>
+    );
+}
