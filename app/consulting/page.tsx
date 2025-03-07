@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -41,14 +41,46 @@ const navItems = [
 export default function ConsultingKnowMorePage() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
     const [selectedSection, setSelectedSection] = useState("projects");
+    const [evData, setEvData] = useState<any[]>([]);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState<string | null>(null);
+
+    useEffect(() => {
+        if (selectedSection === "dashboard") {
+            async function fetchEVData() {
+                setLoading(true);
+                try {
+                    const response = await fetch("/api/ev-sales?year=2023");
+                    const result = await response.json();
+                    if (result.status === "success") {
+                        setEvData(result.data);
+                    } else {
+                        throw new Error(result.message);
+                    }
+                } catch (err) {
+                    const errorMessage = err instanceof Error ? err.message : String(err);
+                    setError(errorMessage);
+                } finally {
+                    setLoading(false);
+                }
+            }
+            fetchEVData();
+        }
+    }, [selectedSection]);
+
+    // Calculate stats for Insights section
+    const totalSales = evData
+        .filter((d) => d.Parameter === "EV sales" && d.unit === "Vehicles")
+        .reduce((sum, d) => sum + d.value, 0);
+    const topRegion = evData
+        .filter((d) => d.Parameter === "EV sales" && d.unit === "Vehicles")
+        .reduce((max, d) => (d.value > (max?.value || 0) ? d : max), null)?.region || "N/A";
 
     return (
         <div className="flex min-h-screen bg-gradient-to-br from-[#E6F4EA] via-[#A5D6A7] to-[#FFFFFF]">
             {/* Sidebar */}
             <aside
-                className={`${
-                    isSidebarOpen ? "w-64" : "w-16"
-                } bg-[#0ABF53] text-white transition-all duration-300 flex-shrink-0 shadow-lg`}
+                className={`${isSidebarOpen ? "w-64" : "w-16"} bg-[#0ABF53] text-white transition-all duration-300 flex-shrink-0 shadow-lg`}
             >
                 <div className="p-4 flex justify-between items-center">
                     {isSidebarOpen && <h1 className="text-xl font-bold">Consulting Insights</h1>}
@@ -59,15 +91,12 @@ export default function ConsultingKnowMorePage() {
                         {isSidebarOpen ? <ChevronLeft /> : <ChevronRight />}
                     </button>
                 </div>
-
                 <nav className="mt-6">
                     {navItems.map((item) => (
                         <button
                             key={item.id}
                             onClick={() => setSelectedSection(item.id)}
-                            className={`w-full flex items-center p-4 hover:bg-[#089B45] ${
-                                selectedSection === item.id ? "bg-[#089B45]" : ""
-                            }`}
+                            className={`w-full flex items-center p-4 hover:bg-[#089B45] ${selectedSection === item.id ? "bg-[#089B45]" : ""}`}
                         >
                             {item.icon}
                             {isSidebarOpen && <span className="ml-3">{item.label}</span>}
@@ -78,7 +107,6 @@ export default function ConsultingKnowMorePage() {
 
             {/* Main Content */}
             <main className="flex-1 p-8 max-w-7xl mx-auto">
-                {/* Header */}
                 <motion.header
                     className="mb-12"
                     initial={{ opacity: 0, y: -30 }}
@@ -93,7 +121,6 @@ export default function ConsultingKnowMorePage() {
                     </p>
                 </motion.header>
 
-                {/* Content Section */}
                 {selectedSection === "projects" ? (
                     <motion.div
                         className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
@@ -110,7 +137,6 @@ export default function ConsultingKnowMorePage() {
                                 transition={{ duration: 0.6, delay: index * 0.1 }}
                                 whileHover={{ scale: 1.03 }}
                             >
-                                {/* Image */}
                                 <div className="relative h-48 w-full">
                                     <Image
                                         src={project.image}
@@ -120,8 +146,6 @@ export default function ConsultingKnowMorePage() {
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-gray-800/50 to-transparent" />
                                 </div>
-
-                                {/* Content */}
                                 <div className="p-6">
                                     <h2 className="text-xl font-semibold text-gray-700 mb-2">{project.title}</h2>
                                     <p className="text-gray-600 text-sm mb-4">{project.description}</p>
@@ -139,26 +163,45 @@ export default function ConsultingKnowMorePage() {
                     </motion.div>
                 ) : (
                     <motion.div
-                        className="bg-white rounded-xl shadow-lg p-6 text-center"
+                        className="bg-white rounded-xl shadow-lg p-6"
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, delay: 0.2 }}
                     >
-                        <h2 className="text-2xl font-semibold text-gray-800 mb-4">Sustainability Insights Dashboard</h2>
+                        <h2 className="text-2xl font-semibold text-gray-800 mb-4">EV Sales Insights</h2>
                         <p className="text-gray-600 mb-6">
-                            Explore detailed visualizations and analyses from our consulting projects.
+                            Real-time analysis of 2023 electric vehicle sales data.
                         </p>
-                        <Link
-                            href="/dashboard" // Link to a future dashboard page
-                            className="inline-flex items-center gap-2 px-6 py-3 bg-[#0ABF53] text-white rounded-lg hover:bg-[#089B45] transition-all duration-300 shadow-md"
-                        >
-                            Visit Dashboard
-                            <BarChart2 className="w-5 h-5" />
-                        </Link>
+                        {loading ? (
+                            <p className="text-gray-500">Loading EV sales data...</p>
+                        ) : error ? (
+                            <p className="text-red-500">Error: {error}</p>
+                        ) : evData.length > 0 ? (
+                            <div className="grid gap-6 md:grid-cols-2">
+                                <div className="rounded-lg border bg-[#E6F4EA] p-4 shadow-md">
+                                    <h3 className="text-lg font-semibold text-gray-700">Total EV Sales</h3>
+                                    <p className="mt-2 text-2xl font-bold text-[#0ABF53]">{totalSales.toLocaleString()} Vehicles</p>
+                                </div>
+                                <div className="rounded-lg border bg-[#E6F4EA] p-4 shadow-md">
+                                    <h3 className="text-lg font-semibold text-gray-700">Top Region</h3>
+                                    <p className="mt-2 text-2xl font-bold text-[#0ABF53]">{topRegion}</p>
+                                </div>
+                            </div>
+                        ) : (
+                            <p className="text-gray-500">No data available.</p>
+                        )}
+                        <div className="mt-6">
+                            <Link
+                                href="/dashboard"
+                                className="inline-flex items-center gap-2 px-6 py-3 bg-[#0ABF53] text-white rounded-lg hover:bg-[#089B45] transition-all duration-300 shadow-md"
+                            >
+                                Explore Full Dashboard
+                                <BarChart2 className="w-5 h-5" />
+                            </Link>
+                        </div>
                     </motion.div>
                 )}
 
-                {/* Consultancy Services Section */}
                 <motion.section
                     className="mt-12 bg-white rounded-xl shadow-lg p-6"
                     initial={{ opacity: 0, y: 30 }}
