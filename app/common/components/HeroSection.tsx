@@ -86,10 +86,10 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2 }}
           >
-            Smarter Portfolio
+            Maximizing Returns,
             <br />
             <span className="relative bg-clip-text text-transparent bg-gradient-to-r from-[#089B45] to-[#0ABF53]">
-            Analysis
+            Minimizing Risk
             <motion.span
                 className="absolute left-0 bottom-[-8px] w-full h-1 bg-gradient-to-r from-[#089B45] to-[#0ABF53] rounded-full"
                 initial={{ scaleX: 0 }}
@@ -105,7 +105,7 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.4 }}
           >
-            Cutting-edge analytics for a sustainable future
+            Cutting-edge portfolio analytics for a sustainable future
           </motion.p>
 
           <motion.div
