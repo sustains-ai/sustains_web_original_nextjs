@@ -3,111 +3,129 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { ChevronRight } from "lucide-react"; // Added missing import
+import { motion, Variants } from "framer-motion"; // Explicitly import Variants
+import { ChevronRight } from "lucide-react";
+
+// Define variants with explicit typing
+const slideLeftToRight: Variants = {
+  initial: { x: "0%", y: "0%" },
+  animate: {
+    x: "5%",
+    y: "0%",
+    transition: {
+      duration: 60,
+      repeat: Infinity,
+      repeatType: "reverse",
+      ease: "easeInOut"
+    }
+  }
+};
+
+const slideRightToLeft: Variants = {
+  initial: { x: "0%", y: "0%" },
+  animate: {
+    x: "20%",
+    y: "0%",
+    transition: {
+      duration: 35,
+      repeat: Infinity,
+      repeatType: "reverse",
+      ease: "easeInOut"
+    }
+  }
+};
 
 const HeroSection = () => {
   return (
-      <section className="relative bg-gradient-to-br from-[#E6F4EA] via-[#A5D6A7] to-[#FFFFFF] text-gray-800 py-24 md:py-32 overflow-hidden">
-        {/* Background Decorative Elements */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,#0ABF5320_0%,transparent_50%)] pointer-events-none" />
-        <motion.div
-            className="absolute top-[-150px] left-[-150px] w-[300px] h-[300px] bg-[#0ABF53] rounded-full opacity-10 blur-3xl"
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 0.1 }}
-            transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
-        />
-        <motion.div
-            className="absolute bottom-[-100px] right-[-100px] w-[200px] h-[200px] bg-[#089B45] rounded-full opacity-10 blur-2xl"
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 0.1 }}
-            transition={{ duration: 1.5, repeat: Infinity, repeatType: "reverse", delay: 0.5 }}
-        />
-
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-12 items-center px-6 relative z-10">
-          {/* Left Column - Text Content */}
+      <section className="relative bg-[#FFFFFF] text-gray-800 py-24 md:py-32 overflow-hidden">
+        {/* Background Images */}
+        <div className="absolute inset-0 z-0">
+          {/* Hero_1.jpg - Left to Right */}
           <motion.div
-              className="text-center md:text-left md:pl-8 lg:pl-0 mt-12 md:mt-0"
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1, ease: "easeOut" }}
+              className="absolute top-0 left-0 w-full h-full opacity-70"
+              variants={slideLeftToRight}
+              initial="initial"
+              animate="animate"
           >
-            <motion.h1
-                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight drop-shadow-md"
-                initial={{ opacity: 0, y: -30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 0.2 }}
-            >
-              Sustainable Decisions
-              <br />
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#089B45] to-[#0ABF53]">
-              Powered by Data
-            </span>
-            </motion.h1>
-
-            <motion.p
-                className="mt-6 text-lg md:text-xl text-gray-600 max-w-lg mx-auto md:mx-0 leading-relaxed"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 0.4 }}
-            >
-              AI-Driven Analytics for a Greener, Smarter Future
-            </motion.p>
-
-            <motion.div
-                className="mt-10"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-            >
-              <Link href="/contact">
-                <button className="relative inline-flex items-center gap-2 px-8 py-4 bg-[#0ABF53] text-white text-lg font-semibold rounded-full shadow-lg hover:bg-[#089B45] hover:scale-105 transition-all duration-300 overflow-hidden group">
-                  <span className="relative z-10">Schedule a Meeting</span>
-                  <ChevronRight className="w-5 h-5 relative z-10" />
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#089B45] to-[#0ABF53] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </button>
-              </Link>
-            </motion.div>
+            <Image
+                src="/img/950x950/Hero_1.jpg"
+                alt="Sustainable Analytics 1"
+                fill
+                className="object-cover"
+                priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0ABF53]/10 to-transparent" />
           </motion.div>
 
-          {/* Right Column - Hero Image */}
+          {/* Hero_2.jpg - Right to Left */}
           <motion.div
-              className="relative flex justify-center mt-16 md:mt-0 md:pr-8 lg:pr-0"
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1, delay: 0.5 }}
+              className="absolute top-0 left-1/3 w-2/3 h-full opacity-60"
+              variants={slideRightToLeft}
+              initial="initial"
+              animate="animate"
           >
-            {/* Main Hero Image */}
-            <div className="relative w-full max-w-[700px] h-[400px] md:h-[500px] rounded-xl shadow-2xl overflow-hidden group">
-              <Image
-                  src="/img/950x950/Hero_1.jpg"
-                  alt="Sustainable Analytics"
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-gray-800/20 to-transparent" />
-              <motion.div
-                  className="absolute inset-0 bg-[#0ABF53] opacity-0 group-hover:opacity-10 transition-opacity duration-500"
-                  initial={{ opacity: 0 }}
-                  whileHover={{ opacity: 0.1 }}
-              />
-            </div>
+            <Image
+                src="/img/950x950/Hero_2.jpg"
+                alt="Sustainable Analytics 2"
+                fill
+                className="object-cover"
+                priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-l from-[#089B45]/10 to-transparent" />
+          </motion.div>
 
-            {/* Decorative SVG - Bottom Right */}
-            <motion.div
-                className="absolute bottom-[-60px] right-[-80px] opacity-40 z-0"
-                initial={{ opacity: 0, rotate: -10 }}
-                animate={{ opacity: 0.4, rotate: 0 }}
-                transition={{ duration: 1, delay: 1.2 }}
-            >
-              <Image
-                  src="/svg/components/curved-shape.svg"
-                  alt="Decorative SVG"
-                  width={160}
-                  height={160}
-              />
-            </motion.div>
+          {/* Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-gray-900/60 to-gray-900/80" />
+        </div>
+
+        {/* Text Content */}
+        <div className="container mx-auto px-6 relative z-10 flex flex-col items-center justify-center min-h-[600px] text-center">
+          <motion.h1
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight text-white drop-shadow-2xl"
+              initial={{ opacity: 0, y: -30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.2 }}
+          >
+            Smarter Portfolio
+            <br />
+            <span className="relative bg-clip-text text-transparent bg-gradient-to-r from-[#089B45] to-[#0ABF53]">
+            Analysis
+            <motion.span
+                className="absolute left-0 bottom-[-8px] w-full h-1 bg-gradient-to-r from-[#089B45] to-[#0ABF53] rounded-full"
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 1.5, delay: 0.8, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+            />
+          </span>
+          </motion.h1>
+
+          <motion.p
+              className="mt-6 text-lg md:text-xl text-gray-200 max-w-lg leading-relaxed font-medium"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.4 }}
+          >
+            Cutting-edge analytics for a sustainable future
+          </motion.p>
+
+          <motion.div
+              className="mt-10"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+          >
+            <Link href="/contact">
+              <button className="relative inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#089B45] to-[#0ABF53] text-white text-lg font-semibold rounded-full shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 overflow-hidden group">
+                <span className="relative z-10">Schedule a Meeting</span>
+                <ChevronRight className="w-5 h-5 relative z-10" />
+                <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-[#0ABF53]/50 to-[#089B45]/50 opacity-0 group-hover:opacity-100 rounded-full"
+                    initial={{ scale: 0, x: "50%", y: "50%" }}
+                    animate={{ scale: 3, x: 0, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                />
+              </button>
+            </Link>
           </motion.div>
         </div>
       </section>

@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { productsData } from "../../../common/data/products";
+import { productsData } from "@/app/common/data/products";
 
 export default function SustainabilityKnowMorePage() {
     const sustainabilityProducts = productsData.sustainability;
