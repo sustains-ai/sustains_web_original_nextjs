@@ -3,15 +3,15 @@ import { FeatureTab } from "@/types/featureTab";
 const featuresTabData: FeatureTab[] = [
   {
     id: "tabOne",
-    title: "Sustainability",
-    desc1: `Empowering organizations with AI-driven solutions for energy efficiency, carbon footprint reduction, and resource optimization. Our platform transforms sustainability challenges into opportunities for smarter, greener growth.`,
+    title: "Energy",
+    desc1:  `Optimize energy investments and resource allocation with AI-driven portfolio analysis. From renewables to grid efficiency, our platform helps organizations maximize returns while ensuring sustainability and resilience.`,
     image: "/images/sustainability_analytics.jpg",
     link: "sustainability"
   },
   {
     id: "tabTwo",
-    title: "Risk",
-    desc1: `Navigate uncertainty with precision. Our risk analytics platform provides deep insights into financial, operational, and energy-related risks, ensuring resilience and long-term sustainability in a rapidly changing world.`,
+    title: "Finance",
+    desc1:`Enhance investment strategies and risk management with intelligent financial portfolio analytics. Our AI-powered insights help you optimize asset allocation, forecast market trends, and mitigate risks effectively.`,
     image: "/images/risk_analysis_vertical.jpg",
     link: "risk"
   },

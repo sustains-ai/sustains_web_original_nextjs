@@ -18,20 +18,21 @@ const FeaturesSection = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
         <FeatureCard
             icon="bi-bar-chart-line"
-            title="Data-Driven Sustainability"
-            description="Leverage AI-powered analytics to optimize energy use, reduce waste, and drive sustainable business decisions."
+            title="Comprehensive Portfolio Analytics"
+            description="Harness AI-driven insights to optimize both financial and energy portfolios, ensuring data-backed decision-making for maximum efficiency and returns."
         />
         <FeatureCard
             icon="bi-graph-up-arrow"
-            title="Risk Intelligence for Resilience"
-            description="Identify, quantify, and mitigate risks in energy, finance, and operations to ensure long-term stability."
+            title="Risk Intelligence & Optimization"
+            description="Quantify and manage risks across investment and energy portfolios. Leverage predictive analytics to enhance stability and mitigate uncertainties."
         />
         <FeatureCard
-            icon="bi-shield-lock"
-            title="AI for Smarter Growth"
-            description="Predict future challenges and opportunities with AI-driven modeling, ensuring a balanced, risk-aware strategy for sustainability."
+            icon="bi-lightbulb"
+            title="AI-Powered Strategy & Forecasting"
+            description="Utilize machine learning models to forecast portfolio performance, identify growth opportunities, and create a risk-balanced strategy for the future."
         />
       </div>
+
 
 
     </section>

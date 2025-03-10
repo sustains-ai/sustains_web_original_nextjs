@@ -13,12 +13,12 @@ export default function RiskKnowMorePage() {
             <div className="container mx-auto px-4">
                 {/* Header */}
                 <motion.h1
-                    className="text-5xl font-extrabold text-center mb-12 text-gray-800 bg-clip-text text-transparent bg-gradient-to-r from-[#089B45] to-[#0ABF53]"
+                    className="text-5xl font-extrabold text-center mb-12 text-gray-800 bg-clip-text text-transparent bg-gradient-to-r from-[#089B45] to-[#0ABF53] leading-normal"
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                 >
-                    Risk Management Solutions
+                    Smarter Portfolio Strategies
                 </motion.h1>
                 <motion.p
                     className="text-center text-gray-600 text-lg max-w-2xl mx-auto mb-16"
@@ -26,7 +26,7 @@ export default function RiskKnowMorePage() {
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
                 >
-                    Explore our advanced tools for risk analysis and financial decision-making.
+                    Explore our advanced tools for portfolio analysis and financial decision-making.
                 </motion.p>
 
                 {/* Product Teasers Grid */}

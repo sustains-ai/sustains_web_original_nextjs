@@ -13,12 +13,12 @@ export default function SustainabilityKnowMorePage() {
             <div className="container mx-auto px-4">
                 {/* Header */}
                 <motion.h1
-                    className="text-5xl font-extrabold text-center mb-12 text-gray-800 bg-clip-text text-transparent bg-gradient-to-r from-[#089B45] to-[#0ABF53]"
+                    className="text-5xl font-extrabold text-center mb-12 text-gray-800 bg-clip-text text-transparent bg-gradient-to-r from-[#089B45] to-[#0ABF53] leading-normal"
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                 >
-                    Sustainability Solutions
+                    Advanced Energy Analytics for Sustainability
                 </motion.h1>
                 <motion.p
                     className="text-center text-gray-600 text-lg max-w-2xl mx-auto mb-16"
@@ -26,7 +26,8 @@ export default function SustainabilityKnowMorePage() {
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
                 >
-                    Discover our innovative products designed to drive sustainability and optimize energy usage.
+                    Leverage AI and real-time data to optimize energy consumption and enhance sustainability strategies.
+
                 </motion.p>
 
                 {/* Product Teasers Grid */}
