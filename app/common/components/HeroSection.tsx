@@ -105,7 +105,7 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.4 }}
           >
-            Cutting-edge portfolio analytics for a sustainable future
+            Cutting-edge portfolio analytics for sustainable growth.
           </motion.p>
 
           <motion.div
