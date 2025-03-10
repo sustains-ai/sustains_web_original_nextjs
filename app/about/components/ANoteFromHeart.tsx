@@ -6,11 +6,11 @@ import { ReactTyped } from "react-typed";
 
 const typedStrings = [
   "It all began on Friday evenings in a cozy coffee shop...",
-  "A group of risk analysis enthusiasts gathered to share lively discussions...",
+  "A group of portfolio analysis enthusiasts gathered to share lively discussions...",
   "We explored quantitative strategies, market trends, and world economics...",
   "Often sprinkled with a dash of office gossip and the inevitable boss banter...",
-  "These debates sparked a dream—to create a firm dedicated to risk analytics...",
-  "One Friday, that dream turned into a reality, and Sustains.ai was born."
+  "These debates sparked a dream—to create a firm dedicated to portfolio analytics...",
+  "One Friday, that dream turned into a reality, and sustains.ai was born."
 ];
 
 const ANoteFromHeart = () => {

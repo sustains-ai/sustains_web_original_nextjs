@@ -15,36 +15,39 @@ const HeroAbout = () => {
         {/* Left Side - Text Content */}
         <div className="text-left md:ml-[-60px]">
           <motion.h1
-            className="text-5xl font-extrabold leading-tight tracking-tight md:pr-10"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2 }}
+              className="text-5xl font-extrabold leading-tight tracking-tight md:pr-10"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.2 }}
           >
-            Simplifying Complexity,
-            <span className="text-[#0ABF53]"> Unlocking Possibilities.</span>
+            Making Sense of Data,
+            <span className="text-[#0ABF53]"> Redefining Portfolios.</span>
           </motion.h1>
 
           <motion.p
-            className="mt-6 text-lg text-gray-700 leading-relaxed max-w-xl"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.4 }}
+              className="mt-6 text-lg text-gray-700 leading-relaxed max-w-xl"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 0.4 }}
           >
-            We transform complex challenges into actionable insights and innovative solutions, all with sustainability at the core
-
+            We analyze complex financial and energy portfolios, transforming raw data into
+            actionable insights that drive smarter decisions. Whether optimizing risk or
+            maximizing sustainability, our approach is built for the future.
           </motion.p>
 
           <motion.p
-            className="mt-4 text-lg text-gray-700 leading-relaxed max-w-xl"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.6 }}
+              className="mt-4 text-lg text-gray-700 leading-relaxed max-w-xl"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 0.6 }}
           >
-            Beyond work, we are still those old college dreamers, fueled by big ideas,
-            late-night debates, and endless curiosity. The common thread? An obsession with
-            problem-solving and a drive to create impact.
+            Beyond the algorithms, we are still those college dreamers, fueled by curiosity,
+            late-night discussions, and a drive to solve real-world problems. What started
+            as a passion for data and strategy is now a mission to help businesses
+            navigate uncertainty and build resilient portfolios.
           </motion.p>
         </div>
+
 
         {/* Right Side - Updated Hero Image */}
         <motion.div
@@ -56,7 +59,7 @@ const HeroAbout = () => {
           <motion.img
             className="rounded-lg shadow-xl z-10 w-[550px] h-auto"
             // className="relative flex justify-center mt-20 md:mr-10"
-            src="/img/950x950/img5.jpg"
+            src="/img/950x950/HeroAbout_1.jpg"
             alt="Our Team"
             width={500}
             height={500}
