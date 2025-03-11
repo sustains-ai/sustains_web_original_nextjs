@@ -1,34 +1,27 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import featuresTabData from "./featuresTabData";
 import FeaturesTabItem from "./FeaturesTabItem";
 
 const FeaturesTab = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
-    // Auto-cycle through verticals every 5 seconds
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentIndex((prevIndex) =>
-                prevIndex === featuresTabData.length - 1 ? 0 : prevIndex + 1
-            );
-        }, 5000); // 5 seconds
-        return () => clearInterval(interval); // Cleanup on unmount
-    }, []);
-
+    // Function to go to the next slide
     const nextSlide = () => {
         setCurrentIndex((prevIndex) =>
             prevIndex === featuresTabData.length - 1 ? 0 : prevIndex + 1
         );
     };
 
+    // Function to go to the previous slide
     const prevSlide = () => {
         setCurrentIndex((prevIndex) =>
             prevIndex === 0 ? featuresTabData.length - 1 : prevIndex - 1
         );
     };
 
+    // Get the selected feature based on currentIndex
     const selectedVertical = featuresTabData[currentIndex];
 
     return (
@@ -58,6 +51,7 @@ const FeaturesTab = () => {
                             />
                         </svg>
                     </button>
+
                     <button
                         onClick={nextSlide}
                         className="absolute right-0 top-1/2 transform -translate-y-1/2 p-3 bg-[#0ABF53] text-white rounded-full hover:bg-[#089B45] transition-all shadow-md z-10"
@@ -77,6 +71,7 @@ const FeaturesTab = () => {
                             />
                         </svg>
                     </button>
+
                     {/* Feature Card */}
                     <FeaturesTabItem featureTab={selectedVertical} />
                 </div>

@@ -15,13 +15,7 @@ const FeaturesTabItem = ({ featureTab }: { featureTab: FeatureTab }) => {
             : "/vertical/risk/know-more";
 
     return (
-        <motion.div
-            className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 max-w-4xl mx-auto"
-            initial={{ opacity: 0, scale: 0.98 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            key={title} // Ensures animation triggers on content change
-        >
+        <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 max-w-4xl mx-auto">
             {/* Image Section */}
             <div className="relative h-96 w-full">
                 <Image
@@ -31,10 +25,11 @@ const FeaturesTabItem = ({ featureTab }: { featureTab: FeatureTab }) => {
                     className="object-cover rounded-t-xl"
                     priority
                 />
+                {/* Border hover effect */}
                 <motion.div
                     className="absolute inset-0 border-4 border-transparent rounded-t-xl"
                     whileHover={{ borderColor: "#0ABF53" }}
-                    transition={{ duration: 0.3 }}
+                    transition={{ duration: 0.3 }} // Reduced transition duration for smooth effect
                 />
             </div>
 
@@ -46,8 +41,12 @@ const FeaturesTabItem = ({ featureTab }: { featureTab: FeatureTab }) => {
                 <p className="text-gray-600 text-lg leading-relaxed max-w-2xl mx-auto mb-6">
                     {desc1}
                 </p>
-                <Link href={knowMorePath}>
-                    <button className="inline-flex items-center px-8 py-3 bg-[#0ABF53] text-white font-semibold rounded-full shadow-md hover:bg-[#089B45] hover:scale-105 hover:shadow-lg transition-all duration-300">
+                <Link href={knowMorePath} passHref>
+                    <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="inline-flex items-center px-8 py-3 bg-[#0ABF53] text-white font-semibold rounded-full shadow-md hover:bg-[#089B45] hover:shadow-lg transition-all duration-300"
+                    >
                         Know More
                         <svg
                             className="ml-2 w-5 h-5"
@@ -63,10 +62,10 @@ const FeaturesTabItem = ({ featureTab }: { featureTab: FeatureTab }) => {
                                 d="M9 5l7 7-7 7"
                             />
                         </svg>
-                    </button>
+                    </motion.button>
                 </Link>
             </div>
-        </motion.div>
+        </div>
     );
 };
 
