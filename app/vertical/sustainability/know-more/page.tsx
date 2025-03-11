@@ -1,13 +1,41 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
-import { productsData } from "@/app/common/data/products";
+import EnergyProductsCard from "../../components/EnergyProductsCard";
+
+const energyPortfolioProducts = [
+    {
+        id: "energy-optimization",
+        title: "Resource Optimization",
+        description: "Optimize energy assets and investment decisions with AI-powered forecasting.",
+        img: "/images/energy-optimization.jpg",
+        link: "/vertical/sustainability/know-more/energy-optimization"
+    },
+    {
+        id: "weather-data",
+        title: "Weather Data & Energy Forecasting",
+        description: "Utilize real-time weather data to improve renewable energy production planning.",
+        img: "/images/weather-data.jpg",
+        link: "/vertical/sustainability/know-more/weather-data"
+    },
+    {
+        id: "grid-analytics",
+        title: "Grid Analytics & Risk Assessment",
+        description: "Evaluate energy infrastructure risks and optimize grid efficiency for stable power flow.",
+        img: "/images/grid-analytics.jpg",
+        link: "/vertical/sustainability/know-more/grid-analytics"
+    },
+    {
+        id: "sustainability-reporting",
+        title: "Energy Portfolio Sustainability Reporting",
+        description: "Automate carbon footprint tracking and sustainability reports for energy investments.",
+        img: "/images/sustainability-reporting.jpg",
+        link: "/vertical/sustainability/know-more/sustainability-reporting"
+    }
+];
 
 export default function SustainabilityKnowMorePage() {
-    const sustainabilityProducts = productsData.sustainability;
-
     return (
         <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
             <div className="container mx-auto px-4">
@@ -18,66 +46,23 @@ export default function SustainabilityKnowMorePage() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                 >
-                    Advanced Energy Analytics for Sustainability
+                    AI-Driven Energy Portfolio Analysis
                 </motion.h1>
                 <motion.p
-                    className="text-center text-gray-600 text-lg max-w-2xl mx-auto mb-16"
+                    className="text-center text-gray-600 text-lg max-w-3xl mx-auto mb-16"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
                 >
-                    Leverage AI and real-time data to optimize energy consumption and enhance sustainability strategies.
-
+                    Maximize the efficiency of your energy investments with cutting-edge AI analytics.
+                    Our platform enables energy portfolio managers, grid operators, and investors
+                    to optimize assets, mitigate risks, and track sustainability metrics effortlessly.
                 </motion.p>
 
-                {/* Product Teasers Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {sustainabilityProducts.map((product, index) => (
-                        <motion.div
-                            key={product.id}
-                            className={`rounded-xl shadow-lg overflow-hidden ${product.color} ${product.border} border-2 transition-all duration-300 ${
-                                product.status === "offering" ? "hover:shadow-xl" : "opacity-75 cursor-not-allowed"
-                            }`}
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.1 * index }}
-                            whileHover={product.status === "offering" ? { scale: 1.05 } : {}}
-                        >
-                            {/* Teaser Image */}
-                            <div className="relative h-48 w-full">
-                                <Image
-                                    src={product.img}
-                                    alt={product.title}
-                                    fill
-                                    className="object-cover rounded-t-xl"
-                                />
-                                <div className="absolute inset-0 bg-black opacity-10 rounded-t-xl" />
-                            </div>
-
-                            {/* Teaser Content */}
-                            <div className="p-6 text-center">
-                                <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                                    {product.title}
-                                </h3>
-                                <p className="text-gray-600 text-sm mb-4">
-                                    {product.description}
-                                </p>
-                                <span
-                                    className={`inline-block px-3 py-1 text-xs font-semibold rounded-full ${
-                                        product.status === "offering"
-                                            ? "bg-green-100 text-green-700"
-                                            : "bg-gray-200 text-gray-500"
-                                    }`}
-                                >
-                  {product.status === "offering" ? "Available Now" : "In Pipeline"}
-                </span>
-                            </div>
-
-                            {/* Decorative Accent */}
-                            {product.status === "offering" && (
-                                <div className={`absolute top-0 left-0 w-2 h-full ${product.border.replace("border-", "bg-")}`} />
-                            )}
-                        </motion.div>
+                {/* Product Cards Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+                    {energyPortfolioProducts.map((product) => (
+                        <EnergyProductsCard key={product.id} product={product} />
                     ))}
                 </div>
             </div>
