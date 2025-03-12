@@ -1,8 +1,12 @@
-"use client";
+"use client"; // ✅ Ensure this is a Client Component
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import RiskProductsCard from "../../components/FinanceProductsCard";
+import dynamic from "next/dynamic";
+
+// ✅ Dynamically import StockSearch to prevent SSR issues
+const StockSearch = dynamic(() => import("../../components/StockSearch"), { ssr: false });
 
 const riskProducts = [
     {
@@ -10,7 +14,7 @@ const riskProducts = [
         title: "Portfolio Analyser",
         description: "Analyze and optimize your portfolio with advanced AI-driven risk insights.",
         img: "/images/portfolio_analysis.jpg",
-        link: "/vertical/risk/know-more/portfolio-analyser"
+        link: "/vertical/risk/know-more/portfolio-analysis"
     },
     {
         id: "trading-algorithms",
@@ -36,10 +40,11 @@ const riskProducts = [
 ];
 
 export default function RiskKnowMorePage() {
+    const [selectedStock, setSelectedStock] = useState<{ symbol: string; name: string } | null>(null);
+
     return (
         <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
             <div className="container mx-auto px-4">
-                {/* Header */}
                 <motion.h1
                     className="text-5xl font-extrabold text-center mb-12 text-gray-800 bg-clip-text text-transparent bg-gradient-to-r from-[#089B45] to-[#0ABF53] leading-normal"
                     initial={{ opacity: 0, y: -20 }}
@@ -48,16 +53,19 @@ export default function RiskKnowMorePage() {
                 >
                     Portfolio Strategies, Algorithms, and More
                 </motion.h1>
-                <motion.p
-                    className="text-center text-gray-600 text-lg max-w-2xl mx-auto mb-16"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                >
-                    Explore our cutting-edge tools for portfolio analysis, algorithmic trading, valuation, and financial news.
-                </motion.p>
 
-                {/* Product Cards Grid */}
+                <div className="flex justify-center mb-12">
+                    <StockSearch onSelect={(symbol, name) => setSelectedStock({ symbol, name })} />
+                </div>
+
+                {selectedStock && (
+                    <div className="mt-4 p-4 border rounded bg-gray-100 text-center">
+                        <h3 className="text-lg font-semibold">Selected Stock</h3>
+                        <p><strong>Symbol:</strong> {selectedStock.symbol}</p>
+                        <p><strong>Name:</strong> {selectedStock.name}</p>
+                    </div>
+                )}
+
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
                     {riskProducts.map((product) => (
                         <RiskProductsCard key={product.id} product={product} />
