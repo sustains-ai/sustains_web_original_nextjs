@@ -1,107 +1,112 @@
 "use client";
 
 import { useState } from "react";
-import axios from "axios";
 
 export default function PortfolioManager() {
-    const [portfolio, setPortfolio] = useState<string[]>([]);
-    const [performance, setPerformance] = useState<any>(null);
-    const [error, setError] = useState<string | null>(null);
-    const [inputSymbol, setInputSymbol] = useState<string>("");
+    const [portfolio, setPortfolio] = useState<{ symbol: string; name: string; quantity: number; price: number; date: string }[]>([]);
+    const [inputSymbol, setInputSymbol] = useState("");
+    const [inputName, setInputName] = useState("");
+    const [inputQuantity, setInputQuantity] = useState("");
+    const [inputPrice, setInputPrice] = useState("");
+    const [inputDate, setInputDate] = useState("");
 
     const addStock = () => {
-        if (inputSymbol && !portfolio.includes(inputSymbol.toUpperCase())) {
-            setPortfolio([...portfolio, inputSymbol.toUpperCase()]);
-        }
-        setInputSymbol("");
-    };
+        if (inputSymbol && inputName && inputQuantity && inputPrice && inputDate) {
+            setPortfolio([...portfolio, {
+                symbol: inputSymbol.toUpperCase(),
+                name: inputName,
+                quantity: Number(inputQuantity),
+                price: Number(inputPrice),
+                date: inputDate
+            }]);
 
-    const analyzePortfolio = async () => {
-        setError(null);
-        setPerformance(null);
-
-        if (portfolio.length === 0) {
-            setError("Portfolio is empty.");
-            return;
-        }
-
-        try {
-            const response = await axios.post("/api/portfolio-performance", { portfolio });
-            setPerformance(response.data.portfolio);
-        } catch (err) {
-            console.error("Error analyzing portfolio:", err);
-            setError("Failed to analyze portfolio.");
+            setInputSymbol("");
+            setInputName("");
+            setInputQuantity("");
+            setInputPrice("");
+            setInputDate("");
         }
     };
 
     return (
-        <div className="p-4 border rounded shadow-md bg-white">
-            <h2 className="text-lg font-semibold mb-4">Portfolio Manager</h2>
+        <div className="bg-white p-8 rounded-xl shadow-2xl border-t-4 border-[#0ABF53] transition-all duration-300 hover:shadow-3xl hover:border-[#089B45]">
+            <h3 className="text-2xl font-bold text-[#0ABF53] mb-6 drop-shadow-md">Portfolio Overview</h3>
 
-            {/* Input & Add Stock */}
-            <div className="flex items-center gap-2">
+            {/* Stock Input Form */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                 <input
                     type="text"
-                    placeholder="Add stock (e.g., AAPL)"
+                    placeholder="Stock Symbol"
                     value={inputSymbol}
-                    onChange={(e) => setInputSymbol(e.target.value.toUpperCase())}
-                    className="p-2 border rounded w-48"
+                    onChange={(e) => setInputSymbol(e.target.value)}
+                    className="border p-2 rounded-md"
                 />
-                <button onClick={addStock} className="p-2 bg-green-500 text-white rounded">
-                    Add Stock
-                </button>
+                <input
+                    type="text"
+                    placeholder="Stock Name"
+                    value={inputName}
+                    onChange={(e) => setInputName(e.target.value)}
+                    className="border p-2 rounded-md"
+                />
+                <input
+                    type="number"
+                    placeholder="Number of Stocks"
+                    value={inputQuantity}
+                    onChange={(e) => setInputQuantity(e.target.value)}
+                    className="border p-2 rounded-md"
+                />
+                <input
+                    type="number"
+                    placeholder="Price per Stock"
+                    value={inputPrice}
+                    onChange={(e) => setInputPrice(e.target.value)}
+                    className="border p-2 rounded-md"
+                />
+                <input
+                    type="date"
+                    placeholder="Purchase Date"
+                    value={inputDate}
+                    onChange={(e) => setInputDate(e.target.value)}
+                    className="border p-2 rounded-md"
+                />
             </div>
 
-            {/* Portfolio List */}
-            <ul className="mt-2">
-                {portfolio.map((stock) => (
-                    <li key={stock} className="text-sm text-gray-700">{stock}</li>
-                ))}
-            </ul>
-
-            {/* Analyze Portfolio Button */}
-            <button onClick={analyzePortfolio} className="mt-4 p-2 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 transition">
-                Analyze Portfolio
+            <button
+                onClick={addStock}
+                className="bg-[#0ABF53] text-white px-4 py-2 rounded-md hover:bg-[#089B45] transition"
+            >
+                Add Stock
             </button>
 
-            {/* Error Message */}
-            {error && <p className="text-red-500 mt-2">{error}</p>}
-
-            {/* Portfolio Performance Table */}
-            {performance && (
-                <div className="mt-6 p-4 border rounded bg-gray-100">
-                    <h3 className="text-md font-semibold mb-2">Portfolio Analysis</h3>
-                    <table className="min-w-full bg-white border border-gray-200 rounded-lg shadow-sm">
+            {/* Portfolio Display */}
+            <div className="mt-6">
+                {portfolio.length > 0 ? (
+                    <table className="w-full border-collapse border border-gray-200">
                         <thead>
-                        <tr className="bg-gray-200 text-gray-700">
-                            <th className="py-2 px-4 border">Symbol</th>
-                            <th className="py-2 px-4 border">Latest Close</th>
-                            <th className="py-2 px-4 border">Volume</th>
+                        <tr className="bg-gray-100">
+                            <th className="border p-2">Symbol</th>
+                            <th className="border p-2">Name</th>
+                            <th className="border p-2">Quantity</th>
+                            <th className="border p-2">Price</th>
+                            <th className="border p-2">Date</th>
                         </tr>
                         </thead>
                         <tbody>
-                        {performance.map((stock: any, index: number) => {
-                            const latestDate = stock.data["Time Series (Daily)"]
-                                ? Object.keys(stock.data["Time Series (Daily)"])[0]
-                                : null;
-                            const latestData = latestDate ? stock.data["Time Series (Daily)"][latestDate] : null;
-
-                            return (
-                                <tr key={index} className="text-center border-b">
-                                    <td className="py-2 px-4 border">{stock.symbol}</td>
-                                    <td className="py-2 px-4 border">
-                                        {latestData ? latestData["4. close"] : "N/A"}
-                                    </td>
-                                    <td className="py-2 px-4 border">
-                                        {latestData ? latestData["5. volume"] : "N/A"}
-                                    </td>
-                                </tr>
-                            );
-                        })}
+                        {portfolio.map((stock, index) => (
+                            <tr key={index} className="text-center">
+                                <td className="border p-2">{stock.symbol}</td>
+                                <td className="border p-2">{stock.name}</td>
+                                <td className="border p-2">{stock.quantity}</td>
+                                <td className="border p-2">${stock.price.toFixed(2)}</td>
+                                <td className="border p-2">{stock.date}</td>
+                            </tr>
+                        ))}
                         </tbody>
                     </table>
-                </div>
-            )}
+                ) : (
+                    <p className="text-center text-gray-500">No stocks added yet.</p>
+                )}
+            </div>
         </div>
     );
 }

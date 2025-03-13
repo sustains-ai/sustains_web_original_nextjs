@@ -54,9 +54,9 @@ export default function RiskKnowMorePage() {
                     Portfolio Strategies, Algorithms, and More
                 </motion.h1>
 
-                <div className="flex justify-center mb-12">
-                    <StockSearch onSelect={(symbol, name) => setSelectedStock({ symbol, name })} />
-                </div>
+                {/*<div className="flex justify-center mb-12">*/}
+                {/*    <StockSearch onSelect={(symbol, name) => setSelectedStock({ symbol, name })} />*/}
+                {/*</div>*/}
 
                 {selectedStock && (
                     <div className="mt-4 p-4 border rounded bg-gray-100 text-center">

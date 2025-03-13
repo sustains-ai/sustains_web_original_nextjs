@@ -28,7 +28,7 @@ const FeaturesTab = () => {
         <section className="relative pb-20 pt-18.5 lg:pb-22.5 bg-gradient-to-b from-gray-50 to-white">
             <div className="container mx-auto px-4">
                 <h2 className="text-5xl font-extrabold text-center mb-12 text-gray-800 bg-clip-text text-transparent bg-gradient-to-r from-[#089B45] to-[#0ABF53]">
-                    Our Two Core Verticals
+                    Verticals
                 </h2>
                 <div className="relative w-full max-w-4xl mx-auto">
                     {/* Navigation Arrows */}
