@@ -6,7 +6,7 @@ import { logger } from "../logger"
 axios.defaults.headers.post["Content-Type"] = "application/json"
 
 export const mainAxios = axios.create({
-  baseURL: process.env.REACT_APP_BASE_URL,
+  baseURL: process.env.NEXT_PUBLIC_BASE_URL,
   timeout: 10000
 })
 

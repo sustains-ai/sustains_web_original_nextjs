@@ -9,7 +9,7 @@ import { reducers } from "./combineReducers"
 
 const persistConfig = {
   key: "root",
-  whitelist: ["login", "dashboard"], // Only these reducers will be persisted.
+  whitelist: ["blog"], // Only these reducers will be persisted.
   storage,
   stateReconciler: autoMergeLevel2
 }

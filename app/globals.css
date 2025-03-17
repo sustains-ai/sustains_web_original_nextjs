@@ -36,3 +36,5 @@ body {
   max-width: 80% !important;
   width: 80% !important;
 }
+
+.ce-block__content, .ce-toolbar__content { max-width: calc(75%) !important; } .cdx-block { max-width: 100% !important; }
