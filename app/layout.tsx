@@ -11,6 +11,8 @@ import Header from "@/app/common/components/Header";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react"
 import { persistor, store } from "./common/store";
+import { ThemeProvider } from "@mui/material/styles"
+import { themeProvider } from "./common/theme";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -45,14 +47,16 @@ export default function RootLayout({
         />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <Provider store={store}>
         <Header />
         <main className="pt-16">
-          <Provider store={store}>
             <PersistGate loading={null} persistor={persistor}>
-              {children}
+              <ThemeProvider theme={themeProvider}>
+                {children}
+              </ThemeProvider>
             </PersistGate>
-          </Provider>
         </main>
+        </Provider>
         <Footer />
 
         {/* Local JS (Ensure files exist in /public/js/) */}

@@ -2,7 +2,9 @@
 
 import { addBlogAction, deleteDraftedBlogAction, getBlogAction, getBlogsAction, updateBlogAction } from "@/app/common/components/Blog/redux/actions";
 import Editor from "@/app/common/components/Editor"
+import { useIsAdmin } from "@/app/common/components/hooks";
 import { Check, X } from "lucide-react";
+import { redirect } from "next/navigation";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -33,6 +35,14 @@ const CreateBlog = ({ params }: { params: Promise<{ id: string }> }) => {
             window.location.href = "/blog"
         }
     };
+
+    const isAdmin = useIsAdmin()
+
+    React.useLayoutEffect(() => {
+        if(!isAdmin){
+          redirect("/blog")
+        }
+      }, [])
 
     return (
         <div className="animate_top rounded-md border border-stroke bg-white p-7.5 shadow-solid-13 md:p-10">
