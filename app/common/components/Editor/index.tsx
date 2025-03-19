@@ -23,7 +23,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 const Editor = ({ id, readOnly }: { id: string, readOnly: boolean }) => {
 
-    const editorRef = React.useRef(null);
+    const editorRef = React.useRef<EditorJS | null>(null);
 
     const dispatch = useDispatch()
 
