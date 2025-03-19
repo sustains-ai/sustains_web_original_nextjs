@@ -9,10 +9,12 @@ import { Plus } from 'lucide-react';
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import { getBlogsAction } from "../common/components/Blog/redux/actions";
+import { useIsAdmin } from "../common/components/hooks";
 
 const Blog = () => {
 
   const dispatch = useDispatch()
+  const isAdmin = useIsAdmin()
 
   React.useEffect(() => {
     dispatch(getBlogsAction())
@@ -31,12 +33,16 @@ const Blog = () => {
 
   return (
     <section className="py-20 lg:py-25 xl:py-30">
-      <Link href={`/blog/create-edit/${Date.now()}`}>
-        <button
-          className="absolute top-30 right-6 sm:top-30 sm:right-10 md:top-30 md:right-12 lg:top-30 lg:right-16 gap-2 px-3 py-3 bg-gradient-to-r from-[#089B45] to-[#0ABF53] text-white text-lg font-semibold rounded-full shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 group">
-          <Plus />
-        </button>
-      </Link>
+      {
+        isAdmin &&
+        <Link href={`/blog/create-edit/${Date.now()}`}>
+          <button
+            className="absolute top-30 right-6 sm:top-30 sm:right-10 md:top-30 md:right-12 lg:top-30 lg:right-16 gap-2 px-3 py-3 bg-gradient-to-r from-[#089B45] to-[#0ABF53] text-white text-lg font-semibold rounded-full shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 group">
+            <Plus />
+          </button>
+        </Link>
+      }
+
       <div className="mx-auto max-w-c-1315 px-4 md:px-8 xl:px-0">
         {/* <!-- Section Title Start --> */}
         <div className="animate_top mx-auto text-center">
