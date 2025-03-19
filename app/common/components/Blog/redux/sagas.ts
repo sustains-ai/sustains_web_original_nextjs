@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { getActionType } from "@/app/common/store/typeSafe";
 import { call, debounce, put, takeLatest } from "redux-saga/effects";
 import { addBlogAction, deleteBlogAction, deleteDraftedBlogAction, getBlogsAction, storeBlogsAction, updateBlogAction } from "./actions";
