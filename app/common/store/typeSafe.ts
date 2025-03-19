@@ -6,7 +6,7 @@ export type actionType = () => {
   payload?: any
 }
 
-export const getActionType = (action: actionType) => {
+export const getActionType = (action: actionType): any => {
   return action().type
 }
 

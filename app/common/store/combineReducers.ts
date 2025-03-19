@@ -2,8 +2,10 @@
 import { combineReducers } from "redux";
 import { loaderReducer } from "../loaderRedux/reducer";
 import { sessionReducer } from "../sessionRedux/reducer";
+import { blogReducer } from "../components/Blog/redux/reducer";
 
 export const reducers: any = combineReducers({
   loader: loaderReducer,
   session: sessionReducer,
+  blog: blogReducer
 });
