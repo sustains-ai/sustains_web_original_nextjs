@@ -1043,57 +1043,57 @@
   dependencies:
     tippy.js "^6.3.1"
 
-"@tiptap-pro/extension-details-content@https://github.com/sriharshamadamanchi/extension-details-content.git#v0.1.0":
+"@tiptap-pro/extension-details-content@git+https://sriharshamadamanchi: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@github.com/sriharshamadamanchi/extension-details-content.git":
   version "2.17.3"
-  resolved "git+ssh://git@github.com/sriharshamadamanchi/extension-details-content.git#38cd8cb182cd5d06ed76af5360b54a98839b315a"
+  resolved "git+https://sriharshamadamanchi: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@github.com/sriharshamadamanchi/extension-details-content.git#38cd8cb182cd5d06ed76af5360b54a98839b315a"
 
-"@tiptap-pro/extension-details-summary@https://github.com/sriharshamadamanchi/extension-details-summary.git#v0.1.0":
+"@tiptap-pro/extension-details-summary@git+https://sriharshamadamanchi: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@github.com/sriharshamadamanchi/extension-details-summary.git":
   version "2.17.3"
-  resolved "git+ssh://git@github.com/sriharshamadamanchi/extension-details-summary.git#492b7463ee8922a131bb4d2dc1e9c9d0706b514c"
+  resolved "git+https://sriharshamadamanchi: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@github.com/sriharshamadamanchi/extension-details-summary.git#492b7463ee8922a131bb4d2dc1e9c9d0706b514c"
 
-"@tiptap-pro/extension-details@https://github.com/sriharshamadamanchi/extension-details.git#v0.1.0":
+"@tiptap-pro/extension-details@git+https://sriharshamadamanchi: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@github.com/sriharshamadamanchi/extension-details.git":
   version "2.17.3"
-  resolved "git+ssh://git@github.com/sriharshamadamanchi/extension-details.git#17124a702fed4e7f1b6bff11c03f779aac9aab83"
+  resolved "git+https://sriharshamadamanchi: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@github.com/sriharshamadamanchi/extension-details.git#17124a702fed4e7f1b6bff11c03f779aac9aab83"
 
-"@tiptap-pro/extension-drag-handle-react@https://github.com/sriharshamadamanchi/extension-drag-handle-react.git#v0.3.0":
+"@tiptap-pro/extension-drag-handle-react@git+https://sriharshamadamanchi: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@github.com/sriharshamadamanchi/extension-drag-handle-react.git#v0.3.0":
   version "2.17.3"
-  resolved "git+ssh://git@github.com/sriharshamadamanchi/extension-drag-handle-react.git#167fe58c0f04401bfbb36941b45d953b2ff38349"
+  resolved "git+https://sriharshamadamanchi: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@github.com/sriharshamadamanchi/extension-drag-handle-react.git#167fe58c0f04401bfbb36941b45d953b2ff38349"
 
-"@tiptap-pro/extension-drag-handle@git+https://github.com/sriharshamadamanchi/extension-drag-handle.git#v0.1.0", "@tiptap-pro/extension-drag-handle@https://github.com/sriharshamadamanchi/extension-drag-handle.git#v0.2.0":
+"@tiptap-pro/extension-drag-handle@git+https://github.com/sriharshamadamanchi/extension-drag-handle.git#v0.1.0", "@tiptap-pro/extension-drag-handle@git+https://sriharshamadamanchi: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@github.com/sriharshamadamanchi/extension-drag-handle.git#v0.2.0":
   version "2.17.3"
-  resolved "git+ssh://git@github.com/sriharshamadamanchi/extension-drag-handle.git#b37d685e2ce50e41ece7f94f44286d0888ec8c18"
+  resolved "git+https://sriharshamadamanchi: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@github.com/sriharshamadamanchi/extension-drag-handle.git#b37d685e2ce50e41ece7f94f44286d0888ec8c18"
   dependencies:
     tippy.js "^6.3.7"
 
-"@tiptap-pro/extension-emoji@https://github.com/sriharshamadamanchi/extension-emoji.git#v0.1.0":
+"@tiptap-pro/extension-emoji@git+https://sriharshamadamanchi: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@github.com/sriharshamadamanchi/extension-emoji.git":
   version "2.17.3"
-  resolved "git+ssh://git@github.com/sriharshamadamanchi/extension-emoji.git#90a2b33b6ae931b00ef9cccacda0fda0ddca87eb"
+  resolved "git+https://sriharshamadamanchi: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@github.com/sriharshamadamanchi/extension-emoji.git#90a2b33b6ae931b00ef9cccacda0fda0ddca87eb"
   dependencies:
     emoji-regex "^10.4.0"
     emojibase-data "^7.0.1"
     is-emoji-supported "^0.0.5"
 
-"@tiptap-pro/extension-file-handler@https://github.com/sriharshamadamanchi/extension-file-handler.git#v0.1.0":
+"@tiptap-pro/extension-file-handler@git+https://sriharshamadamanchi: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@github.com/sriharshamadamanchi/extension-file-handler.git":
   version "2.17.3"
-  resolved "git+ssh://git@github.com/sriharshamadamanchi/extension-file-handler.git#c1bf98de21e639c5668a50f6e25f1140fd774a71"
+  resolved "git+https://sriharshamadamanchi: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@github.com/sriharshamadamanchi/extension-file-handler.git#c1bf98de21e639c5668a50f6e25f1140fd774a71"
 
-"@tiptap-pro/extension-mathematics@https://github.com/sriharshamadamanchi/extension-mathematics.git#v0.1.0":
+"@tiptap-pro/extension-mathematics@git+https://sriharshamadamanchi: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@github.com/sriharshamadamanchi/extension-mathematics.git":
   version "2.17.3"
-  resolved "git+ssh://git@github.com/sriharshamadamanchi/extension-mathematics.git#434ef2a323145893202fd2bde7d2c48783d475d7"
+  resolved "git+https://sriharshamadamanchi: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@github.com/sriharshamadamanchi/extension-mathematics.git#434ef2a323145893202fd2bde7d2c48783d475d7"
 
-"@tiptap-pro/extension-node-range@git+https://github.com/sriharshamadamanchi/extension-node-range.git#v0.1.0", "@tiptap-pro/extension-node-range@https://github.com/sriharshamadamanchi/extension-node-range.git#v0.1.0":
+"@tiptap-pro/extension-node-range@git+https://github.com/sriharshamadamanchi/extension-node-range.git#v0.1.0", "@tiptap-pro/extension-node-range@git+https://sriharshamadamanchi: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@github.com/sriharshamadamanchi/extension-node-range.git":
   version "2.17.3"
-  resolved "git+ssh://git@github.com/sriharshamadamanchi/extension-node-range.git#b650d63d20d932563bbb9b99948d45dad5829237"
+  resolved "git+https://sriharshamadamanchi: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@github.com/sriharshamadamanchi/extension-node-range.git#b650d63d20d932563bbb9b99948d45dad5829237"
 
-"@tiptap-pro/extension-table-of-contents@https://github.com/sriharshamadamanchi/extension-table-of-contents.git#v0.1.0":
+"@tiptap-pro/extension-table-of-contents@git+https://sriharshamadamanchi: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@github.com/sriharshamadamanchi/extension-table-of-contents.git":
   version "2.17.3"
-  resolved "git+ssh://git@github.com/sriharshamadamanchi/extension-table-of-contents.git#d7a5ac11d581a125da263e444f1f7c702481e295"
+  resolved "git+https://sriharshamadamanchi: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@github.com/sriharshamadamanchi/extension-table-of-contents.git#d7a5ac11d581a125da263e444f1f7c702481e295"
   dependencies:
     uuid "^10.0.0"
 
-"@tiptap-pro/extension-unique-id@https://github.com/sriharshamadamanchi/extension-unique-id.git#v0.1.0":
+"@tiptap-pro/extension-unique-id@git+https://sriharshamadamanchi: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@github.com/sriharshamadamanchi/extension-unique-id.git":
   version "2.17.3"
-  resolved "git+ssh://git@github.com/sriharshamadamanchi/extension-unique-id.git#1e63186ec52de528ae12d19d4024b623d94e4b3c"
+  resolved "git+https://sriharshamadamanchi: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@github.com/sriharshamadamanchi/extension-unique-id.git#1e63186ec52de528ae12d19d4024b623d94e4b3c"
   dependencies:
     uuid "^10.0.0"
 
@@ -1691,8 +1691,6 @@ aria-query@^5.0.0, aria-query@^5.3.2:
 
 aria-query@5.3.0:
   version "5.3.0"
-  resolved "https://registry.npmjs.org/aria-query/-/aria-query-5.3.0.tgz"
-  integrity sha512-b0P0sZPKtyu8HkeRAfCq0IfURZK+SuwMjY1UXGBU27wpAiTwQAIlq56IbIO+ytk/JjS1fMR14ee5WBBfKi5J6A==
   dependencies:
     dequal "^2.0.3"
 
@@ -2254,8 +2252,6 @@ delayed-stream@~1.0.0:
 
 dequal@^2.0.0, dequal@^2.0.3:
   version "2.0.3"
-  resolved "https://registry.npmjs.org/dequal/-/dequal-2.0.3.tgz"
-  integrity sha512-0je+qPKHEMohvfRTCEo3CrPG6cAzAYgmzKyxRiYSSDkS6eGJdyVJm7WaYA5ECaAD9wLB2T4EEeymA5aFVcYXCA==
 
 detect-libc@^2.0.3:
   version "2.0.3"
@@ -2791,8 +2787,6 @@ get-tsconfig@^4.10.0:
 
 glob-parent@^5.1.2:
   version "5.1.2"
-  resolved "https://registry.npmjs.org/glob-parent/-/glob-parent-5.1.2.tgz"
-  integrity sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==
   dependencies:
     is-glob "^4.0.1"
 
@@ -3778,8 +3772,6 @@ react-is@^16.7.0:
 
 react-is@^17.0.1:
   version "17.0.2"
-  resolved "https://registry.npmjs.org/react-is/-/react-is-17.0.2.tgz"
-  integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
 
 react-is@^18.0.0:
   version "18.3.1"
