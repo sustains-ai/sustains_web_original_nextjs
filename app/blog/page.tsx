@@ -10,10 +10,20 @@ import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import { getBlogsAction } from "../common/components/Blog/redux/actions";
 import { useIsAdmin } from "../common/components/hooks";
+import { useSearchParams } from "next/navigation";
+import { BLOG_TYPES } from "../common/constants";
+import { loaderSelector } from "../common/loaderRedux/selectors";
+import { LoadingIndicator } from "../common/components/LoadingIndicator/LoadingIndicator";
 
 const Blog = () => {
 
+  const searchParams = useSearchParams();
+  const category = searchParams.get("category") ?? "";
+
+  const isCategoryValid = category.trim() !== ""
+
   const dispatch = useDispatch()
+  const { loading }: { loading: boolean } = useSelector(loaderSelector("BlogList"))
   const isAdmin = useIsAdmin()
 
   React.useEffect(() => {
@@ -23,16 +33,18 @@ const Blog = () => {
   const blogs = useSelector((store: any) => store.blog.blogs)
   const draftedBlogs = useSelector((store: any) => store.blog.draftedBlog)
 
-  const allBlogs = [...draftedBlogs]
+  let allBlogs = [...draftedBlogs]
+
   const draftedBlogIds = draftedBlogs.map((blog: any) => blog.id)
-  blogs.map((blog: any) => {
-    if (!draftedBlogIds.includes(blog.id)) {
-      allBlogs.push(blog)
-    }
-  })
+  const validBlogs = blogs.filter((blog: any) => !draftedBlogIds.includes(blog.id))
+  allBlogs = [...allBlogs, ...validBlogs]
+    if(isCategoryValid) {
+    allBlogs = allBlogs.filter((blog) => blog.blog_type === category)
+  }
 
   return (
     <section className="py-20 lg:py-25 xl:py-30">
+      <LoadingIndicator loading={loading} />
       {
         isAdmin &&
         <Link href={`/blog/create-edit/${Date.now()}`}>
@@ -66,7 +78,7 @@ const Blog = () => {
           </div>
         ) : (
           <div className="flex justify-center items-center h-64 text-gray-500 text-lg font-semibold">
-            No blogs available.
+            {`No blogs available${isCategoryValid ? ` for category ${category}` : ""}`}
           </div>
         )}
       </div>

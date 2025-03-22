@@ -29,3 +29,13 @@ export const deleteBlogByIdAPI = async (id: string) => {
 
     return data
 }
+
+export const uploadBlogImage = async (imageData: any) => {
+    const { data } = await mainAxios.post(`/api/blog/image/upload`, imageData, {
+        headers: {
+            'Content-Type': 'multipart/form-data',
+        },
+    })
+
+    return data
+}

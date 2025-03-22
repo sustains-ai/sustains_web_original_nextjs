@@ -25,6 +25,10 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+html {
+  scroll-padding-top: 6rem; 
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
@@ -36,5 +40,3 @@ body {
   max-width: 80% !important;
   width: 80% !important;
 }
-
-.ce-block__content, .ce-toolbar__content { max-width: calc(75%) !important; } .cdx-block { max-width: 100% !important; }

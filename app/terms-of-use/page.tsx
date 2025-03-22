@@ -1,6 +1,6 @@
 const TermsOfUse = () => {
     return (
-        <div style={{ padding: "20px", maxWidth: "800px", margin: "0 auto" }}>
+        <div style={{ padding: "20px", maxWidth: "800px", margin: "0 auto", marginTop: "80px" }}>
             <h3>Terms of Use</h3>
             <p>Last updated: March 2025</p>
 

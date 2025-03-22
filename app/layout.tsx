@@ -13,6 +13,7 @@ import { PersistGate } from "redux-persist/integration/react"
 import { persistor, store } from "./common/store";
 import { ThemeProvider } from "@mui/material/styles"
 import { themeProvider } from "./common/theme";
+import { usePathname } from "next/navigation";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,6 +30,10 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+
+  const pathname = usePathname();
+  const isCreateBlog = pathname.includes("/create-edit");
+
   return (
     <html lang="en">
       <head>
@@ -48,8 +53,8 @@ export default function RootLayout({
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
       <Provider store={store}>
-        <Header />
-        <main className="pt-16">
+        {!isCreateBlog && <Header />}
+        <main >
             <PersistGate loading={null} persistor={persistor}>
               <ThemeProvider theme={themeProvider}>
                 {children}
@@ -57,7 +62,7 @@ export default function RootLayout({
             </PersistGate>
         </main>
         </Provider>
-        <Footer />
+        {!isCreateBlog && <Footer />}
 
         {/* Local JS (Ensure files exist in /public/js/) */}
         <Script src="/js/theme.min.js" strategy="lazyOnload" />
