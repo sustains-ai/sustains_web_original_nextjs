@@ -1368,29 +1368,29 @@
   dependencies:
     tippy.js "^6.3.1"
 
-"@tiptap-pro/extension-details-content@git+https://github.com/sriharshamadamanchi/extension-details-content.git#v0.1.0":
+"@tiptap-pro/extension-details-content@https://github.com/sriharshamadamanchi/extension-details-content.git#v0.1.0":
   version "2.17.3"
   resolved "git+ssh://git@github.com/sriharshamadamanchi/extension-details-content.git#38cd8cb182cd5d06ed76af5360b54a98839b315a"
 
-"@tiptap-pro/extension-details-summary@git+https://github.com/sriharshamadamanchi/extension-details-summary.git#v0.1.0":
+"@tiptap-pro/extension-details-summary@https://github.com/sriharshamadamanchi/extension-details-summary.git#v0.1.0":
   version "2.17.3"
   resolved "git+ssh://git@github.com/sriharshamadamanchi/extension-details-summary.git#492b7463ee8922a131bb4d2dc1e9c9d0706b514c"
 
-"@tiptap-pro/extension-details@git+https://github.com/sriharshamadamanchi/extension-details.git#v0.1.0":
+"@tiptap-pro/extension-details@https://github.com/sriharshamadamanchi/extension-details.git#v0.1.0":
   version "2.17.3"
   resolved "git+ssh://git@github.com/sriharshamadamanchi/extension-details.git#17124a702fed4e7f1b6bff11c03f779aac9aab83"
 
-"@tiptap-pro/extension-drag-handle-react@git+https://github.com/sriharshamadamanchi/extension-drag-handle-react.git#v0.3.0":
+"@tiptap-pro/extension-drag-handle-react@https://github.com/sriharshamadamanchi/extension-drag-handle-react.git#v0.3.0":
   version "2.17.3"
   resolved "git+ssh://git@github.com/sriharshamadamanchi/extension-drag-handle-react.git#167fe58c0f04401bfbb36941b45d953b2ff38349"
 
-"@tiptap-pro/extension-drag-handle@git+https://github.com/sriharshamadamanchi/extension-drag-handle.git#v0.1.0", "@tiptap-pro/extension-drag-handle@git+https://github.com/sriharshamadamanchi/extension-drag-handle.git#v0.2.0":
+"@tiptap-pro/extension-drag-handle@git+https://github.com/sriharshamadamanchi/extension-drag-handle.git#v0.1.0", "@tiptap-pro/extension-drag-handle@https://github.com/sriharshamadamanchi/extension-drag-handle.git#v0.2.0":
   version "2.17.3"
   resolved "git+ssh://git@github.com/sriharshamadamanchi/extension-drag-handle.git#b37d685e2ce50e41ece7f94f44286d0888ec8c18"
   dependencies:
     tippy.js "^6.3.7"
 
-"@tiptap-pro/extension-emoji@git+https://github.com/sriharshamadamanchi/extension-emoji.git#v0.1.0":
+"@tiptap-pro/extension-emoji@https://github.com/sriharshamadamanchi/extension-emoji.git#v0.1.0":
   version "2.17.3"
   resolved "git+ssh://git@github.com/sriharshamadamanchi/extension-emoji.git#90a2b33b6ae931b00ef9cccacda0fda0ddca87eb"
   dependencies:
@@ -1398,25 +1398,25 @@
     emojibase-data "^7.0.1"
     is-emoji-supported "^0.0.5"
 
-"@tiptap-pro/extension-file-handler@git+https://github.com/sriharshamadamanchi/extension-file-handler.git#v0.1.0":
+"@tiptap-pro/extension-file-handler@https://github.com/sriharshamadamanchi/extension-file-handler.git#v0.1.0":
   version "2.17.3"
   resolved "git+ssh://git@github.com/sriharshamadamanchi/extension-file-handler.git#c1bf98de21e639c5668a50f6e25f1140fd774a71"
 
-"@tiptap-pro/extension-mathematics@git+https://github.com/sriharshamadamanchi/extension-mathematics.git#v0.1.0":
+"@tiptap-pro/extension-mathematics@https://github.com/sriharshamadamanchi/extension-mathematics.git#v0.1.0":
   version "2.17.3"
   resolved "git+ssh://git@github.com/sriharshamadamanchi/extension-mathematics.git#434ef2a323145893202fd2bde7d2c48783d475d7"
 
-"@tiptap-pro/extension-node-range@git+https://github.com/sriharshamadamanchi/extension-node-range.git#v0.1.0":
+"@tiptap-pro/extension-node-range@git+https://github.com/sriharshamadamanchi/extension-node-range.git#v0.1.0", "@tiptap-pro/extension-node-range@https://github.com/sriharshamadamanchi/extension-node-range.git#v0.1.0":
   version "2.17.3"
   resolved "git+ssh://git@github.com/sriharshamadamanchi/extension-node-range.git#b650d63d20d932563bbb9b99948d45dad5829237"
 
-"@tiptap-pro/extension-table-of-contents@git+https://github.com/sriharshamadamanchi/extension-table-of-contents.git#v0.1.0":
+"@tiptap-pro/extension-table-of-contents@https://github.com/sriharshamadamanchi/extension-table-of-contents.git#v0.1.0":
   version "2.17.3"
   resolved "git+ssh://git@github.com/sriharshamadamanchi/extension-table-of-contents.git#d7a5ac11d581a125da263e444f1f7c702481e295"
   dependencies:
     uuid "^10.0.0"
 
-"@tiptap-pro/extension-unique-id@git+https://github.com/sriharshamadamanchi/extension-unique-id.git#v0.1.0":
+"@tiptap-pro/extension-unique-id@https://github.com/sriharshamadamanchi/extension-unique-id.git#v0.1.0":
   version "2.17.3"
   resolved "git+ssh://git@github.com/sriharshamadamanchi/extension-unique-id.git#1e63186ec52de528ae12d19d4024b623d94e4b3c"
   dependencies:
