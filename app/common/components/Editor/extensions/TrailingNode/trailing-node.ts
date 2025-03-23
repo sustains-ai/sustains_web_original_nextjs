@@ -1,8 +1,7 @@
 import { Extension } from '@tiptap/core'
 import { Plugin, PluginKey } from '@tiptap/pm/state'
 
-// @ts-ignore
-function nodeEqualsType({ types, node }) {
+function nodeEqualsType({ types, node }: { types: any; node: any }) {
   return (Array.isArray(types) && types.includes(node.type)) || node.type === types
 }
 
