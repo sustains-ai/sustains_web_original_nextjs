@@ -4592,6 +4592,8 @@ y-prosemirror@^1.2.11, y-prosemirror@^1.2.17, y-prosemirror@^1.2.5:
 
 y-protocols@^1.0.1, y-protocols@^1.0.6:
   version "1.0.6"
+  resolved "https://registry.npmjs.org/y-protocols/-/y-protocols-1.0.6.tgz"
+  integrity sha512-vHRF2L6iT3rwj1jub/K5tYcTT/mEYDUppgNPXwp8fmLpui9f7Yeq3OEtTLVF012j39QnV+KEQpNqoN7CWU7Y9Q==
   dependencies:
     lib0 "^0.2.85"
 
