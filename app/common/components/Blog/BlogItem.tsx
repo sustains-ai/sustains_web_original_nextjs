@@ -6,35 +6,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { Pencil, Trash2 } from "lucide-react";
 import { deleteBlogAction, deleteDraftedBlogAction } from "./redux/actions";
-import { useDispatch } from "react-redux";
-import { useIsAdmin } from "../hooks";
-
-const extractBlogData = (blog: any) => {
-    let image; // Fallback image
-    let title;
-    let description;
-
-    if (blog && blog.blocks) {
-        for (const block of blog.blocks) {
-            if (!image && block.type === "image") {
-                image = block.data.file?.url || block.data.url || image;
-            }
-            if (!title && (block.type === "header")) {
-                title = block.data.text;
-            }
-            if (!description && block.type === "paragraph") {
-                description = block.data.text;
-            }
-            if (image && title && description) break;
-        }
-    }
-
-    return { image, title, description };
-};
-
+import { useDispatch, useSelector } from "react-redux";
+import { useBlogHeaders, useIsAdmin } from "../hooks";
 
 const BlogItem = ({ blog }: { blog: any }) => {
-    const { image = "/images/default-image.jpg", title = "Untitled blog", description } = extractBlogData(blog.content);
+    const { image, title, description } = useBlogHeaders(blog.content);
+    const user = useSelector((store: any) => store.login.user)
 
     const dispatch = useDispatch()
     const isAdmin = useIsAdmin()
@@ -55,19 +32,28 @@ const BlogItem = ({ blog }: { blog: any }) => {
             whileInView="visible"
             transition={{ duration: 1, delay: 0.5 }}
             viewport={{ once: true }}
-            className="animate_top rounded-lg bg-white p-4 pb-9 shadow-solid-8 dark:bg-blacksection"
+            className="relative animate_top rounded-lg bg-white p-2 pb-9 shadow-solid-8 dark:bg-blacksection"
         >
             {/* Draft Label (Dual Style - Red & Grey) */}
             {blog.draft && (
-                <div className="relative flex justify-end py-2">
-                    <span className="flex items-center gap-2 px-3 py-1 text-xs font-semibold rounded bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-300">
+                <div className="absolute top-2 left-2 z-50 flex justify-end p-2">
+                    <span className="flex items-center gap-2 px-3 py-1 text-xs font-semibold rounded bg-yellow-200 text-gray-800 dark:bg-yellow-700 dark:text-yellow-300">
                         <span className="w-2 h-2 bg-red-500 rounded-full"></span>
                         Draft
                     </span>
                 </div>
             )}
 
-            <Link href={`/blog/${blog.id}`} className="relative block aspect-[368/239]">
+            {blog.blog_type && (
+                <div className="absolute top-2 left-2 z-50 flex justify-end p-2">
+                    <span className="flex items-center gap-2 px-3 py-1 text-xs font-bold rounded bg-white">
+                        <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                        {blog.blog_type}
+                    </span>
+                </div>
+            )}
+
+            <Link href={`/blog/${blog.id}`} className="relative block aspect-[320/200]">
                 <Image src={image} alt={title} fill />
             </Link>
 
@@ -81,8 +67,8 @@ const BlogItem = ({ blog }: { blog: any }) => {
             </div>
 
             {
-                isAdmin &&
-                <div className="px-3 flex items-center gap-3">
+                isAdmin && blog?.author?.email === user.email &&
+                <div className="absolute top-2 right-2 z-50 flex items-center gap-3 p-2">
                     {/* Edit Button */}
                     <Link
                         href={`/blog/create-edit/${blog.id}`}

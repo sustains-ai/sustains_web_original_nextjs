@@ -1,6 +1,8 @@
 import type { Config } from "tailwindcss";
 
 export default {
+  darkMode: ['class'],
+  safelist: ['ProseMirror'],
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -12,7 +14,8 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         primary: "#0ABF53", // Your main theme color
-        grey: "#808080"
+        grey: "#808080",
+        black: "#000000"
       },
       fontFamily: {
         sans: ["Inter", "sans-serif"], // Keeping font consistent

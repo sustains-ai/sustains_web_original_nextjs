@@ -7,12 +7,16 @@ import { Blog } from "@/types/blog";
 import Editor from "@/app/common/components/Editor";
 import React from "react";
 import { useSelector } from "react-redux";
+import BlockReadOnly from "@/app/common/components/Editor/components/BlockEditor/BlockReadOnly";
+import { Button, Chip } from "@mui/material";
+import Link from "next/link";
+import { BLOG_TYPES } from "@/app/common/constants";
 
 const SingleBlogPage = ({ params }: { params: Promise<{ id: string }> }) => {
     const resolvedParams = React.use(params);
     const id = resolvedParams.id;
 
-    const blogs = useSelector((store: any) => store.blog.blogs)
+    const blogs = useSelector((store: any) => store.blog.blogs) ?? []
     const draftedBlogs = useSelector((store: any) => store.blog.draftedBlog)
 
     const allBlogs = [...draftedBlogs, ...blogs]
@@ -26,9 +30,40 @@ const SingleBlogPage = ({ params }: { params: Promise<{ id: string }> }) => {
     const imageSrc = typeof blog.image === "string" ? blog.image : blog.image?.src || "/default-image.jpg";
     const dateString = blog.date instanceof Date ? blog.date.toISOString().split("T")[0] : blog.date;
 
+    const latestBlogs = blogs.filter((blog: any) => blog.id !== id) ?? []
+    console.log(latestBlogs)
+
     return (
-        <div className="animate_top rounded-md border border-stroke bg-white p-7.5 shadow-solid-13 md:p-10">
-            <Editor id={id} readOnly={true} />
+        <div className="flex flex-row animate_top rounded-md border border-stroke bg-white shadow-solid-13 mt-16">
+            <div className="w-3/4">
+                <BlockReadOnly id={id} />
+            </div>
+            <div className="w-1/4 mt-10 m-4">
+                {
+                    latestBlogs.length > 0 &&
+                    <RelatedPost blogs={latestBlogs} />
+                }
+                <div className="animate_top mt-4 mb-10 rounded-md border border-stroke bg-white p-5 shadow-solid-13">
+                    <h4 className="mb-7.5 text-2xl font-semibold text-black">
+                        Categories
+                    </h4>
+                    <ul className="h-[20rem] overflow-y-auto border border-gray-300 rounded-lg p-4">
+                        {
+                            BLOG_TYPES.map((type: string, index: number) => {
+                                return (
+                                    <Link key={index} href={`/blog?category=${type}`}>
+                                        <li key={index} className="py-2">
+                                            <button className="px-4 py-2 text-sm font-semibold text-gray-700 bg-gray-200 rounded-full transition-all duration-300 hover:bg-primary hover:text-white">
+                                                {type}
+                                            </button>
+                                        </li>
+                                    </Link>
+                                )
+                            })
+                        }
+                    </ul>
+                </div>
+            </div>
         </div>
     )
 
