@@ -17,6 +17,13 @@ const riskProducts = [
         link: "/vertical/risk/know-more/portfolio-analysis"
     },
     {
+        id: "company-overview",
+        title: "Company Overview",
+        description: "Overview of the companies",
+        img: "/images/company_overview.jpg",
+        link: "/vertical/risk/know-more/company-overview"
+    },
+    {
         id: "trading-algorithms",
         title: "Trading Algorithms",
         description: "Automated trading strategies designed to enhance your trading performance.",
