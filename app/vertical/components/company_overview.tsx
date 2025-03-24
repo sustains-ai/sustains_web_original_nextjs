@@ -29,17 +29,16 @@ export default function CompanyOverview() {
         }
     };
 
-    // Helper to format value
     const formatValue = (value: any) => {
         if (value === null || value === undefined) return 'N/A';
         if (typeof value === 'string' || typeof value === 'number') return value.toString();
-        return JSON.stringify(value, null, 2); // Fallback for objects/arrays
+        return JSON.stringify(value, null, 2);
     };
 
     return (
         <div className="bg-gradient-to-br from-gray-100 to-gray-200 py-8 px-4 sm:px-6 lg:px-8">
             <div className="max-w-5xl mx-auto">
-                <div className="bg-white rounded-xl shadow-lg p-6 transition-transform transform hover:scale-105">
+                <div className="bg-white rounded-xl shadow-lg p-6">
                     <h2 className="text-xl md:text-2xl font-semibold text-gray-800 mb-4">Company Overview</h2>
                     <div className="flex items-center space-x-4 mb-6">
                         <input
