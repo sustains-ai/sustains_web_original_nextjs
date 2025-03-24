@@ -5,7 +5,7 @@ import FeaturesSection from "../common/components/FeaturesSection"
 import HeroSection from "../common/components/HeroSection"
 import QuotesSection from "../common/components/Quotes"
 import Testimonials from "../common/components/Testimonials"
-
+import CuratedNews from "../common/components/CuratedNews"
 const Home = () => {
     return (
         <>
@@ -14,8 +14,9 @@ const Home = () => {
             <FeaturesTab />
             <CTA />
             <Testimonials />
+            <CuratedNews />
             <QuotesSection />
-            <Blog />
+
         </>
     )
 }
