@@ -4,6 +4,8 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import RiskProductsCard from "../../components/FinanceProductsCard";
 import dynamic from "next/dynamic";
+import MarketStatus from "@/app/vertical/components/GlobalMarketStatus";
+
 
 // ✅ Dynamically import StockSearch to prevent SSR issues
 const StockSearch = dynamic(() => import("../../components/StockSearch"), { ssr: false });
@@ -61,9 +63,9 @@ export default function RiskKnowMorePage() {
                     Portfolio Strategies, Algorithms, and More
                 </motion.h1>
 
-                {/*<div className="flex justify-center mb-12">*/}
-                {/*    <StockSearch onSelect={(symbol, name) => setSelectedStock({ symbol, name })} />*/}
-                {/*</div>*/}
+                <div className="flex justify-center mb-12">
+                    <MarketStatus/>
+                </div>
 
                 {selectedStock && (
                     <div className="mt-4 p-4 border rounded bg-gray-100 text-center">
