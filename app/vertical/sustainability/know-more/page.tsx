@@ -13,12 +13,13 @@ const energyPortfolioProducts = [
         link: "/vertical/sustainability/know-more/energy-optimization"
     },
     {
-        id: "weather-data",
-        title: "Weather Data & Energy Forecasting",
-        description: "Utilize real-time weather data to improve renewable energy production planning.",
-        img: "/images/weather-data.jpg",
-        link: "/vertical/sustainability/know-more/weather-data"
+        id: "oil-data",
+        title: "Global Oil Dashboard",
+        description: "Visualize monthly oil data trends across countries for strategic insights.",
+        img: "/images/oil-dashboard.jpg",
+        link: "/vertical/sustainability/know-more/oil-data"
     },
+
     {
         id: "grid-analytics",
         title: "Grid Analytics & Risk Assessment",
