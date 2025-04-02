@@ -92,7 +92,7 @@
     "@tiptap/extension-text-style": "^2.11.5",
     "@tiptap/extension-typography": "^2.11.5",
     "@tiptap/extension-underline": "^2.11.5",
-    "@tiptap/react": "^2.11.5",
+    "@tiptap/react": "^2.11.7",
     "@tiptap/starter-kit": "^2.11.5",
     "@tiptap/suggestion": "^2.11.5",
     "@types/jest": "^29.5.14",
