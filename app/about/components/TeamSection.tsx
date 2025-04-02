@@ -50,7 +50,7 @@ const TeamSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          Our Team
+          Our Core Team
         </motion.h2>
 
         {/* Carousel Wrapper */}
