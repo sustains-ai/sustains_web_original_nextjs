@@ -7,7 +7,7 @@ import Image from "next/image";
 // Team Data
 const teamSection = [
   {
-    name: "Aswin Nambiar",
+    name: "Aswin",
     role: "CEO",
     image: "/img/350x350/aswin2.png",
     bio: "Our Chief Entertaining Officer. He talks—a lot. Conversations range from product strategies to deep spiritual insights, though there is ongoing debate about how spiritual he truly is. A relentless extrovert, he thrives on social interactions and energizes every discussion he joins."  },
@@ -22,6 +22,30 @@ const teamSection = [
     role: "Head of products",
     image: "/img/350x350/arjun2.jpg",
     bio: "A product guy turned developer turned energy professional turned finance guy. Holds a PhD in energy, loves coding, and might just end up as the CTO. A devoted fan of JETBRAINS products."
+  },
+  {
+    name: "Ravi",
+    role: "Head of Business Development",
+    image: "/img/350x350/Ravi_g.png",
+    bio: "Energy whisperer with 15+ years of sparking business deals. Official sponsor of our tea, coffee, and beer runs. Resident people-magnet — and also the one asking ‘wait… does this even make sense?’ at every step. Keeps us grounded while secretly hoping we make it to unicorn land."
+  },
+  {
+    name: "Harsha M",
+    role: "Head of Engineering",
+    image: "/img/350x350/Harsha_g.png",
+    bio:"Works in stealth mode — we never know when, but he always delivers. Attends meetings from tea stalls, gyms, and temples. A true React enthusiast and the quiet force behind everything you see on this website. Talks only when necessary, codes like it is second nature. The geek of our team."
+  },
+  {
+    name: "Chinju",
+    role: "Head of UX/UI",
+    image: "/img/350x350/Chinju_g.png",
+    bio: "Holds a PhD in user research and a black belt in observing our every move. She is our go-to person for “Are we doing this right?” and “Do clients even like this?” Says ‘thank you’ and ‘sorry’ more times than we can count — usually while quietly taking notes on our behavior. Keeps us grounded in reality and user love. Absolute food person… but tragically, a vegetarian."
+  },
+  {
+    name: "Rohit",
+    role: "Head of Consulting",
+    image: "/img/350x350/Rohit_g.png",
+    bio: "Our consulting head with Big4 battle scars and a calendar full of meetings we never asked him to attend — at hours we would not dare suggest. Can never say no (we have tried). A brilliant chef in his downtime, known for both killer biriyani and uncompromising work ethic. Whether it is strategy decks or dinner plates, there is only one rule: no shortcuts, no compromise."
   },
 ];
 
