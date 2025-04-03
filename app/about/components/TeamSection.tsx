@@ -13,7 +13,7 @@ const teamSection = [
     bio: "Our Chief Entertaining Officer. He talks—a lot. Conversations range from product strategies to deep spiritual insights, though there is ongoing debate about how spiritual he truly is. A relentless extrovert, he thrives on social interactions and energizes every discussion he joins."  },
   {
     name: "Sachin Muralee Krishna",
-    role: "CFO",
+    role: "Strategy Head",
     image: "/img/350x350/sachin3.png",
     bio: "Our budding CFO. Loves finance and hangovers in equal measure. Equally passionate about spreadsheets and sweets. Rarely speaks—unless fueled by a drink. Eligible bachelor, for now."
   },
