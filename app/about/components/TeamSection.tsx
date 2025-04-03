@@ -23,12 +23,12 @@ const teamSection = [
     image: "/img/350x350/arjun2.jpg",
     bio: "A product guy turned developer turned energy professional turned finance guy. Holds a PhD in energy, loves coding, and might just end up as the CTO. A devoted fan of JETBRAINS products."
   },
-  {
-    name: "Ravi",
-    role: "Head of Business Development",
-    image: "/img/350x350/Ravi_g.png",
-    bio: "Energy whisperer with 15+ years of sparking business deals. Official sponsor of our tea, coffee, and beer runs. Resident people-magnet — and also the one asking ‘wait… does this even make sense?’ at every step. Keeps us grounded while secretly hoping we make it to unicorn land."
-  },
+  // {
+  //   name: "Ravi",
+  //   role: "Head of Business Development",
+  //   image: "/img/350x350/Ravi_g.png",
+  //   bio: "Energy whisperer with 15+ years of sparking business deals. Official sponsor of our tea, coffee, and beer runs. Resident people-magnet — and also the one asking ‘wait… does this even make sense?’ at every step. Keeps us grounded while secretly hoping we make it to unicorn land."
+  // },
   {
     name: "Harsha M",
     role: "Head of Engineering",
