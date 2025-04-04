@@ -26,9 +26,9 @@ const Form = () => {
   }, []);
 
   return (
-    <main className="relative bg-white text-black py-24 px-6">
+    <main className="relative text-black p-5">
       <motion.div
-        className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center"
+        className="sm:container mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
@@ -49,11 +49,11 @@ const Form = () => {
             transition={{ duration: 1, delay: 0.5 }}
           >
             <Image
-              className="rounded-lg mt-6 shadow-xl"
+              className="rounded-lg mt-4 shadow-xl"
               src="/img/580x480/img1.jpg"
               alt="Sustainability-Driven Insights"
               width={500}
-              height={400}
+              height={500}
             />
           </motion.div>
 
@@ -72,7 +72,7 @@ const Form = () => {
 
         {/* Right Column - Contact Form & Lottie Animation */}
         <motion.div
-          className="bg-white shadow-xl rounded-lg p-10 border border-gray-200 relative flex flex-col items-center"
+          className="bg-white shadow-xl rounded-lg p-4 border border-gray-200 relative flex flex-col items-center"
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.4 }}
@@ -92,43 +92,43 @@ const Form = () => {
           </motion.div>
 
           <h4 className="text-3xl font-bold text-gray-900 mb-6">Get in Touch</h4>
-          <form>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <form className="">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* First Name */}
               <div>
-                <label className="block text-gray-700 font-semibold">First Name</label>
+                <label className="block text-gray-700 font-semibold mb-2">First Name</label>
                 <input
                   type="text"
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0ABF53] focus:outline-none transition-all duration-300 hover:shadow-lg"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0ABF53] focus:outline-none transition-all duration-300 hover:shadow-md"
                   placeholder="Jacob"
                 />
               </div>
 
               {/* Last Name */}
               <div>
-                <label className="block text-gray-700 font-semibold">Last Name</label>
+                <label className="block text-gray-700 font-semibold mb-2">Last Name</label>
                 <input
                   type="text"
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0ABF53] focus:outline-none transition-all duration-300 hover:shadow-lg"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0ABF53] focus:outline-none transition-all duration-300 hover:shadow-md"
                   placeholder="Williams"
                 />
               </div>
 
               {/* Email */}
-              <div className="mt-6 col-span-2">
-                <label className="block text-gray-700 font-semibold">Work Email</label>
+              <div className="sm:col-span-2">
+                <label className="block text-gray-700 font-semibold mb-2">Work Email</label>
                 <input
                   type="email"
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0ABF53] focus:outline-none transition-all duration-300 hover:shadow-lg"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0ABF53] focus:outline-none transition-all duration-300 hover:shadow-md"
                   placeholder="email@site.com"
                 />
               </div>
 
               {/* Message */}
-              <div className="mt-6 col-span-2">
-                <label className="block text-gray-700 font-semibold">Message</label>
+              <div className="sm:col-span-2">
+                <label className="block text-gray-700 font-semibold mb-2">Message</label>
                 <textarea
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0ABF53] focus:outline-none transition-all duration-300 hover:shadow-lg"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0ABF53] focus:outline-none transition-all duration-300 hover:shadow-md"
                   rows={4}
                   placeholder="How can we help you?"
                 ></textarea>

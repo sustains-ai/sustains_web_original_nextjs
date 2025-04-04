@@ -28,7 +28,7 @@ const Testimonials = () => {
   return (
     <section className="bg-[#F8F9FA] text-gray-900 py-16">
       <motion.h2
-        className="text-4xl font-extrabold text-center mb-12 text-gray-800"
+        className="text-4xl font-extrabold text-center mb-12 px-2 text-gray-800"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}

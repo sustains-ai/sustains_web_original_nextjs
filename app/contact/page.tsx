@@ -8,7 +8,7 @@ export default function Contact() {
     <>
       <HeroContacts />
       <Form />
-        <Quotes/>
+      <Quotes />
     </>
   );
 }

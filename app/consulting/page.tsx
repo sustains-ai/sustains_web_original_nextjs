@@ -39,7 +39,7 @@ const navItems = [
 ];
 
 export default function ConsultingKnowMorePage() {
-    const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [selectedSection, setSelectedSection] = useState("projects");
     const [evData, setEvData] = useState<any[]>([]);
     const [loading, setLoading] = useState(false);
@@ -77,16 +77,16 @@ export default function ConsultingKnowMorePage() {
         .reduce((max, d) => (d.value > (max?.value || 0) ? d : max), null)?.region || "N/A";
 
     return (
-        <div className="flex min-h-screen bg-gradient-to-br from-[#E6F4EA] via-[#A5D6A7] to-[#FFFFFF]">
+        <div className="flex mt-16 min-h-screen bg-gradient-to-br from-[#E6F4EA] via-[#A5D6A7] to-[#FFFFFF]">
             {/* Sidebar */}
             <aside
                 className={`${isSidebarOpen ? "w-64" : "w-16"} bg-[#0ABF53] text-white transition-all duration-300 flex-shrink-0 shadow-lg`}
             >
-                <div className="p-4 flex justify-between items-center">
-                    {isSidebarOpen && <h1 className="text-xl font-bold">Consulting Insights</h1>}
+                <div className="h-30 flex justify-around items-center mt-5">
+                    {isSidebarOpen && <h1 className="text-xl text-white font-bold">Consulting Insights</h1>}
                     <button
                         onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-                        className="p-1 rounded-full hover:bg-[#089B45]"
+                        className="mb-2 rounded-full hover:bg-[#089B45]"
                     >
                         {isSidebarOpen ? <ChevronLeft /> : <ChevronRight />}
                     </button>
@@ -106,14 +106,14 @@ export default function ConsultingKnowMorePage() {
             </aside>
 
             {/* Main Content */}
-            <main className="flex-1 p-8 max-w-7xl mx-auto">
+            <main className="flex-1 p-4 max-w-7xl mx-auto py-10">
                 <motion.header
                     className="mb-12"
                     initial={{ opacity: 0, y: -30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, ease: "easeOut" }}
                 >
-                    <h1 className="text-4xl md:text-5xl font-extrabold text-gray-800 bg-clip-text text-transparent bg-gradient-to-r from-[#089B45] to-[#0ABF53]">
+                    <h1 className="py-2 text-4xl md:text-5xl font-extrabold text-gray-800 bg-clip-text text-transparent bg-gradient-to-r from-[#089B45] to-[#0ABF53]">
                         Consulting Insights & Projects
                     </h1>
                     <p className="mt-2 text-lg text-gray-600">
@@ -193,7 +193,7 @@ export default function ConsultingKnowMorePage() {
                         <div className="mt-6">
                             <Link
                                 href="/dashboard"
-                                className="inline-flex items-center gap-2 px-6 py-3 bg-[#0ABF53] text-white rounded-lg hover:bg-[#089B45] transition-all duration-300 shadow-md"
+                                className="inline-flex items-center gap- px-6 py-3 bg-[#0ABF53] text-white font-bold rounded-lg hover:bg-[#089B45] transition-all duration-300 shadow-md"
                             >
                                 Explore Full Dashboard
                                 <BarChart2 className="w-5 h-5" />
@@ -214,7 +214,7 @@ export default function ConsultingKnowMorePage() {
                     </p>
                     <Link
                         href="/contact"
-                        className="inline-flex items-center gap-2 px-6 py-3 bg-[#0ABF53] text-white rounded-lg hover:bg-[#089B45] transition-all duration-300 shadow-md"
+                        className="inline-flex items-center gap-2 justify-center w-[160px] h-[50px] bg-[#0ABF53] text-white font-bold rounded-lg hover:bg-[#089B45] transition-all duration-300 shadow-md"
                     >
                         Get in Touch
                         <ChevronRight className="w-5 h-5" />

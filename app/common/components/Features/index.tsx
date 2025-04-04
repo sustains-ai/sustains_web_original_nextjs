@@ -26,7 +26,7 @@ const FeaturesTab = () => {
 
     return (
         <section className="relative pb-20 pt-18.5 lg:pb-22.5 bg-gradient-to-b from-gray-50 to-white">
-            <div className="container mx-auto px-4">
+            <div className="container mx-auto px-0">
                 <h2 className="text-5xl font-extrabold text-center mb-12 text-gray-800 bg-clip-text text-transparent bg-gradient-to-r from-[#089B45] to-[#0ABF53]">
                     Verticals
                 </h2>
@@ -34,7 +34,7 @@ const FeaturesTab = () => {
                     {/* Navigation Arrows */}
                     <button
                         onClick={prevSlide}
-                        className="absolute left-0 top-1/2 transform -translate-y-1/2 p-3 bg-[#0ABF53] text-white rounded-full hover:bg-[#089B45] transition-all shadow-md z-10"
+                        className="absolute left-2 top-[52%] transform -translate-y-1/2 p-2.5 bg-[#0ABF53] text-white rounded-full hover:bg-[#089B45] transition-all shadow-md z-10"
                     >
                         <svg
                             className="w-6 h-6"
@@ -54,7 +54,7 @@ const FeaturesTab = () => {
 
                     <button
                         onClick={nextSlide}
-                        className="absolute right-0 top-1/2 transform -translate-y-1/2 p-3 bg-[#0ABF53] text-white rounded-full hover:bg-[#089B45] transition-all shadow-md z-10"
+                        className="absolute right-2 top-[52%] transform -translate-y-1/2 p-2.5 bg-[#0ABF53] text-white rounded-full hover:bg-[#089B45] transition-all shadow-md z-10"
                     >
                         <svg
                             className="w-6 h-6"

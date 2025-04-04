@@ -52,8 +52,8 @@ export default function RiskKnowMorePage() {
     const [selectedStock, setSelectedStock] = useState<{ symbol: string; name: string } | null>(null);
 
     return (
-        <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
-            <div className="container mx-auto px-4">
+        <section className="py-30 bg-gradient-to-b from-gray-50 to-white">
+            <div className="sm:container mx-auto px-4">
                 <motion.h1
                     className="text-5xl font-extrabold text-center mb-12 text-gray-800 bg-clip-text text-transparent bg-gradient-to-r from-[#089B45] to-[#0ABF53] leading-normal"
                     initial={{ opacity: 0, y: -20 }}
@@ -75,7 +75,7 @@ export default function RiskKnowMorePage() {
                     </div>
                 )}
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
                     {riskProducts.map((product) => (
                         <RiskProductsCard key={product.id} product={product} />
                     ))}

@@ -44,10 +44,10 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="col-sm-6">
-            <h6 className="font-bold text-white">
+          <div className="col-sm-6 mt-3">
+            {/* <h6 className="font-bold text-white">
               LEGAL
-            </h6>
+            </h6> */}
             <ul className="list-unstyled list-py-1 mb-0">
               <li>
                 <a className="link link-light link-light-75 font-semibold" href="/privacy-policy">

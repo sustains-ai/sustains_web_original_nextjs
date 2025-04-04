@@ -45,7 +45,7 @@ const FeaturesTabItem = ({ featureTab }: { featureTab: FeatureTab }) => {
                     <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="inline-flex items-center px-8 py-3 bg-[#0ABF53] text-white font-semibold rounded-full shadow-md hover:bg-[#089B45] hover:shadow-lg transition-all duration-300"
+                        className="inline-flex items-center justify-center w-[180px] h-[50px] bg-[#0ABF53] text-white font-semibold rounded-full shadow-md hover:bg-[#089B45] hover:shadow-lg transition-all duration-300"
                     >
                         Know More
                         <svg

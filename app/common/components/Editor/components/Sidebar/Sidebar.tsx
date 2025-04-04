@@ -7,27 +7,32 @@ export const Sidebar = memo(
   ({ editor, isOpen, onClose }: { editor: Editor; isOpen?: boolean; onClose: () => void }) => {
     const handlePotentialClose = useCallback(() => {
       if (window.innerWidth < 1024) {
-        onClose()
+        onClose();
       }
-    }, [onClose])
+    }, [onClose]);
 
-    const windowClassName = cn(
-      'absolute lg:relative top-0 left-0 bg-white lg:bg-white/30 lg:backdrop-blur-xl w-0 duration-300 transition-all',
-      'dark:bg-black lg:dark:bg-black/30',
-      !isOpen && 'border-r-transparent',
-      isOpen && 'w-[300px] border-r border-r-neutral-200 dark:border-r-neutral-800',
-    )
+    const sidebarClass = cn(
+      'fixed lg:relative top-0 left-0 z-50 bg-white dark:bg-black transition-all duration-300 ease-in-out pt-8',
+      'h-screen lg:h-full',
+      'overflow-hidden',
+      // Mobile sidebar toggle
+      isOpen ? 'w-[260px]' : 'w-0',
+      // Large screen: always visible and wide
+      'lg:w-[300px] lg:border-r lg:border-neutral-200 dark:lg:border-neutral-800',
+      'lg:bg-white/30 lg:backdrop-blur-xl lg:dark:bg-black/30'
+    );
 
     return (
-      <div className={windowClassName}>
+      <div className={sidebarClass}>
         <div className="w-full h-full overflow-hidden">
-          <div className="w-full h-full p-6 overflow-auto">
+          <div className="w-full h-full p-6 overflow-y-auto">
             <TableOfContents onItemClick={handlePotentialClose} editor={editor} />
           </div>
         </div>
       </div>
-    )
-  },
-)
+    );
+  }
+);
+
 
 Sidebar.displayName = 'TableOfContentSidepanel'

@@ -32,7 +32,7 @@ const BlogItem = ({ blog }: { blog: any }) => {
             whileInView="visible"
             transition={{ duration: 1, delay: 0.5 }}
             viewport={{ once: true }}
-            className="relative animate_top rounded-lg bg-white p-2 pb-9 shadow-solid-8 dark:bg-blacksection"
+            className="relative group animate_top rounded-lg bg-white p-2 shadow-solid-8 dark:bg-blacksection"
         >
             {/* Draft Label (Dual Style - Red & Grey) */}
             {blog.draft && (
@@ -68,7 +68,7 @@ const BlogItem = ({ blog }: { blog: any }) => {
 
             {
                 isAdmin && blog?.author?.email === user.email &&
-                <div className="absolute top-2 right-2 z-50 flex items-center gap-3 p-2">
+                <div className="absolute top-2 right-2 z-50 flex items-center gap-3 p-2 sm:opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     {/* Edit Button */}
                     <Link
                         href={`/blog/create-edit/${blog.id}`}

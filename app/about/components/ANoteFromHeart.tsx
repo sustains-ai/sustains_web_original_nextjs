@@ -34,7 +34,7 @@ const ANoteFromHeart = () => {
   }, [currentIndex]);
 
   return (
-    <section className="bg-white text-gray-900 py-24">
+    <section className="bg-white text-gray-900 py-5">
       <motion.div
         className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center px-6"
         initial={{ opacity: 0, y: 30 }}
