@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const BusinessImpactCards = () => {
   return (
-    <section className="bg-white-100 text-gray-900 py-24 text-center">
+    <section className="bg-white-100 text-gray-900 py-5 text-center">
       <div className="container mx-auto">
         {/* Section Title */}
         <motion.h2

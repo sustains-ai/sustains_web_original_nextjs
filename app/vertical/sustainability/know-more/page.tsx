@@ -38,8 +38,8 @@ const energyPortfolioProducts = [
 
 export default function SustainabilityKnowMorePage() {
     return (
-        <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
-            <div className="container mx-auto px-4">
+        <section className="py-30 bg-gradient-to-b from-gray-50 to-white">
+            <div className="sm:container mx-auto px-4">
                 {/* Header */}
                 <motion.h1
                     className="text-5xl font-extrabold text-center mb-12 text-gray-800 bg-clip-text text-transparent bg-gradient-to-r from-[#089B45] to-[#0ABF53] leading-normal"
@@ -61,7 +61,7 @@ export default function SustainabilityKnowMorePage() {
                 </motion.p>
 
                 {/* Product Cards Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
                     {energyPortfolioProducts.map((product) => (
                         <EnergyProductsCard key={product.id} product={product} />
                     ))}

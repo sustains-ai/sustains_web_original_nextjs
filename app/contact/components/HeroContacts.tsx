@@ -17,15 +17,15 @@ const HeroSection = () => {
   }
 
   return (
-    <section className="bg-white text-black py-24 relative">
+    <section className="text-black mt-5 p-5 relative">
       <motion.div
-        className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center"
+        className="sm:container mx-auto grid grid-cols-1 md:grid-cols-2 items-center"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
         {/* Left Column - Text Content */}
-        <div className="text-center md:text-left px-6 mt-20">
+        <div className="text-center md:text-left px-0 mt-20">
           <motion.h1
             className="text-5xl font-extrabold text-dark leading-tight"
             initial={{ opacity: 0, y: -20 }}
@@ -34,11 +34,7 @@ const HeroSection = () => {
           >
              Get in Touch <br /> We would love to hear from you.
             <span className="text-[#0ABF53]"> Feel free to reach out.</span>
-
-
           </motion.h1>
-
-
         </div>
 
         {/* Right Column - Hero Images */}
@@ -57,21 +53,6 @@ const HeroSection = () => {
             height={500}
             priority // Fast Loading
           />
-
-          {/* Decorative SVG - Bottom Right */}
-          <motion.div
-            className="absolute bottom-[-80px] right-[-100px] opacity-50"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1.2 }}
-          >
-            <Image
-              src="/svg/illustrations/plane.svg"
-              alt="Decorative SVG"
-              width={160}
-              height={160}
-            />
-          </motion.div>
         </motion.div>
       </motion.div>
     </section>

@@ -115,7 +115,7 @@ const HeroSection = () => {
               transition={{ duration: 0.8, delay: 0.6 }}
           >
             <Link href="/contact">
-              <button className="relative inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#089B45] to-[#0ABF53] text-white text-lg font-semibold rounded-full shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 overflow-hidden group">
+              <button className="relative flex items-center justify-center gap-1 w-[250px] h-[60px] bg-gradient-to-r from-[#089B45] to-[#0ABF53] text-white text-md font-semibold rounded-full shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 overflow-hidden group">
                 <span className="relative z-10">Schedule a Meeting</span>
                 <ChevronRight className="w-5 h-5 relative z-10" />
                 <motion.div

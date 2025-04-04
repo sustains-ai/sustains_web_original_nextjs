@@ -8,7 +8,7 @@ export type SidebarState = {
 }
 
 export const useSidebar = (): SidebarState => {
-  const [isOpen, setIsOpen] = useState(true)
+  const [isOpen, setIsOpen] = useState(false)
   return useMemo(() => {
     return {
       isOpen,

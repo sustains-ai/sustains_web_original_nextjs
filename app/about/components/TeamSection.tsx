@@ -71,8 +71,8 @@ const TeamSection = () => {
   };
 
   return (
-    <section className="bg-white py-24">
-      <div className="container mx-auto text-center px-6 relative">
+    <section className="bg-white py-5">
+      <div className="container mx-auto text-center px-0 relative">
         {/* Section Title */}
         <motion.h2
           className="text-4xl font-extrabold text-gray-900 mb-12"

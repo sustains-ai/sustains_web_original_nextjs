@@ -54,7 +54,7 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
       <Provider store={store}>
         {!isCreateBlog && <Header />}
-        <main >
+        <main>
             <PersistGate loading={null} persistor={persistor}>
               <ThemeProvider theme={themeProvider}>
                 {children}

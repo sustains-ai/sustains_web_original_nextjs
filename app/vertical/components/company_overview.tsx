@@ -36,7 +36,7 @@ export default function CompanyOverview() {
     };
 
     return (
-        <div className="bg-gradient-to-br from-gray-100 to-gray-200 py-8 px-4 sm:px-6 lg:px-8">
+        <div className="bg-gradient-to-br from-gray-100 to-gray-200 mt-16 py-8 px-4 sm:px-6 lg:px-8">
             <div className="max-w-5xl mx-auto">
                 <div className="bg-white rounded-xl shadow-lg p-6">
                     <h2 className="text-xl md:text-2xl font-semibold text-gray-800 mb-4">Company Overview</h2>
@@ -57,7 +57,7 @@ export default function CompanyOverview() {
                     </div>
 
                     {loading && (
-                        <p className="text-blue-600 text-center animate-pulse">Loading...</p>
+                        <p className="text-green-600 text-center animate-pulse">Loading...</p>
                     )}
 
                     {error && (

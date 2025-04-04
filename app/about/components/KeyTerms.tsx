@@ -69,7 +69,7 @@ const KeyTerms = () => {
         </motion.h2>
 
         {/* Grid Layout */}
-        <div className="relative z-10 container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="relative z-10 sm:container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Financial Edge Tools */}
           <motion.div
               className="bg-white/90 backdrop-blur-lg p-8 rounded-xl shadow-2xl border-t-4 border-[#0ABF53] text-center transition-all duration-300 hover:shadow-3xl hover:border-[#089B45] hover:bg-white/95"

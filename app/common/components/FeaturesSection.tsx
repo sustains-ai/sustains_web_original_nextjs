@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const FeaturesSection = () => {
   return (
-    <section className="container mx-auto px-6 py-16">
+    <section className="container mx-auto px-0 py-16">
       <motion.h2
         className="text-4xl font-bold text-center mb-12 text-gray-900"
         initial={{ opacity: 0, y: -50 }}

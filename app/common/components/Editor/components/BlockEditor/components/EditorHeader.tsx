@@ -18,9 +18,10 @@ export type EditorHeaderProps = {
   isSidebarOpen?: boolean
   toggleSidebar?: () => void
   editor: Editor
+  readOnly: boolean
 }
 
-export const EditorHeader = ({ id, editor, isSidebarOpen, toggleSidebar }: EditorHeaderProps) => {
+export const EditorHeader = ({ id, editor, isSidebarOpen, toggleSidebar, readOnly }: EditorHeaderProps) => {
   const [isModalOpen, setModalOpen] = React.useState(false);
   const [selectedType, setSelectedType] = React.useState(BLOG_TYPES[0]);
 
@@ -52,12 +53,11 @@ export const EditorHeader = ({ id, editor, isSidebarOpen, toggleSidebar }: Edito
   };
 
   const windowClassName = cn(
-    "w-full fixed top-0 flex flex-row items-center justify-between flex-none py-2 pl-6 pr-3 text-black bg-white border-b border-neutral-200 dark:bg-black dark:text-white dark:border-neutral-800 bg-white z-[999]",
-    isSidebarOpen && 'w-[calc(100%-320px)]',
-  )
+    readOnly && "md:hidden",
+    "flex flex-row items-center justify-between flex-none py-2 pl-6 pr-3 text-black bg-white border-b border-neutral-200 dark:bg-black dark:text-white dark:border-neutral-800"  )
 
   return (
-    <div className="flex flex-row items-center justify-between flex-none py-2 pl-6 pr-3 text-black bg-white border-b border-neutral-200 dark:bg-black dark:text-white dark:border-neutral-800">
+    <div className={windowClassName}>
       <div className="flex flex-row gap-x-1.5 items-center">
         <div className="flex items-center gap-x-1.5">
           <Toolbar.Button
@@ -68,14 +68,21 @@ export const EditorHeader = ({ id, editor, isSidebarOpen, toggleSidebar }: Edito
           >
             <Icon name={isSidebarOpen ? 'PanelLeftClose' : 'PanelLeft'} />
           </Toolbar.Button>
-          <Toolbar.Button tooltip={editor.isEditable ? 'Disable editing' : 'Enable editing'} onClick={toggleEditable}>
-            <Icon name={editor.isEditable ? 'PenOff' : 'Pen'} />
-          </Toolbar.Button>
-          <Toolbar.Button tooltip={'Redirect to blogs page'} onClick={() => redirect("/blog")}>
-            <Icon name={"House"} />
-          </Toolbar.Button>
+          {
+            !readOnly &&
+            <>
+              <Toolbar.Button tooltip={editor.isEditable ? 'Disable editing' : 'Enable editing'} onClick={toggleEditable}>
+                <Icon name={editor.isEditable ? 'PenOff' : 'Pen'} />
+              </Toolbar.Button>
+              <Toolbar.Button tooltip={'Redirect to blogs page'} onClick={() => redirect("/blog")}>
+                <Icon name={"House"} />
+              </Toolbar.Button>
+            </>
+          }
         </div>
       </div>
+      {
+        !readOnly &&
       <div className="flex items-center gap-6">
         {/* <EditorInfo characters={characters} words={words} /> */}
         <div className="flex gap-3">
@@ -84,7 +91,7 @@ export const EditorHeader = ({ id, editor, isSidebarOpen, toggleSidebar }: Edito
             onClick={handleDiscard}
             className="bg-gray-500 hover:bg-gray-700 text-white font-bold text-sm px-4 py-2 rounded flex items-center gap-2"
           >
-            <X size={16} /> Discard
+            <X size={16} />
           </button>
 
           {/* Publish Button */}
@@ -92,10 +99,11 @@ export const EditorHeader = ({ id, editor, isSidebarOpen, toggleSidebar }: Edito
             onClick={() => setModalOpen(true)}
             className="bg-green-500 hover:bg-green-600 text-white font-bold text-sm px-4 py-2 rounded flex items-center gap-2"
           >
-            <Check size={16} /> Publish
+            <Check size={16} />
           </button>
         </div>
       </div>
+}
       {/* Publish Modal */}
       {isModalOpen && (
         <div className="fixed z-[999] inset-0 bg-black bg-opacity-50 flex justify-center items-center">

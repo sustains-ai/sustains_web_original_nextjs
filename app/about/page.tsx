@@ -13,10 +13,10 @@ export default function About() {
       <HeroAbout />
       <ANoteFromHeart />
       <BusinessImpactCards />
-        <TechEcosystem/>
-        <TeamSection/>
+      <TechEcosystem />
+      <TeamSection />
       <KeyTerms />
-         <Quotes />
+      <Quotes />
     </>
   );
 }

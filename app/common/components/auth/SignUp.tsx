@@ -48,6 +48,8 @@ const useStyles = makeStyles()((theme) => ({
     height: "100vh",
     alignItems: "center",
     justifyContent: "center",
+    padding: 20,
+    marginTop: 20,
     backgroundColor: theme.colors.light.background
   },
   button: {

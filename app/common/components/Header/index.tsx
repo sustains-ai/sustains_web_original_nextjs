@@ -5,9 +5,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import menuData from './menuData';
-import { Menu } from '@/types/menu';
 import { useDispatch, useSelector } from 'react-redux';
-import { LogOut, User } from "lucide-react";
+import { LogOut, Menu, X, User } from "lucide-react";
 import { logoutAction } from '../auth/redux/actions';
 
 const getInitials = (fullName: string) => {
@@ -16,7 +15,7 @@ const getInitials = (fullName: string) => {
   return (nameParts[0][0] + nameParts[nameParts.length - 1][0]).toUpperCase();
 };
 
-const Profile = () => {
+const Profile = ({ onClick = () => { } }: { onClick: () => void }) => {
   const isLoggedIn = useSelector((state: any) => state.login.isLoggedIn)
   const user = useSelector((state: any) => state.login.user)
   const [showDropdown, setShowDropdown] = useState(false);
@@ -49,7 +48,7 @@ const Profile = () => {
           {showDropdown && (
             <div
               ref={dropdownRef}
-              className="absolute right-0 top-10 bg-white border rounded-lg shadow-lg"
+              className="absolute z-[10] -right-5 top-10 bg-white border rounded-lg shadow-lg"
             >
               <div className="px-4 py-2 text-gray-700 border-b">{user.name}</div>
               <div className="px-4 py-2 text-gray-700 border-b">{user.email}</div>
@@ -67,14 +66,14 @@ const Profile = () => {
           )}
         </div>
       ) : (
-        <div className="hidden lg:flex items-center space-x-4">
-          <Link href="/signup">
-            <button className="text-gray-600 font-semibold border border-gray-400 px-4 py-2 rounded-md hover:bg-gray-100 transition">
+        <div className="flex items-center space-x-4">
+          <Link href="/signup" onClick={onClick}>
+            <button className="text-gray-600 font-semibold border border-gray-400 px-4 py-2 rounded-md hover:bg-gray-100 transition w-[120px]">
               Sign Up
             </button>
           </Link>
-          <Link href="/signin">
-            <button className="bg-primary text-white font-semibold px-4 py-2 rounded-md transition">
+          <Link href="/signin" onClick={onClick}>
+            <button className="bg-primary text-white font-semibold px-4 py-2 rounded-md transition w-[120px]">
               Sign In
             </button>
           </Link>
@@ -90,7 +89,7 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 w-full bg-white shadow-md z-[999]">
-      <div className="container mx-auto flex justify-between items-center">
+      <div className="container mx-auto flex items-center">
         {/* Logo */}
         <Link href="/">
           <Image
@@ -100,35 +99,63 @@ const Header = () => {
             height={30}
           />
         </Link>
-
-        {/* Mobile Menu Button */}
-        <button
-          className="lg:hidden p-2 text-gray-700 focus:outline-none"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <span>&#10005;</span> : <span>&#9776;</span>}
-        </button>
-
-        {/* Navigation Links */}
-        <nav
-          className={`${isOpen ? 'block' : 'hidden'
-            } lg:flex lg:items-center lg:space-x-6 w-full lg:w-auto absolute lg:static top-16 left-0 px-4 lg:px-0 py-4 lg:py-0`}
-        >
-          {
-            menuData.map((item: Menu) => {
-              return (
-                <Link
-                  key={item.id}
-                  href={item.path}
-                  className={`text-gray-500 hover:text-primary px-3 py-2 transition-colors font-semibold ${pathUrl === item.path ? "text-primary" : ""
-                    }`}
-                >{item.title}</Link>
-              )
-            })
+        <div className="flex flex-1 items-center justify-end">
+          {/* Mobile Menu Button */}
+          {!isOpen &&
+            <button
+              className="md:hidden p-3 text-gray-700 focus:outline-none"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              <Menu size={24} />
+            </button>
           }
-        </nav>
-        <Profile />
+
+          {/* Navigation Links */}
+          <nav
+            className={`${isOpen ? 'flex' : 'hidden md:flex'}
+                          fixed bottom-0 left-0 w-full rounded-t-2xl
+                          flex-col md:flex-row items-center md:justify-end
+                          bg-white shadow-2xl md:shadow-none
+                          z-[2] px-4 py-4 md:py-0 md:gap-5 md:relative md:bottom-auto md:left-auto`}
+          >
+            {
+              isOpen &&
+              <div className='absolute z-[3] right-5 top-2 p-3'>
+                <X onClick={() => setIsOpen(false)} size={24} />
+              </div>
+            }
+            <div className='md:hidden py-5'>
+              <Profile onClick={() => {
+                setIsOpen(false)
+              }} />
+            </div>
+            {
+              menuData.map((item) => {
+                return (
+                  <Link
+                    key={item.id}
+                    href={item.path}
+                    onClick={() => setIsOpen(false)}
+                    className={`text-gray-500 hover:text-primary px-3 py-2 transition-colors font-semibold ${pathUrl === item.path ? "text-primary bg-green-100 rounded-md" : ""
+                      }`}
+                  >{item.title}</Link>
+                )
+              })
+            }
+          </nav>
+          <div className='hidden md:flex'>
+            <Profile onClick={() => {
+              setIsOpen(false)
+            }} />
+          </div>
+        </div>
       </div>
+      {isOpen && window.innerWidth < 1024 && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 z-1"
+          onClick={() => setIsOpen(false)}
+        />
+      )}
     </header>
   );
 };

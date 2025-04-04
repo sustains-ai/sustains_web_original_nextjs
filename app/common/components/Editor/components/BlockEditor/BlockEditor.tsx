@@ -41,11 +41,18 @@ export const BlockEditor = ({ id }: { id: string }) => {
     <div className="flex h-full" ref={menuContainerRef}>
       <Sidebar isOpen={leftSidebar.isOpen} onClose={leftSidebar.close} editor={editor}/>
       <div className="relative flex flex-col flex-1 h-full overflow-hidden">
+      {leftSidebar.isOpen && window.innerWidth < 1024 && (
+          <div
+            className="fixed inset-0 bg-black bg-opacity-50 z-40"
+            onClick={leftSidebar.close}
+          />
+        )}
         <EditorHeader
           id={id}
           editor={editor}
           isSidebarOpen={leftSidebar.isOpen}
           toggleSidebar={leftSidebar.toggle}
+          readOnly={false}
         />
         <div className='h-screen overflow-y-auto'>
           <EditorContent editor={editor} className={"flex-1 overflow-y-auto"} />

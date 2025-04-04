@@ -54,7 +54,7 @@ export default function PortfolioTheory() {
     };
 
     return (
-        <div className="bg-[#FFFFFF] text-gray-800 overflow-hidden relative">
+        <div className="bg-[#FFFFFF] text-gray-800 overflow-hidden relative mt-16">
             {/* Background Decorative Elements */}
             <motion.div
                 className="absolute top-[-100px] left-[-100px] w-[240px] h-[240px] bg-[#0ABF53] rounded-full opacity-5"
@@ -69,7 +69,7 @@ export default function PortfolioTheory() {
                 transition={{ duration: 2.5, repeat: Infinity, repeatType: "reverse", delay: 0.5 }}
             />
 
-            <div className="container mx-auto px-6 py-16 relative z-10">
+            <div className="sm:container mx-auto px-4 py-16 relative z-10">
                 {/* Header */}
                 <motion.h1
                     className="text-4xl md:text-6xl font-extrabold text-center text-gray-800 bg-clip-text text-transparent bg-gradient-to-r from-[#089B45] to-[#0ABF53] drop-shadow-lg mb-12"

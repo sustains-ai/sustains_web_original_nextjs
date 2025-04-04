@@ -7,34 +7,23 @@ import { ChevronRight, ChevronLeft, BarChart2 } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function DashboardPage() {
-    const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
     const navItems = [
         { id: "ev-sales", label: "EV Sales", icon: <BarChart2 className="w-5 h-5" /> },
     ];
 
     return (
-        <div className="flex min-h-screen bg-gradient-to-br from-[#E6F4EA] via-[#A5D6A7] to-[#FFFFFF]">
+        <div className="flex mt-5 min-h-screen bg-gradient-to-br from-[#E6F4EA] via-[#A5D6A7] to-[#FFFFFF]">
             {/* Sidebar */}
             <aside
-                className={`${
-                    isSidebarOpen ? "w-64" : "w-16"
-                } bg-[#0ABF53] text-white transition-all duration-500 flex-shrink-0 shadow-2xl`}
+                className={`${isSidebarOpen ? "w-64" : "w-16"} bg-[#0ABF53] text-white transition-all duration-300 flex-shrink-0 shadow-lg`}
             >
-                <div className="p-4 flex justify-between items-center">
-                    {isSidebarOpen && (
-                        <motion.h1
-                            className="text-2xl font-extrabold tracking-tight"
-                            initial={{ opacity: 0, x: -20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.5 }}
-                        >
-                            EV Analytics
-                        </motion.h1>
-                    )}
+                <div className="h-30 flex justify-around items-center">
+                    {isSidebarOpen && <h1 className="text-xl text-white font-bold">EV Analytics</h1>}
                     <button
                         onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-                        className="p-2 rounded-full hover:bg-[#089B45] transition-colors duration-300"
+                        className="mb-2 rounded-full hover:bg-[#089B45]"
                     >
                         {isSidebarOpen ? <ChevronLeft /> : <ChevronRight />}
                     </button>
@@ -55,7 +44,7 @@ export default function DashboardPage() {
             </aside>
 
             {/* Main Content */}
-            <main className="flex-1 p-8 max-w-7xl mx-auto">
+            <main className="flex-1 p-4 max-w-7xl mx-auto">
                 {/* Header */}
                 <motion.header
                     className="mb-12"

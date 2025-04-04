@@ -48,10 +48,12 @@ const Blog = () => {
       {
         isAdmin &&
         <Link href={`/blog/create-edit/${Date.now()}`}>
-          <button
-            className="absolute top-30 right-6 sm:top-30 sm:right-10 md:top-30 md:right-12 lg:top-30 lg:right-16 gap-2 px-3 py-3 bg-gradient-to-r from-[#089B45] to-[#0ABF53] text-white text-lg font-semibold rounded-full shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 group">
-            <Plus />
-          </button>
+          <div className="flex justify-center items-center sm:block">
+            <button
+              className="relative sm:absolute sm:absolute sm:top:10 sm:right-10 px-3 py-3 bg-gradient-to-r from-[#089B45] to-[#0ABF53] text-white text-lg font-semibold rounded-full shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 group">
+              <Plus />
+            </button>
+          </div>
         </Link>
       }
 
@@ -69,7 +71,7 @@ const Blog = () => {
         {/* <!-- Section Title End --> */}
       </div>
 
-      <div className="mx-auto mt-15 max-w-c-1280 px-4 md:px-8 xl:mt-20 xl:px-0">
+      <div className="mx-auto mt-6 max-w-c-1280 px-4 md:px-8 xl:mt-20 xl:px-0">
         {allBlogs.length > 0 ? (
           <div className="grid grid-cols-1 gap-7.5 md:grid-cols-2 lg:grid-cols-3 xl:gap-10">
             {allBlogs.map((blog, key) => (
@@ -78,7 +80,7 @@ const Blog = () => {
           </div>
         ) : (
           <div className="flex justify-center items-center h-64 text-gray-500 text-lg font-semibold">
-            {`No blogs available${isCategoryValid ? ` for category ${category}` : ""}`}
+            {loading ? "Loading..." : `No blogs available${isCategoryValid ? ` for category ${category}` : ""}`}
           </div>
         )}
       </div>
