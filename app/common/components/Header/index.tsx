@@ -15,7 +15,7 @@ const getInitials = (fullName: string) => {
   return (nameParts[0][0] + nameParts[nameParts.length - 1][0]).toUpperCase();
 };
 
-const Profile = () => {
+const Profile = ({ onClick = () => { } }: { onClick: () => void }) => {
   const isLoggedIn = useSelector((state: any) => state.login.isLoggedIn)
   const user = useSelector((state: any) => state.login.user)
   const [showDropdown, setShowDropdown] = useState(false);
@@ -48,7 +48,7 @@ const Profile = () => {
           {showDropdown && (
             <div
               ref={dropdownRef}
-              className="absolute z-[10] right-0 top-10 bg-white border rounded-lg shadow-lg"
+              className="absolute z-[10] -right-5 top-10 bg-white border rounded-lg shadow-lg"
             >
               <div className="px-4 py-2 text-gray-700 border-b">{user.name}</div>
               <div className="px-4 py-2 text-gray-700 border-b">{user.email}</div>
@@ -66,14 +66,14 @@ const Profile = () => {
           )}
         </div>
       ) : (
-        <div className="hidden lg:flex items-center space-x-4">
-          <Link href="/signup">
-            <button className="text-gray-600 font-semibold border border-gray-400 px-4 py-2 rounded-md hover:bg-gray-100 transition">
+        <div className="flex items-center space-x-4">
+          <Link href="/signup" onClick={onClick}>
+            <button className="text-gray-600 font-semibold border border-gray-400 px-4 py-2 rounded-md hover:bg-gray-100 transition w-[120px]">
               Sign Up
             </button>
           </Link>
-          <Link href="/signin">
-            <button className="bg-primary text-white font-semibold px-4 py-2 rounded-md transition">
+          <Link href="/signin" onClick={onClick}>
+            <button className="bg-primary text-white font-semibold px-4 py-2 rounded-md transition w-[120px]">
               Sign In
             </button>
           </Link>
@@ -101,25 +101,34 @@ const Header = () => {
         </Link>
         <div className="flex flex-1 items-center justify-end">
           {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-3 text-gray-700 focus:outline-none"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            <Menu size={24} />
-          </button>
-
-          {
-            isOpen && 
-            <div className='absolute z-[2] right-5 top-2 p-3'>
-              <X onClick={() => setIsOpen(false)} size={24} />
-            </div>
+          {!isOpen &&
+            <button
+              className="md:hidden p-3 text-gray-700 focus:outline-none"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              <Menu size={24} />
+            </button>
           }
 
           {/* Navigation Links */}
           <nav
-            className={`${isOpen ? 'flex' : 'hidden md:flex'
-              } flex-col md:flex-row items-center md:justify-end bg-white shadow-2xl md:shadow-none w-full z-[1] absolute md:relative top-0 left-0 md:top-0 px-4 lg:px-0 py-4 md:py-0 md:gap-5`}
+            className={`${isOpen ? 'flex' : 'hidden md:flex'}
+                          fixed bottom-0 left-0 w-full rounded-t-2xl
+                          flex-col md:flex-row items-center md:justify-end
+                          bg-white shadow-2xl md:shadow-none
+                          z-[2] px-4 py-4 md:py-0 md:gap-5 md:relative md:bottom-auto md:left-auto`}
           >
+            {
+              isOpen &&
+              <div className='absolute z-[3] right-5 top-2 p-3'>
+                <X onClick={() => setIsOpen(false)} size={24} />
+              </div>
+            }
+            <div className='md:hidden py-5'>
+              <Profile onClick={() => {
+                setIsOpen(false)
+              }} />
+            </div>
             {
               menuData.map((item) => {
                 return (
@@ -134,11 +143,19 @@ const Header = () => {
               })
             }
           </nav>
-          <div className='flex justify-end bg-green'>
-            <Profile />
+          <div className='hidden md:flex'>
+            <Profile onClick={() => {
+              setIsOpen(false)
+            }} />
           </div>
         </div>
       </div>
+      {isOpen && window.innerWidth < 1024 && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 z-1"
+          onClick={() => setIsOpen(false)}
+        />
+      )}
     </header>
   );
 };
