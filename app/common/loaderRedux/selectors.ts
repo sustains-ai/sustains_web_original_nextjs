@@ -1,5 +1,5 @@
 // Copyright © 2025 Sustains AI, All Rights Reserved
-const defaultValue = { loading: false };
+const defaultValue = { loading: undefined };
 
 export const loaderSelector = (name: string): any => (store: any) => {
 

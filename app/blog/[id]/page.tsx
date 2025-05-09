@@ -1,18 +1,18 @@
 "use client"
 
-import BlogData from "@/app/common/components/Blog/blogData";
 import RelatedPost from "../../common/components/Blog/RelatedPost";
-import Image from "next/image";
-import { Blog } from "@/types/blog";
-import Editor from "@/app/common/components/Editor";
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import BlockReadOnly from "@/app/common/components/Editor/components/BlockEditor/BlockReadOnly";
-import { Button, Chip } from "@mui/material";
 import Link from "next/link";
 import { BLOG_TYPES } from "@/app/common/constants";
+import { getBlogsAction } from "@/app/common/components/Blog/redux/actions";
+import { loaderSelector } from "@/app/common/loaderRedux/selectors";
+import { LoadingIndicator } from "@/app/common/components/LoadingIndicator/LoadingIndicator";
 
 const SingleBlogPage = ({ params }: { params: Promise<{ id: string }> }) => {
+
+    const dispatch = useDispatch()
     const resolvedParams = React.use(params);
     const id = resolvedParams.id;
 
@@ -23,22 +23,42 @@ const SingleBlogPage = ({ params }: { params: Promise<{ id: string }> }) => {
 
     const blog = allBlogs.find((blog: any) => blog.id === id)
 
-    if (!blog) {
-        return null;
+    React.useLayoutEffect(() => {
+        dispatch(getBlogsAction())
+    }, [])
+
+    const { loading }: { loading: boolean } = useSelector(loaderSelector("BlogList"))
+
+    if ((loading || loading === undefined) && !blog) {
+        return (
+            <div style={{ height: '100vh', width: '100vw' }}>
+                <LoadingIndicator loading={true} />
+            </div>
+        )
     }
 
-    const imageSrc = typeof blog.image === "string" ? blog.image : blog.image?.src || "/default-image.jpg";
-    const dateString = blog.date instanceof Date ? blog.date.toISOString().split("T")[0] : blog.date;
+    if (!blog) {
+        return (
+            <div style={{ height: '100vh', width: '100vw', fontSize: 50, display: "flex", justifyContent: "center", alignItems: "center" }}>
+                Blog Not Found
+            </div>
+        );
+    }
 
     const latestBlogs = blogs.filter((blog: any) => blog.id !== id) ?? []
-    console.log(latestBlogs)
 
     return (
         <div className="flex flex-col sm:flex-row animate_top rounded-md border border-stroke bg-white shadow-solid-13 mt-5 py-2">
+            {
+                !blog && <LoadingIndicator loading={loading} />
+            }
+
             {/* Main Content */}
+
             <div className="sm:flex-[3] w-full">
                 <BlockReadOnly id={id} />
             </div>
+
 
             {/* Sidebar */}
             <div className="sm:flex-[1] w-full sm:mt-0 mt-10 sm:ml-6 px-4">
