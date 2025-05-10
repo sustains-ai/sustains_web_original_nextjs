@@ -21,7 +21,7 @@ const teamSection = [
     name: "Arjun C Unni",
     role: "Head of products",
     image: "/img/350x350/arjun2.jpg",
-    bio: "A product guy turned developer turned energy professional turned finance guy. Holds a PhD in energy, loves coding, and might just end up as the CTO. A devoted fan of JETBRAINS products."
+    bio: "Started in product, detoured through a PhD in Energy, dabbled in finance, fell for code, and somehow ended up as CTO. Basically, he collects careers like other people collect coffee mugs. In the kitchen, he's a culinary anarchist — no recipes, just chaos and delicious outcomes. Think MasterChef meets mad scientist. He debates like it's a sport, switches sides mid-argument for fun, and feels absolutely nothing while doing it. Cold-blooded, but charming"
   },
   // {
   //   name: "Ravi",
