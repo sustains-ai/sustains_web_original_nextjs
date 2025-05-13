@@ -42,6 +42,12 @@ const Footer = () => {
                   Contact
                 </a>
               </li>
+
+              <li>
+                <a className="link link-light link-light-75 font-semibold" href="/careers">
+                  Careers
+                </a>
+              </li>
             </ul>
           </div>
           <div className="col-sm-6 mt-3">
