@@ -208,7 +208,7 @@ export default function Careers() {
                             <form onSubmit={handleSubmit}>
                                 <div className="mb-5">
                                     <h4 className="card-title">1. Personal details</h4>
-                                    <p className="card-text">We'll need these details to contact you.</p>
+                                    <p className="card-text">We&apos;ll need these details to contact you.</p>
                                 </div>
 
                                 <div className="row">
