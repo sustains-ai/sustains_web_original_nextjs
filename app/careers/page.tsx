@@ -7,52 +7,52 @@ import { LoadingIndicator } from "../common/components/LoadingIndicator/LoadingI
 import React from 'react';
 
 function JobPosting() {
-  return (
-    <div className="max-w-4xl mx-auto p-6 font-sans text-gray-800">
-      <h1 className="text-3xl font-bold mb-4 text-grey-800">Frontend Developer - Internship</h1>
+    return (
+        <div className="max-w-4xl mx-auto lg:p-6 font-sans text-gray-800">
+            <h1 className="text-3xl font-bold mb-4 text-grey-800">Frontend Developer - Internship</h1>
 
-      <section className="mb-8">
-        <p className="text-lg">
-          The ideal candidate will be responsible for designing, developing, testing, and debugging responsive web and mobile applications for the company. Using JavaScript, HTML, and CSS, this candidate should be able to translate user and business needs into functional front-end design.
-        </p>
-      </section>
+            <section className="mb-8">
+                <p className="text-lg">
+                    The ideal candidate will be responsible for designing, developing, testing, and debugging responsive web and mobile applications for the company. Using JavaScript, HTML, and CSS, this candidate should be able to translate user and business needs into functional front-end design.
+                </p>
+            </section>
 
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold text-gray-700 mb-3">Responsibilities:</h2>
-        <ul className="list-disc pl-6 space-y-2">
-          <li>Improve the UI of our web apps (Entropy & Sandbox) using HTML, CSS, and JavaScript to ensure a smooth, modern user experience.</li>
-          <li>Enhance and maintain our company website (built with Next.js) using responsive designs with React, HTML, and CSS.</li>
-          <li>Collaborate with backend developers to integrate front-end templates with Django views and models.</li>
-          <li>Revamp existing pages and forms to improve usability and visual appeal.</li>
-          <li>Troubleshoot and resolve front-end issues across various devices and browsers.</li>
-          <li>Participate in code reviews and contribute to ongoing UI/UX improvements.</li>
-          <li>Work closely with the Director of Engineering for feedback and alignment.</li>
-        </ul>
-      </section>
+            <section className="mb-8">
+                <h2 className="text-2xl font-semibold text-gray-700 mb-3">Responsibilities:</h2>
+                <ul className="list-disc pl-6 space-y-2">
+                    <li>Improve the UI of our web apps (Entropy & Sandbox) using HTML, CSS, and JavaScript to ensure a smooth, modern user experience.</li>
+                    <li>Enhance and maintain our company website (built with Next.js) using responsive designs with React, HTML, and CSS.</li>
+                    <li>Collaborate with backend developers to integrate front-end templates with Django views and models.</li>
+                    <li>Revamp existing pages and forms to improve usability and visual appeal.</li>
+                    <li>Troubleshoot and resolve front-end issues across various devices and browsers.</li>
+                    <li>Participate in code reviews and contribute to ongoing UI/UX improvements.</li>
+                    <li>Work closely with the Director of Engineering for feedback and alignment.</li>
+                </ul>
+            </section>
 
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold text-gray-700 mb-3">Requirements:</h2>
-        <ul className="list-disc pl-6 space-y-2">
-          <li>Current student or recent graduate in Computer Science, Web Development, or a related field.</li>
-          <li>Solid understanding of HTML, CSS, and JavaScript for front-end development.</li>
-          <li>Basic experience with React and familiarity with Next.js.</li>
-          <li>Familiarity with Git and version control workflows.</li>
-          <li>Strong attention to detail and a passion for clean, user-friendly interfaces.</li>
-          <li>Self-motivated and able to manage time independently in a remote setting.</li>
-          <li>Availability of 20-30 hours per week.</li>
-        </ul>
-      </section>
+            <section className="mb-8">
+                <h2 className="text-2xl font-semibold text-gray-700 mb-3">Requirements:</h2>
+                <ul className="list-disc pl-6 space-y-2">
+                    <li>Current student or recent graduate in Computer Science, Web Development, or a related field.</li>
+                    <li>Solid understanding of HTML, CSS, and JavaScript for front-end development.</li>
+                    <li>Basic experience with React and familiarity with Next.js.</li>
+                    <li>Familiarity with Git and version control workflows.</li>
+                    <li>Strong attention to detail and a passion for clean, user-friendly interfaces.</li>
+                    <li>Self-motivated and able to manage time independently in a remote setting.</li>
+                    <li>Availability of 20-30 hours per week.</li>
+                </ul>
+            </section>
 
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold text-gray-700 mb-3">Nice-to-Have:</h2>
-        <ul className="list-disc pl-6 space-y-2">
-          <li>Experience with Django template integration or a willingness to learn quickly.</li>
-          <li>Exposure to CSS frameworks like Bootstrap or similar tools.</li>
-          <li>Interest in sustainability, AI, or tech solutions for finance and energy sectors.</li>
-        </ul>
-      </section>
-    </div>
-  );
+            <section className="mb-8">
+                <h2 className="text-2xl font-semibold text-gray-700 mb-3">Nice-to-Have:</h2>
+                <ul className="list-disc pl-6 space-y-2">
+                    <li>Experience with Django template integration or a willingness to learn quickly.</li>
+                    <li>Exposure to CSS frameworks like Bootstrap or similar tools.</li>
+                    <li>Interest in sustainability, AI, or tech solutions for finance and energy sectors.</li>
+                </ul>
+            </section>
+        </div>
+    );
 }
 
 export default function Careers() {
@@ -180,7 +180,7 @@ export default function Careers() {
     };
 
     return (
-        <div className="container content-space-2 content-space-lg-3">
+        <div className="content-space-2 content-space-lg-3 m-5">
             <LoadingIndicator loading={state === "loading"} />
             <div className="text-center mb-7">
                 <div className="mb-3">
@@ -201,147 +201,147 @@ export default function Careers() {
             {
                 state !== "completed" &&
                 <>
-                <JobPosting />
-                <div className="w-lg-75 mx-lg-auto">
-                    <div className="card card-shadow">
-                        <div className="card-body p-sm-7 p-md-10">
-                            <form onSubmit={handleSubmit}>
-                                <div className="mb-5">
-                                    <h4 className="card-title">1. Personal details</h4>
-                                    <p className="card-text">We&apos;ll need these details to contact you.</p>
-                                </div>
+                    <JobPosting />
+                    <div className="w-lg-65 mx-lg-auto">
+                        <div className="card card-shadow">
+                            <div className="card-body p-sm-7 p-md-10">
+                                <form onSubmit={handleSubmit}>
+                                    <div className="mb-5">
+                                        <h4 className="card-title">1. Personal details</h4>
+                                        <p className="card-text">We&apos;ll need these details to contact you.</p>
+                                    </div>
 
-                                <div className="row">
-                                    <div className="col-sm-6 mb-4">
-                                        <label className="form-label" htmlFor="firstName">First name</label>
+                                    <div className="row">
+                                        <div className="col-sm-6 mb-4">
+                                            <label className="form-label" htmlFor="firstName">First name</label>
+                                            <input
+                                                type="text"
+                                                className="form-control form-control-lg"
+                                                name="firstName"
+                                                id="firstName"
+                                                value={form.firstName}
+                                                onChange={handleChange}
+                                                placeholder="First name"
+                                            />
+                                            {errors.firstName && <div className="text-sm text-danger">{errors.firstName}</div>}
+                                        </div>
+                                        <div className="col-sm-6 mb-4">
+                                            <label className="form-label" htmlFor="lastName">Last name</label>
+                                            <input
+                                                type="text"
+                                                className="form-control form-control-lg"
+                                                name="lastName"
+                                                id="lastName"
+                                                value={form.lastName}
+                                                onChange={handleChange}
+                                                placeholder="Last name"
+                                            />
+                                            {errors.lastName && <div className="text-sm text-danger">{errors.lastName}</div>}
+                                        </div>
+                                    </div>
+
+                                    <div className="mb-4">
+                                        <label className="form-label" htmlFor="email">Email address</label>
+                                        <input
+                                            type="email"
+                                            className="form-control form-control-lg"
+                                            name="email"
+                                            id="email"
+                                            value={form.email}
+                                            onChange={handleChange}
+                                            placeholder="email@site.com"
+                                        />
+                                        {errors.email && <div className="text-sm text-danger">{errors.email}</div>}
+                                    </div>
+
+                                    <div className="mb-4">
+                                        <label className="form-label" htmlFor="phone">Phone</label>
                                         <input
                                             type="text"
                                             className="form-control form-control-lg"
-                                            name="firstName"
-                                            id="firstName"
-                                            value={form.firstName}
+                                            name="phone"
+                                            id="phone"
+                                            value={form.phone}
                                             onChange={handleChange}
-                                            placeholder="First name"
+                                            placeholder="Phone"
                                         />
-                                        {errors.firstName && <div className="text-sm text-danger">{errors.firstName}</div>}
+                                        {errors.phone && <div className="text-sm text-danger">{errors.phone}</div>}
                                     </div>
-                                    <div className="col-sm-6 mb-4">
-                                        <label className="form-label" htmlFor="lastName">Last name</label>
+
+                                    <div className="mb-4">
+                                        <label className="form-label" htmlFor="linkedin">LinkedIn URL</label>
                                         <input
                                             type="text"
-                                            className="form-control form-control-lg"
-                                            name="lastName"
-                                            id="lastName"
-                                            value={form.lastName}
+                                            className="form-control"
+                                            name="linkedin"
+                                            id="linkedin"
+                                            value={form.linkedin}
                                             onChange={handleChange}
-                                            placeholder="Last name"
+                                            placeholder="www.linkedin.com/in/yourname"
                                         />
-                                        {errors.lastName && <div className="text-sm text-danger">{errors.lastName}</div>}
+                                        {errors.linkedin && <div className="text-sm text-danger">{errors.linkedin}</div>}
                                     </div>
-                                </div>
 
-                                <div className="mb-4">
-                                    <label className="form-label" htmlFor="email">Email address</label>
-                                    <input
-                                        type="email"
-                                        className="form-control form-control-lg"
-                                        name="email"
-                                        id="email"
-                                        value={form.email}
-                                        onChange={handleChange}
-                                        placeholder="email@site.com"
-                                    />
-                                    {errors.email && <div className="text-sm text-danger">{errors.email}</div>}
-                                </div>
+                                    <hr className="my-md-7" />
+                                    <div className="mb-5">
+                                        <h4 className="card-title">2. Profile</h4>
+                                    </div>
 
-                                <div className="mb-4">
-                                    <label className="form-label" htmlFor="phone">Phone</label>
-                                    <input
-                                        type="text"
-                                        className="form-control form-control-lg"
-                                        name="phone"
-                                        id="phone"
-                                        value={form.phone}
-                                        onChange={handleChange}
-                                        placeholder="Phone"
-                                    />
-                                    {errors.phone && <div className="text-sm text-danger">{errors.phone}</div>}
-                                </div>
+                                    <div className="mb-4">
+                                        <label htmlFor="resume" className="form-label">Résumé / CV</label>
+                                        <input
+                                            type="file"
+                                            className="form-control"
+                                            name="resume"
+                                            id="resume"
+                                            onChange={handleChange}
+                                        />
+                                        {errors.resume && <div className="text-sm text-danger">{errors.resume}</div>}
+                                    </div>
 
-                                <div className="mb-4">
-                                    <label className="form-label" htmlFor="linkedin">LinkedIn URL</label>
-                                    <input
-                                        type="text"
-                                        className="form-control"
-                                        name="linkedin"
-                                        id="linkedin"
-                                        value={form.linkedin}
-                                        onChange={handleChange}
-                                        placeholder="www.linkedin.com/in/yourname"
-                                    />
-                                    {errors.linkedin && <div className="text-sm text-danger">{errors.linkedin}</div>}
-                                </div>
+                                    <div className="mb-4">
+                                        <label htmlFor="summary" className="form-label">Personal summary</label>
+                                        <textarea
+                                            className="form-control"
+                                            name="summary"
+                                            id="summary"
+                                            value={form.summary}
+                                            onChange={handleChange}
+                                            placeholder="Add a cover letter or anything else you want to share."
+                                            rows={5}
+                                        />
+                                    </div>
 
-                                <hr className="my-md-7" />
-                                <div className="mb-5">
-                                    <h4 className="card-title">2. Profile</h4>
-                                </div>
+                                    <hr className="my-md-7" />
+                                    <div className="mb-5">
+                                        <h4 className="card-title">3. Submit application</h4>
+                                        <p>We need your consent to process your personal data.</p>
+                                    </div>
 
-                                <div className="mb-4">
-                                    <label htmlFor="resume" className="form-label">Résumé / CV</label>
-                                    <input
-                                        type="file"
-                                        className="form-control"
-                                        name="resume"
-                                        id="resume"
-                                        onChange={handleChange}
-                                    />
-                                    {errors.resume && <div className="text-sm text-danger">{errors.resume}</div>}
-                                </div>
+                                    <div className="form-check mb-4">
+                                        <input
+                                            type="checkbox"
+                                            className="form-check-input"
+                                            name="privacyAccepted"
+                                            id="privacyAccepted"
+                                            checked={form.privacyAccepted}
+                                            onChange={handleChange}
+                                        />
+                                        <label className="form-check-label" htmlFor="privacyAccepted">
+                                            Allow us to process your personal information.
+                                        </label>
+                                        {errors.privacyAccepted && <div className="text-sm text-danger">{errors.privacyAccepted}</div>}
+                                    </div>
 
-                                <div className="mb-4">
-                                    <label htmlFor="summary" className="form-label">Personal summary</label>
-                                    <textarea
-                                        className="form-control"
-                                        name="summary"
-                                        id="summary"
-                                        value={form.summary}
-                                        onChange={handleChange}
-                                        placeholder="Add a cover letter or anything else you want to share."
-                                        rows={5}
-                                    />
-                                </div>
-
-                                <hr className="my-md-7" />
-                                <div className="mb-5">
-                                    <h4 className="card-title">3. Submit application</h4>
-                                    <p>We need your consent to process your personal data.</p>
-                                </div>
-
-                                <div className="form-check mb-4">
-                                    <input
-                                        type="checkbox"
-                                        className="form-check-input"
-                                        name="privacyAccepted"
-                                        id="privacyAccepted"
-                                        checked={form.privacyAccepted}
-                                        onChange={handleChange}
-                                    />
-                                    <label className="form-check-label" htmlFor="privacyAccepted">
-                                        Allow us to process your personal information.
-                                    </label>
-                                    {errors.privacyAccepted && <div className="text-sm text-danger">{errors.privacyAccepted}</div>}
-                                </div>
-
-                                <div className="flex justify-center items-center">
-                                    <button type="submit" className="btn btn-primary btn-lg w-[300px]">
-                                        Submit application
-                                    </button>
-                                </div>
-                            </form>
+                                    <div className="flex justify-center items-center">
+                                        <button type="submit" className="btn btn-primary btn-lg w-[300px]">
+                                            Submit application
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                </div>
                 </>
 
             }
