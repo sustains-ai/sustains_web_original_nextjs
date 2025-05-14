@@ -60,9 +60,12 @@ export default function NewsFeed() {
 
     return (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-            <h2 className="text-2xl font-bold text-center text-gray-800 mb-8">
+            <h2 className="text-2xl font-bold text-center text-gray-800 mb-2">
                 Market News & Insights
             </h2>
+            <p className="text-center text-gray-600 mb-5">
+                Stay ahead with real-time financial news and insights curated for informed decision-making.
+            </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {news.slice(0, 6).map((item, idx) => (
                     <a

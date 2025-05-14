@@ -12,32 +12,39 @@ const StockSearch = dynamic(() => import("../../components/StockSearch"), { ssr:
 
 const riskProducts = [
     {
-        id: "portfolio-analyser",
-        title: "Portfolio Analyser",
-        description: "Analyze and optimize your portfolio with advanced AI-driven risk insights.",
+        id: "portfolio-analysis",
+        title: "Portfolio Analysis",
+        description: "Smarter Portfolio Management for Smarter Investing",
         img: "/images/portfolio_analysis.jpg",
         link: "/vertical/risk/know-more/portfolio-analysis"
     },
     {
-        id: "company-overview",
-        title: "Company Overview",
-        description: "Overview of the companies",
+        id: "risk-aware-planning",
+        title: "Personalized Risk-Aware Wealth Planning",
+        description: "Goal-Based Financial Planning for Emerging Market Retail Investors",
         img: "/images/company_overview.jpg",
-        link: "/vertical/risk/know-more/company-overview"
+        link: "/vertical/risk/know-more/risk-aware-planning"
     },
     {
-        id: "trading-algorithms",
-        title: "Trading Algorithms",
-        description: "Automated trading strategies designed to enhance your trading performance.",
+        id: "integrated-risk-analysis",
+        title: "Integrated Risk Analysis & Reporting",
+        description: "Comprehensive Risk Visibility for Strategic Investments",
         img: "/images/trading.jpg",
-        link: "/vertical/risk/know-more/trading-algorithms"
+        link: "/vertical/risk/know-more/integrated-risk-analysis"
     },
     {
-        id: "valuation",
-        title: "Valuation",
-        description: "Accurate company valuation tools for smarter investment decisions.",
+        id: "equity-research",
+        title: "AI-Integrated Equity Research & Valuation",
+        description: "Faster, Smarter Equity Research with AI Support",
         img: "/images/valuation.jpg",
-        link: "/vertical/risk/know-more/valuation"
+        link: "/vertical/risk/know-more/equity-research"
+    },
+    {
+        id: "enhanced-stock-screener",
+        title: "AI-Enhanced Stock Screener",
+        description: "Discover Opportunities with Explainable AI Screening",
+        img: "/images/company_overview.jpg",
+        link: "/vertical/risk/know-more/enhanced-stock-screener"
     },
     {
         id: "news",
