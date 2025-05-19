@@ -47,12 +47,12 @@ const teamSection = [
     image: "/img/350x350/Rohit_g.png",
     bio: "Our consulting head with Big4 battle scars and a calendar full of meetings we never asked him to attend — at hours we would not dare suggest. Can never say no (we have tried). A brilliant chef in his downtime, known for both killer biriyani and uncompromising work ethic. Whether it is strategy decks or dinner plates, there is only one rule: no shortcuts, no compromise."
   },
-  {
-    name: "Reshma",
-    role: "Head of Energy",
-    image: "/img/350x350/Reshma_g.png",
-    bio:"Our head of energy — and yes, she breathes Python. Equally fluent in code and client conversations, she is the rare mix of engineer and consultant. With her at the helm, the energy vertical is not just safe — it is thriving. Calm, precise, and always one script away from solving the impossible."
-  },
+  // {
+  //   name: "Reshma",
+  //   role: "Head of Energy",
+  //   image: "/img/350x350/Reshma_g.png",
+  //   bio:"Our head of energy — and yes, she breathes Python. Equally fluent in code and client conversations, she is the rare mix of engineer and consultant. With her at the helm, the energy vertical is not just safe — it is thriving. Calm, precise, and always one script away from solving the impossible."
+  // },
 ];
 
 const TeamSection = () => {
