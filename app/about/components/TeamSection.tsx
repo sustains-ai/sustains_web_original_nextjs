@@ -13,15 +13,15 @@ const teamSection = [
     bio: "Our Chief Entertaining Officer. He talks—a lot. Conversations range from product strategies to deep spiritual insights, though there is ongoing debate about how spiritual he truly is. A relentless extrovert, he thrives on social interactions and energizes every discussion he joins."  },
   {
     name: "Sachin Muralee Krishna",
-    role: "Head of Strategy",
+    role: "Strategic Advisor – Investment, Finance & Product",
     image: "/img/350x350/sachin3.png",
-    bio: "Our budding CFO. Loves finance and hangovers in equal measure. Equally passionate about spreadsheets and sweets. Rarely speaks—unless fueled by a drink. Eligible bachelor, for now."
+    bio: "Loves finance and hangovers in equal measure. Equally passionate about spreadsheets and sweets. Rarely speaks—unless fueled by a drink. Eligible bachelor, for now."
   },
   {
     name: "Arjun C Unni",
     role: "Head of products",
     image: "/img/350x350/arjun2.jpg",
-    bio: "Started in product, detoured through a PhD in Energy, dabbled in finance, fell for code, and somehow ended up as CTO. Basically, he collects careers like other people collect coffee mugs. In the kitchen, he's a culinary anarchist — no recipes, just chaos and delicious outcomes. Think MasterChef meets mad scientist. He debates like it's a sport, switches sides mid-argument for fun, and feels absolutely nothing while doing it. Cold-blooded, but charming"
+    bio: "Started in product, detoured through a PhD in Energy, dabbled in finance, fell for code, and somehow ended up as head of products. Basically, he collects careers like other people collect coffee mugs. In the kitchen, he's a culinary anarchist — no recipes, just chaos and delicious outcomes. Think MasterChef meets mad scientist. He debates like it's a sport, switches sides mid-argument for fun, and feels absolutely nothing while doing it. Cold-blooded, but charming"
   },
   // {
   //   name: "Ravi",
